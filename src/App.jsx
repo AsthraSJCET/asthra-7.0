@@ -9,18 +9,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route
-            index="true"
-            path="/"
-            element={<Events eventName="Ev-Name" dateTime="Nov2, 9AM" />}
-          />
-          <Route path="/workshops" element={<Events eventType="workshops" />} />
+          <Route index element={<Events eventType="workshop" />} />
+          <Route path="/workshop" element={<Events eventType="workshop" />} />
+
           <Route
             path="/competitions"
-            element={<Events eventType="workshop" />}
+            element={<Events eventType="competitions" />}
           />
-          <Route path="/workshops" element={<Events />} />
-          <Route path="/workshops" element={<Events />} />
+
+          <Route path="/talks" element={<Events eventType="talks" />} />
+
+          <Route path="/talks" element={<Events eventType="talks" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="*" element={<NotFound />} />

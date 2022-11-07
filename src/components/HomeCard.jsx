@@ -14,7 +14,7 @@ function HomeCard({ eventName, dateTime }) {
           <h1 className="text-black text-3xl font-bold mb-2 font-mbf">
             {eventName}
           </h1>
-          <h5 className="text-black font-semibold mb-4 font-mono">
+          <h5 className="text-black font-semibold mb-4 font-spaceGrotesk">
             {dateTime}
           </h5>
         </div>
