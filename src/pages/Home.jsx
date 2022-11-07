@@ -16,10 +16,10 @@ function Home() {
 
 const jsonData = {
   workshop: [
-    { eventName: "W1", dateTime: "Dec2,9AM" },
-    { eventName: "W2", dateTime: "Dec2,10AM" },
-    { eventName: "W3", dateTime: "Dec2,9AM" },
-    { eventName: "W4", dateTime: "Dec2,10AM" },
+    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,9AM" },
+    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,10AM" },
+    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,9AM" },
+    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,10AM" },
   ],
   competitions: [
     { eventName: "C1", dateTime: "Dec2,9AM" },

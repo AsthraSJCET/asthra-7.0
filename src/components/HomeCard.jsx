@@ -11,10 +11,12 @@ function HomeCard({ eventName, dateTime }) {
           />
         </a>
         <div className="p-6">
-          <h1 className="text-black text-3xl font-semibold mb-2">
+          <h1 className="text-black text-3xl font-bold mb-2 font-mbf">
             {eventName}
           </h1>
-          <h5 className="text-black mb-4">{dateTime}</h5>
+          <h5 className="text-black font-semibold mb-4 font-mono">
+            {dateTime}
+          </h5>
         </div>
       </div>
     </div>
