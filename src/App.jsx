@@ -1,8 +1,9 @@
 import React from "react";
-import { Home, Events } from "./pages/Home";
+import { Home } from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import HomeCard from "./components/HomeCard";
+import Events from "./components/Events";
 
 function App() {
   return (
