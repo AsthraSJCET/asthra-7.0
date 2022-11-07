@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="group-hover:text-white h-screen grid grid-cols-1 px-60 py-20 bg-lime-600 text-5xl font-spaceGrotesk font-bold">
+    <div className="h-screen grid grid-cols-1 px-5 lg:px-60 py-20 bg-lime-600 text-4xl lg:text-5xl font-spaceGrotesk font-bold">
       <NavLink to="/">HOME</NavLink>
       <NavLink to="/workshops">WORKSHOPS</NavLink>
       <NavLink to="/talks">TALKS</NavLink>
