@@ -31,7 +31,7 @@ const jsonData = {
 
 function Events(eventType) {
   return (
-    <div className="bg-black grid grid-rows-4 lg:grid-cols-2">
+    <div className="bg-black grid grid-rows-4 lg:grid-cols-3">
       {Object.entries(jsonData.workshop).map((data, key) => {
         return (
           <HomeCard

@@ -2,7 +2,7 @@ import React from "react";
 
 function HomeCard({ eventName, dateTime }) {
   return (
-    <div className="flex justify-center py-10">
+    <div className="flex justify-center py-10 lg:px-10">
       <div className="lg shadow-lg bg-white cursor-pointer">
         <a href="">
           <img
