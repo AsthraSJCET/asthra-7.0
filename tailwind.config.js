@@ -7,10 +7,9 @@ module.exports = {
     extend: {
       fontFamily: {
         mbf: ['MBF'],
-        sg: ['Space Grotesk']
+        spaceGrotesk: ['Space Grotesk']
       }
     },
   },
   plugins: [],
 }
-
