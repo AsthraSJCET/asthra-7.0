@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 function MainTabs() {
   return (
     <>
-      <div className="flex flex-row justify-start py-2 whitespace-nowrap overflow-auto scrollbar-hide mx-0 lg:mx-20">
+      <div className="flex flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0 lg:mx-10">
         <NavLink
           to="/workshops"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-8 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-8 cursor-pointer"
           }
         >
           WORKSHOPS
@@ -19,8 +19,8 @@ function MainTabs() {
           to="/competitions"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-8 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
           }
         >
           COMPETITIONS
@@ -29,8 +29,8 @@ function MainTabs() {
           to="/talks"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
           }
         >
           TALKS
@@ -39,8 +39,8 @@ function MainTabs() {
           to="/lectures"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-10 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-8 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-8 cursor-pointer"
           }
         >
           LECTURES
