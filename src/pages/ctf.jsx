@@ -1,10 +1,12 @@
+import { useParams } from "react-router-dom";
+
 const { default: Navbar } = require("../components/Navbar");
 
 const Capture = ({ name, description, rules, contact }) => {
   return (
     <>
       <Navbar />
-      <div className="bg-black h-screen w-screen pb-40">
+      <div className="bg-black h-screen w-screen pb-40 px-5 lg:px-20 py-5">
         <div>
           <div className="max-w-screen lg:px-20 md:p-8 p-4">
             <h1 className="text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight">

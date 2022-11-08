@@ -8,7 +8,7 @@ export default function Navbar({ fixed }) {
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
             <a
-              className="text-sm font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-white"
+              className="font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-2xl text-white"
               href="#"
             >
               ASTHRA
@@ -20,7 +20,7 @@ export default function Navbar({ fixed }) {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke={navbarOpen ? "black" : "white"}
