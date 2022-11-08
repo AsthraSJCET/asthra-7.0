@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face {
   font-family: "MBF";
   src: url("../../public/fonts/mbf.ttf");
