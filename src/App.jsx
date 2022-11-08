@@ -1,26 +1,26 @@
 import React from "react";
-import { Home, Events } from "./pages/Home";
+import { Home } from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import HomeCard from "./components/HomeCard";
+import Events from "./components/Events";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route
-            index="true"
-            path="/"
-            element={<Events eventName="Ev-Name" dateTime="Nov2, 9AM" />}
-          />
-          <Route path="/workshops" element={<Events eventType="workshops" />} />
+          <Route index element={<Events eventType="workshop" />} />
+          <Route path="/workshop" element={<Events eventType="workshop" />} />
+
           <Route
             path="/competitions"
-            element={<Events eventType="workshop" />}
+            element={<Events eventType="competitions" />}
           />
-          <Route path="/workshops" element={<Events />} />
-          <Route path="/workshops" element={<Events />} />
+
+          <Route path="/talks" element={<Events eventType="talks" />} />
+
+          <Route path="/talks" element={<Events eventType="talks" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="*" element={<NotFound />} />

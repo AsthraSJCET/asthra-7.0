@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mbf: ['MBF']
+        mbf: ['MBF'],
+        spaceGrotesk: ['Space Grotesk']
       }
     },
   },
