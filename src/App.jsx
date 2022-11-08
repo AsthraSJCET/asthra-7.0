@@ -3,6 +3,10 @@ import { Home } from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import HomeCard from "./components/HomeCard";
+
+import Capture from './pages/ctf'
+import NavBar from "./components/Navbar";
+
 import Events from "./components/Events";
 
 function App() {
@@ -23,6 +27,7 @@ function App() {
           <Route path="/talks" element={<Events eventType="talks" />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="/ctf" element={<Capture/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
