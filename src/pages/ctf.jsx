@@ -11,35 +11,35 @@ const Capture = () => {
     return (
         <>
             <Navbar />
-            <div className="bg-black h-full w-screen pb-40">
+            <div className="bg-black h-screen w-screen pb-40">
                 <div>
-                    <div className="max-w-8xl md:p-8 p-4">
-                        <h1 className="text-5xl font-mbf text-white font-bold pb-4 tracking-tight">
+                    <div className="max-w-screen lg:px-20 md:p-8 p-4">
+                        <h1 className="text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight">
                             {eventDetails.name}
                         </h1>
                         <hr className=""></hr>
                     </div>
-                    <div className="px-20 py-4 font-mbf text-white">
+                    <div className="px-20 py-4 font-spaceGrotesk text-white">
                         <h3 className="font-bold font-mono text-2xl pb-6">
                             DESCRIPTION
                         </h3>
-                        <p className="text-white font-mbf text-sm tracking-normal font-semibold max-w-xl">
+                        <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
                             {eventDetails.description}
                         </p>
                     </div>
-                    <div className="px-20 py-4 font-mbf text-white">
+                    <div className="px-20 py-4 font-spaceGrotesk text-white">
                         <h3 className="font-bold font-mono text-2xl pb-6">
                             RULES
                         </h3>
-                        <p className="text-white font-mbf text-sm tracking-normal font-semibold max-w-xl">
+                        <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
                             {eventDetails.rules}
                         </p>
                     </div>
-                    <div className="px-20 py-4 font-mbf text-white">
+                    <div className="px-20 py-4 font-spaceGrotesk text-white">
                         <h3 className="font-bold font-mono text-2xl pb-6">
                             CONTACT
                         </h3>
-                        <p className="text-white font-mbf text-sm tracking-normal font-semibold max-w-xl">
+                        <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
                             {eventDetails.contact}
                         </p>
                     </div>
