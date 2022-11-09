@@ -9,6 +9,7 @@ const Capture = ({ name, description, rules, contact }) => {
     name = user.name
   }
 
+  
   return (
     <>
       <Navbar />
