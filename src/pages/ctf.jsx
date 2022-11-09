@@ -1,8 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 const { default: Navbar } = require("../components/Navbar");
 
 const Capture = ({ name, description, rules, contact }) => {
+  let { isAuthenticated, user } = useAuth0()
+  if (isAuthenticated) {
+    name = user.name
+  }
+
   return (
     <>
       <Navbar />

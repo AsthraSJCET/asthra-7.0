@@ -4,7 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/ctf";
 import Events from "./components/Events";
+import Profile from "./components/profile";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+
 function App() {
+  const { isLoading, error } = useAuth0();
+
   let eventDetails = [
     {
       name: "CAPTURE THE FLAG",
@@ -23,8 +30,18 @@ function App() {
       contact: "PHONE NO AND EMAIL HERE",
     },
   ];
+
   return (
-    <BrowserRouter>
+    <main className="column">
+      {/* <h1>Auth0 Login</h1> */}
+      {error && <p>Authentication Error</p>}
+      {/* {!error && isLoading && <p>Loading...</p>} */}
+      {!error && !isLoading && (
+        <>
+          {/* <LoginButton />
+          <LogoutButton /> */}
+          {/* <Profile /> */}
+          <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Events eventType="workshop" />} />
@@ -72,9 +89,14 @@ function App() {
           }
         />
         <Route path="*" element={<NotFound />} />
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
+        </>
+      )}
+    </main>
   );
 }
+
 
 export default App;
