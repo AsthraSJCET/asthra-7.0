@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { getToken, GoogleAuthLogin } from "../etc/googleAuth";
 
 const { default: Navbar } = require("../components/Navbar");
 
@@ -33,6 +34,11 @@ const Capture = ({ name, description, rules, contact }) => {
             </p>
           </div>
         </div>
+        {getToken("asthra_user") ? (
+          <button className="bg-lime-600">Register</button>
+        ) : (
+          <GoogleAuthLogin text="Login to Register" authkey="asthra_user" />
+        )}
       </div>
     </>
   );

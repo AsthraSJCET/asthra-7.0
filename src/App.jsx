@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/ctf";
 import Events from "./components/Events";
-
 function App() {
   let eventDetails = [
     {
@@ -38,7 +37,31 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route
-          path="/workshops/:id"
+          path="/workshop/:id"
+          element={
+            <Capture
+              name={eventDetails[0].name}
+              description={eventDetails[0].description}
+              rules={eventDetails[0].rules}
+              contact={eventDetails[0].contact}
+            />
+          }
+        />
+
+        <Route
+          path="/competition/:id"
+          element={
+            <Capture
+              name={eventDetails[0].name}
+              description={eventDetails[0].description}
+              rules={eventDetails[0].rules}
+              contact={eventDetails[0].contact}
+            />
+          }
+        />
+
+        <Route
+          path="/workshop/:id"
           element={
             <Capture
               name={eventDetails[0].name}
@@ -49,7 +72,6 @@ function App() {
           }
         />
         <Route path="*" element={<NotFound />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );

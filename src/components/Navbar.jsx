@@ -1,4 +1,5 @@
 import React from "react";
+import { getToken, GoogleAuthLogin, GoogleAuthLogout } from "../etc/googleAuth";
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -121,6 +122,18 @@ export default function Navbar({ fixed }) {
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">CONTACT SUPPORT</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
+                  href="#"
+                >
+                  {getToken("asthra_user") ? (
+                    <GoogleAuthLogout authkey="asthra_user" />
+                  ) : (
+                    <GoogleAuthLogin authkey="asthra_user" />
+                  )}
                 </a>
               </li>
             </ul>

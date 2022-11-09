@@ -27,7 +27,7 @@ function Events(props) {
         return (
           <HomeCard
             key={key}
-            index={key}
+            index={`/${props.eventType}/${key}`}
             eventName={data.eventName}
             dateTime={data.dateTime}
           />
