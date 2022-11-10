@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 export default function Navbar() {
-  let { isAuthenticated, user, getAccessTokenSilently, logout, loginWithRedirect } = useAuth0();
+  let { isAuthenticated, user, logout, loginWithRedirect } = useAuth0();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -50,6 +50,14 @@ export default function Navbar() {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
+            {isAuthenticated ? (<li className="nav-item">
+                <NavLink
+                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
+                >
+                  <i className="text-lg leading-lg opacity-75"></i>
+                  <span className="">MY WORKSHOPS</span>
+                </NavLink>
+              </li>) : (<></>)}
               <li className="nav-item">
                 <NavLink
                   className="py-3 px-12 flex items-center uppercase font-bold leading-snug text-black justify-left hover:opacity-75"

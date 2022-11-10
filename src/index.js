@@ -13,7 +13,6 @@ const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 root.render(
-    // <React.StrictMode>
         <Auth0Provider
             domain={domain}
             clientId={clientId}
@@ -21,8 +20,6 @@ root.render(
         >
             <App />
         </Auth0Provider>
-    // {/* </React.StrictMode>, */}
-    // document.getElementById('root')
 );
 
 serviceWorkerRegistration.unregister();

@@ -7,12 +7,11 @@ import SpreadCard from "../components/SpreadCard";
 import "../stylesheets/index.css";
 
 
-
 function Home() {
   return (
-    <>      
+    <>
       <Navbar />
-      <div className="px-5 lg:px-20 py-5 bg-black">
+      <div className="px-5 lg:px-20 py-5 max-w-8xl justify-center bg-black">
         <MainTabs />
         <Outlet />
         <SpreadCard />
