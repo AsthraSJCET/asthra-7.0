@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom";
 
 function HomeCard({ index, eventName, date, time }) {
+  let event_date = new Date(date)
+  const formattedDate = event_date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
   return (
     <NavLink to={`${index}`}>
       <div className="flex justify-center py-10 lg:px-10 duration-700 hover:scale-105">
@@ -14,10 +20,10 @@ function HomeCard({ index, eventName, date, time }) {
               {eventName}
             </h1>
             <h5 className="text-black font-semibold mb-4 font-spaceGrotesk">
-              {date}
+              {formattedDate}
             </h5>
             <h6 className="text-black font-semibold mb-4 font-spaceGrotesk">
-              {date}
+              {time}
             </h6>
           </div>
         </div>

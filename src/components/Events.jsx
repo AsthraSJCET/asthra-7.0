@@ -11,9 +11,7 @@ function Events(props) {
   ]);
 
 
-  console.log(props.eventType);
   useEffect(() => {
-    console.log(props.eventType)
     publicAPI
       .get(`/events/${props.eventType}`)
       .then((response) => {
@@ -30,7 +28,7 @@ function Events(props) {
         return (
           <HomeCard
             key={key}
-            index={`/${props.eventType}/${key}`}
+            index={`/${props.eventType}?c=${data.code}`}
             eventName={data.name}
             date={data.date_time}
             time={data.time}
