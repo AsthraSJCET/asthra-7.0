@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
+
 const Capture = ({ name, description, rules, contact }) => {
   let { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
   // if (isAuthenticated) {

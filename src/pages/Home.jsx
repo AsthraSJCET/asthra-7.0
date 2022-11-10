@@ -10,6 +10,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import LoginButton from "../components/loginButton";
 import LogoutButton from "../components/logoutButton";
 
+
 function Home() {
   return (
     <>      
