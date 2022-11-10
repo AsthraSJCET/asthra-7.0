@@ -13,8 +13,8 @@ import LogoutButton from "../components/logoutButton";
 function Home() {
   return (
     <>      
-    <LoginButton/>
-    <LogoutButton/>
+    {/* <LoginButton/>
+    <LogoutButton/> */}
       <Navbar />
       <div className="px-5 lg:px-20 py-5 bg-black">
         {/* <RegisterForm /> */}
