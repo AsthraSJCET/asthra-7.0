@@ -7,8 +7,6 @@ import Events from "./components/Events";
 import Profile from "./components/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
-
 function App() {
   const { isLoading, error } = useAuth0();
 
@@ -42,61 +40,63 @@ function App() {
           <LogoutButton /> */}
           {/* <Profile /> */}
           <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<Events eventType="workshop" />} />
-          <Route path="/workshops" element={<Events eventType="workshop" />} />
-          <Route
-            path="/competitions"
-            element={<Events eventType="competitions" />}
-          />
-          <Route path="/talks" element={<Events eventType="talks" />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-        <Route
-          path="/workshop/:id"
-          element={
-            <Capture
-              name={eventDetails[0].name}
-              description={eventDetails[0].description}
-              rules={eventDetails[0].rules}
-              contact={eventDetails[0].contact}
-            />
-          }
-        />
+            <Routes>
+              <Route path="/" element={<Home />}>
+                <Route index element={<Events eventType="workshop" />} />
+                <Route
+                  path="/workshops"
+                  element={<Events eventType="workshop" />}
+                />
+                <Route
+                  path="/competitions"
+                  element={<Events eventType="competitions" />}
+                />
+                <Route path="/talks" element={<Events eventType="talks" />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+              <Route
+                path="/workshop/:id"
+                element={
+                  <Capture
+                    name={eventDetails[0].name}
+                    description={eventDetails[0].description}
+                    rules={eventDetails[0].rules}
+                    contact={eventDetails[0].contact}
+                  />
+                }
+              />
 
-        <Route
-          path="/competition/:id"
-          element={
-            <Capture
-              name={eventDetails[0].name}
-              description={eventDetails[0].description}
-              rules={eventDetails[0].rules}
-              contact={eventDetails[0].contact}
-            />
-          }
-        />
+              <Route
+                path="/competition/:id"
+                element={
+                  <Capture
+                    name={eventDetails[0].name}
+                    description={eventDetails[0].description}
+                    rules={eventDetails[0].rules}
+                    contact={eventDetails[0].contact}
+                  />
+                }
+              />
 
-        <Route
-          path="/workshop/:id"
-          element={
-            <Capture
-              name={eventDetails[0].name}
-              description={eventDetails[0].description}
-              rules={eventDetails[0].rules}
-              contact={eventDetails[0].contact}
-            />
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/profile" element={<Profile/>}/>
-      </Routes>
-    </BrowserRouter>
+              <Route
+                path="/workshop/:id"
+                element={
+                  <Capture
+                    name={eventDetails[0].name}
+                    description={eventDetails[0].description}
+                    rules={eventDetails[0].rules}
+                    contact={eventDetails[0].contact}
+                  />
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </BrowserRouter>
         </>
       )}
     </main>
   );
 }
-
 
 export default App;

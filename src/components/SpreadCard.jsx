@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function SpreadCard() {
   return (
@@ -16,12 +17,12 @@ function SpreadCard() {
           voluptates veniam? Non deleniti animi iusto. Quia corrupti neque iure
           doloremque non. Assumenda!
         </h4>
-        <a
-          href=""
-          className="pt-5 px-5 lg:pr-10 text-2xl font-bold font-spaceGrotesk"
+        <NavLink
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          className="hover:text-white pt-5 px-5 lg:pr-10 text-2xl font-bold font-spaceGrotesk"
         >
           LEARN MORE
-        </a>
+        </NavLink>
       </div>
     </div>
   );

@@ -1,18 +1,19 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Navbar({ fixed }) {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="w-screen relative flex flex-wrap items-center justify-between px-2 py-6 bg-black">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
-            <a
+            <NavLink
               className="font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-2xl text-white"
-              href="#"
+              to={"/"}
             >
               ASTHRA
-            </a>
+            </NavLink>
             <button
               className="text-white z-10 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
               type="button"
@@ -36,92 +37,84 @@ export default function Navbar({ fixed }) {
           </div>
           <div
             className={
-              "fixed p-4 top-0 left-0 right-0 transition h-screen flex flex-grow justify-left items-center bg-[#CCFF00]" +
+              "fixed p-4 z-90 top-0 left-0 right-0 transition h-screen flex flex-grow justify-left items-center bg-[#CCFF00]" +
               (navbarOpen ? " flex" : " hidden")
             }
             id="example-navbar-danger"
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
-              {/* <li className="nav-item inline-flex">
-                                <a
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    href="#pablo"
-                                >
-                                    <i className="text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Share</span>
-                                </a>
-                            </li> */}
               <li className="nav-item">
-                <a
+                <NavLink
                   className="py-3 px-12 flex items-center uppercase font-bold leading-snug text-black justify-left hover:opacity-75"
-                  href="#"
+                  to="/about"
                 >
                   <i className="fab text-lg leading-lg opacity-75"></i>
-                  <span className="ml-2">About</span>
-                </a>
+                  <span className="">About</span>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/signin"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">SIGN IN</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/workshops"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">WORKSHOPS</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/talks"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">TALKS</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/competitions"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">COMPETITIONS</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/ambassadors"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">CAMPUS AMBASSADORS</span>
-                </a>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="/signup"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">SIGN UP</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
+                <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#"
+                  to="contact"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">CONTACT SUPPORT</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -9,32 +10,52 @@ function Footer() {
         aut tempore laborum cupiditate hic unde eos eaque, deleniti ad dolorum!
       </h4>
       <div className="px-5 pt-5 pb-5 lg:pt-0 cursor-pointer text-white grid grid-cols-1 lg:justify-items-end">
-        <h4 className="text-lg font-bold font-spaceGrotesk">
+        <NavLink className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk">
           asthra@sjcetpalai.ac.in
-        </h4>
-        <h4 className="text-lg font-bold font-spaceGrotesk">94342823987</h4>
+        </NavLink>
+        <NavLink className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk">
+          94342823987
+        </NavLink>
       </div>
       <div className="px-5 pt-5 text-white lg:pt-0 grid grid-cols-1 cursor-pointer lg:justify-items-end">
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           INSTAGRAM
-        </a>
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        </NavLink>
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           TWITTER
-        </a>
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        </NavLink>
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           FACEBOOK
-        </a>
+        </NavLink>
       </div>
       <div className="px-5 text-white grid grid-cols-1 cursor-pointer lg:justify-items-end">
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           WORKSHOPS
-        </a>
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        </NavLink>
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           COMPETITIONS
-        </a>
-        <a href="" className="text-lg font-bold font-spaceGrotesk lg:pr-20">
+        </NavLink>
+        <NavLink
+          href=""
+          className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
+        >
           TALKS
-        </a>
+        </NavLink>
       </div>
     </footer>
   );

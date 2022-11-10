@@ -6,19 +6,19 @@ import Navbar from "../components/Navbar";
 import RegisterForm from "../components/RegisterForm";
 import SpreadCard from "../components/SpreadCard";
 import "../stylesheets/index.css";
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import LoginButton from "../components/loginButton";
-
 
 function Home() {
   return (
     <>
-      <Navbar />
-      <LoginButton/>
+      {/* <Navbar /> */}
+      {/* <LoginButton/> */}
       <div className="px-5 lg:px-20 py-5 bg-black">
-        <MainTabs />
+        <RegisterForm />
+        {/* <MainTabs />
         <Outlet />
-        <SpreadCard />
+        <SpreadCard /> */}
         {/* <RegisterForm visible={visible} close= /> */}
       </div>
       <Footer />

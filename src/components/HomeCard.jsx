@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { Navigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function HomeCard({ index, eventName, dateTime }) {
   return (
     <NavLink to={`${index}`}>
-      <div className="flex justify-center py-10 lg:px-10">
+      <div className="flex justify-center py-10 lg:px-10 duration-700 hover:scale-105">
         <div className="lg shadow-lg bg-white cursor-pointer">
           <img
             src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
