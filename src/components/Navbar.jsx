@@ -1,7 +1,9 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
+  let { isAuthenticated, user, getAccessTokenSilently, logout, loginWithRedirect } = useAuth0();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -14,26 +16,30 @@ export default function Navbar() {
             >
               ASTHRA
             </NavLink>
-            <button
-              className="text-white z-10 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke={navbarOpen ? "black" : "white"}
-                strokeWidth="2"
+            <div className="flex">
+              <p className="text-white p-4 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
+              <button
+                className={"text-white p-4 z-10 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
+                type="button"
+                onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke={navbarOpen ? "black" : "white"}
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
           </div>
           <div
             className={
@@ -97,16 +103,6 @@ export default function Navbar() {
                   <span className="">CAMPUS AMBASSADORS</span>
                 </NavLink>
               </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  to="/signup"
-                >
-                  <i className="text-lg leading-lg opacity-75"></i>
-                  <span className="">SIGN UP</span>
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
@@ -116,6 +112,24 @@ export default function Navbar() {
                   <span className="">CONTACT SUPPORT</span>
                 </NavLink>
               </li>
+              {isAuthenticated ? (<li className="nav-item">
+                <NavLink
+                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
+                  onClick={() => logout()}
+                >
+                  <i className="text-lg leading-lg opacity-75"></i>
+                  <span className="">LOG OUT</span>
+                </NavLink>
+              </li>) : (<li className="nav-item">
+                <NavLink
+                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
+                  onClick={() => loginWithRedirect()}
+                >
+                  <i className="text-lg leading-lg opacity-75"></i>
+                  <span className="">SIGN UP</span>
+                </NavLink>
+              </li>)}
+
             </ul>
           </div>
         </div>

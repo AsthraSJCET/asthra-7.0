@@ -3,10 +3,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const Capture = ({ name, description, rules, contact }) => {
-  let { isAuthenticated, user } = useAuth0();
-  if (isAuthenticated) {
-    name = user.name;
-  }
+  let { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
+  // if (isAuthenticated) {
+  //   console.log(user)
+  //   name = user.name;
+  // }
 
   return (
     <>

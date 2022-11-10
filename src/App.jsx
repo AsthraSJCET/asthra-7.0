@@ -6,6 +6,9 @@ import Capture from "./pages/ctf";
 import Events from "./components/Events";
 import Profile from "./components/profile";
 import { useAuth0 } from "@auth0/auth0-react";
+import {Helmet} from 'react-helmet'
+import LoginButton from "./components/loginButton";
+import LogoutButton from "./components/logoutButton"
 
 function App() {
   const { isLoading, error } = useAuth0();
@@ -31,14 +34,17 @@ function App() {
 
   return (
     <main className="column">
+                  <Helmet>
+            <title>Asthra 7.0</title>
+            <link rel="favicon" href="Logo.svg" type="image/svg"/>
+            </Helmet>
       {/* <h1>Auth0 Login</h1> */}
       {error && <p>Authentication Error</p>}
       {/* {!error && isLoading && <p>Loading...</p>} */}
       {!error && !isLoading && (
         <>
           {/* <LoginButton />
-          <LogoutButton /> */}
-          {/* <Profile /> */}
+          <LogoutButton />  */}
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />}>

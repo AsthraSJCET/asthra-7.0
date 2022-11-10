@@ -8,17 +8,19 @@ import SpreadCard from "../components/SpreadCard";
 import "../stylesheets/index.css";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import LoginButton from "../components/loginButton";
+import LogoutButton from "../components/logoutButton";
 
 function Home() {
   return (
-    <>
-      {/* <Navbar /> */}
-      {/* <LoginButton/> */}
+    <>      
+    <LoginButton/>
+    <LogoutButton/>
+      <Navbar />
       <div className="px-5 lg:px-20 py-5 bg-black">
-        <RegisterForm />
-        {/* <MainTabs />
+        {/* <RegisterForm /> */}
+        <MainTabs />
         <Outlet />
-        <SpreadCard /> */}
+        <SpreadCard />
         {/* <RegisterForm visible={visible} close= /> */}
       </div>
       <Footer />
