@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 function MainTabs() {
   return (
-    <div className="sticky z-70 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
-      <div className="flex flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0 lg:mx-10">
+    <div className="sticky z-10 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
+      <div className="flex z-10 flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0 lg:mx-10">
         <NavLink
           to="/workshops"
           className={({ isActive }) =>

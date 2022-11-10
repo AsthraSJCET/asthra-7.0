@@ -8,7 +8,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
+      <nav className="z-1000 flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
             <NavLink
@@ -20,7 +20,7 @@ export default function Navbar() {
             <div className="flex">
               <p className="text-white p-4 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
               <button
-                className={"text-white p-4 z-10 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
+                className={"text-white p-4 z-50 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
@@ -44,7 +44,7 @@ export default function Navbar() {
           </div>
           <div
             className={
-              "fixed p-4 z-90 top-0 left-0 right-0 transition h-screen flex flex-grow justify-left items-center bg-[#CCFF00]" +
+              "fixed p-4 z-40 top-0 left-0 right-0 transition h-screen flex flex-grow justify-left items-center bg-[#CCFF00]" +
               (navbarOpen ? " flex" : " hidden")
             }
             id="example-navbar-danger"
@@ -57,15 +57,6 @@ export default function Navbar() {
                 >
                   <i className="fab text-lg leading-lg opacity-75"></i>
                   <span className="">About</span>
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  to="/signin"
-                >
-                  <i className="text-lg leading-lg opacity-75"></i>
-                  <span className="">SIGN IN</span>
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -127,7 +118,7 @@ export default function Navbar() {
                   onClick={() => loginWithRedirect()}
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
-                  <span className="">SIGN UP</span>
+                  <span className="">SIGN IN</span>
                 </NavLink>
               </li>)}
 

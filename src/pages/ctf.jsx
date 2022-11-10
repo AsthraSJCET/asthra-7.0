@@ -4,12 +4,6 @@ import Navbar from "../components/Navbar";
 
 
 const Capture = ({ name, description, rules, contact }) => {
-  let { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
-  // if (isAuthenticated) {
-  //   console.log(user)
-  //   name = user.name;
-  // }
-
   return (
     <>
       <Navbar />
