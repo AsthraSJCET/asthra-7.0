@@ -32,6 +32,7 @@ function Events(props) {
             eventName={data.name}
             date={data.date_time}
             time={data.time}
+            active={data.active}
           />
         );
       })}

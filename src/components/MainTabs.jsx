@@ -9,7 +9,7 @@ function MainTabs() {
           to="/workshops"
           className={({ isActive }) =>
             isActive
-              ? "text-[#CCFF00] font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-8 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-8 cursor-pointer"
           }
         >
@@ -19,7 +19,7 @@ function MainTabs() {
           to="/events"
           className={({ isActive }) =>
             isActive
-              ? "text-[#CCFF00] font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-8 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
           }
         >
@@ -29,7 +29,7 @@ function MainTabs() {
           to="/competitions"
           className={({ isActive }) =>
             isActive
-              ? "text-[#CCFF00] font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
+              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-8 cursor-pointer"
           }
         >

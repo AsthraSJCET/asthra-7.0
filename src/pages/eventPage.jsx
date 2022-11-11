@@ -35,9 +35,13 @@ const Capture = () => {
         <div>
           <div className="max-w-screen lg:px-20 md:p-8">
             <h1 className="text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight">
-              {data.name}
+              {data.name} {(data.active ? "" : ` (Registration closed)`)}
             </h1>
-            <hr className="pt-2 pb-5"></hr>
+            <hr className="bg-white" />
+            <p className="text-white font-spaceGrotesk">        Seats left:&nbsp;
+            <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat}</span>
+              </p>
+
           </div>
           <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
             <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
@@ -52,7 +56,7 @@ const Capture = () => {
             </p> */}
             <div className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
               {rules.map((rules, key) => (
-                <p key={key}>{key}. {rules} </p>
+                <p key={key}>{key + 1}. {rules} </p>
               ))}
             </div>
           </div>
@@ -62,17 +66,17 @@ const Capture = () => {
             </p> */}
             <div className="px-4">
 
-            <p className=" text-md font-spaceGrotesk">{data.cordinator1_name}</p>
-            <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
-              <p  className="text-sm font-spaceGrotesk">{data.cordinator1_email}</p></div>
+              <p className=" text-md font-spaceGrotesk">{data.cordinator1_name}</p>
+              <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
+                <p className="text-sm font-spaceGrotesk">{data.cordinator1_email}</p></div>
 
-            <p className=" text-md font-spaceGrotesk">{data.cordinator2_name}</p>
-            <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
-              <p  className="text-sm font-spaceGrotesk">{data.cordinator2_email}</p></div>
+              <p className=" text-md font-spaceGrotesk">{data.cordinator2_name}</p>
+              <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
+                <p className="text-sm font-spaceGrotesk">{data.cordinator2_email}</p></div>
 
-            <p className=" text-md font-spaceGrotesk">{data.cordinator3_name}</p>
-            <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
-              <p  className="text-sm font-spaceGrotesk">{data.cordinator3_email}</p></div>
+              <p className=" text-md font-spaceGrotesk">{data.cordinator3_name}</p>
+              <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
+                <p className="text-sm font-spaceGrotesk">{data.cordinator3_email}</p></div>
 
             </div>
 

@@ -19,7 +19,7 @@ export default function Navbar() {
 
             </NavLink>
             <div className="inline-flex">
-              <p className="text-white p-4 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
+              <p className="text-white p-4 font-sans font-light">{isAuthenticated ? user.given_name : ""}</p>
               <button
                 className={"text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
