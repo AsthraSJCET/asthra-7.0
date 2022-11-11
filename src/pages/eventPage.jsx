@@ -22,9 +22,9 @@ const Capture = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [code]);
 
-  const rules_formatted = data.rules;
+  const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
 
 

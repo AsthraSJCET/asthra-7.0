@@ -19,13 +19,13 @@ export default function Navbar() {
 
             </NavLink>
             <div className="inline-flex">
-              <p className="text-white p-3 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
+              <p className="text-white p-4 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
               <button
                 className={"text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <svg
+             <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7"
                   fill="none"
@@ -36,7 +36,7 @@ export default function Navbar() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M4 6h16M8 12h16M8"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
               </button>
