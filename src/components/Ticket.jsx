@@ -3,7 +3,7 @@ import React from "react";
 function Ticket({ EventName, Date, Time }) {
   return (
     <div className="mt-10 lg:mt-0">
-      <div className="bg-lime-500 rounded-t-lg w-96 lg:w-auto lg:h-96 lg:mr-40 pb-10 lg:pb-0">
+      <div className="bg-lime-500 rounded-t-lg lg:w-auto lg:h-96 lg:mr-40 pb-10 lg:pb-0">
         <div className="px-10 pt-10">
           <h4 className="font-bold font-spaceGrotesk text-sm lg:text-md">
             WORKSHOP
