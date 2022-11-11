@@ -113,12 +113,7 @@ const Capture = () => {
               </div>
             </div>
             <div>
-              <Ticket
-                EventName={data.name}
-                Description={data.desc}
-                Date={data.date}
-                Time={data.time}
-              />
+              <Ticket EventName={data.name} Date={data.date} Time={data.time} />
             </div>
           </div>
         </div>

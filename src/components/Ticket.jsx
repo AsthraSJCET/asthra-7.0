@@ -1,9 +1,9 @@
 import React from "react";
 
-function Ticket({ EventName, Description, Date, Time }) {
+function Ticket({ EventName, Date, Time }) {
   return (
     <div className="mt-10 lg:mt-0">
-      <div className="bg-lime-500 rounded-t-lg w-96 lg:w-auto lg:h-96 mr-40 pb-10 lg:pb-0">
+      <div className="bg-lime-500 rounded-t-lg w-96 lg:w-auto lg:h-96 lg:mr-40 pb-10 lg:pb-0">
         <div className="px-10 pt-10">
           <h4 className="font-bold font-spaceGrotesk text-sm lg:text-md">
             WORKSHOP
@@ -38,7 +38,7 @@ function Ticket({ EventName, Description, Date, Time }) {
           </h1>
         </div>
       </div>
-      <div className="bg-zinc-800 rounded-b-lg h-40 mr-40">
+      <div className="bg-zinc-800 rounded-b-lg h-40 lg:mr-40">
         <div className="px-10 pt-10 grid grid-cols-2">
           <div className="grid justify-items-start">
             <img src="/images/asthra-logo.svg" className="lg:h-20 h-12" />
