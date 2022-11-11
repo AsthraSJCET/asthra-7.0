@@ -50,33 +50,31 @@ const Capture = () => {
             {/* <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
               {data.rules}
             </p> */}
-            <ul className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
+            <div className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
               {rules.map((rules, key) => (
-                <li key={key}>{rules} </li>
+                <p key={key}>{key}. {rules} </p>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
             <h3 className="font-bold font-mono text-2xl pb-6">CONTACT</h3>
             {/* <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
             </p> */}
-            <ul className="px-8" style={{ listStyleType: 'decimal' }}>
-            <li>
+            <div className="px-4">
+
             <p className=" text-md font-spaceGrotesk">{data.cordinator1_name}</p>
             <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
               <p  className="text-sm font-spaceGrotesk">{data.cordinator1_email}</p></div>
-            </li>
-            <li>
+
             <p className=" text-md font-spaceGrotesk">{data.cordinator2_name}</p>
             <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
               <p  className="text-sm font-spaceGrotesk">{data.cordinator2_email}</p></div>
-            </li>
-            <li>
+
             <p className=" text-md font-spaceGrotesk">{data.cordinator3_name}</p>
             <div className=" px-2 flex flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
               <p  className="text-sm font-spaceGrotesk">{data.cordinator3_email}</p></div>
-            </li>
-            </ul>
+
+            </div>
 
 
           </div>
