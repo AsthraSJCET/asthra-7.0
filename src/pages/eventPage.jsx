@@ -46,7 +46,7 @@ const Capture = () => {
               </span>
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 grid-rows-2">
+          <div className="grid lg:grid-cols-2">
             <div>
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                 <h3 className="font-bold font-mono text-2xl pb-6">
