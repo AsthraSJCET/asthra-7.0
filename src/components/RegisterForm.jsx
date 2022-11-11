@@ -1,25 +1,48 @@
 import axios from "axios";
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-
+import React, { useEffect } from "react";
+import { useAuth0, User } from "@auth0/auth0-react";
+import { useLocation } from "react-router-dom";
+import { publicAPI } from "../etc/api";
+import { useNavigate } from "react-router-dom"
 
 function RegisterForm() {
-  const { user, isAuthenticated, getTokenSilently } = useAuth0();
+  let navigate = useNavigate();
+  const search = useLocation().search;
+  const url = new URLSearchParams(search)
+  const code = url.get('c')
+  // console.log(url.toString())
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  if (isLoading) {
+    console.log("Loading")
+  }
+  useEffect(()=> {
+    if (isAuthenticated && user) {
+      document.getElementById("name").value = user.name
+      document.getElementById('email').value = user.email
+    }
+  })
+
   function handleSubmit(event) {
     event.preventDefault();
     if (isAuthenticated) {
-      getTokenSilently().then(token => {
-        let data = event.target
-        console.log(data);
-        axios({
+
+        let data = {
+          email: event.target.email.value,
+          college: event.target.college.value,
+          phone: event.target.phone.value,
+          name: event.target.phone.value
+        }
+        // console.log();
+        publicAPI({
           method: 'post',
-          url: 'https://webhook.site/b445dfc6-217c-4571-9e9b-65c7f9ff857a',
+          url: '/register/A01MECE',
           data: data,
-          headers: {
-            'Authorization': token
-          }
+        }).then(resp=> {
+          console.log(resp)
+          navigate('/')
+        }).catch(err=> {
+          console.log(err)
         });
-      })
     } else {
       console.log("No session")
     }
@@ -27,7 +50,7 @@ function RegisterForm() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">
-        <div className="bg-gray-900 py-6 px-10 sm:max-w-md w-full ">
+        <div className="bg-gray-900 py-10 px-10 sm:max-w-md w-full ">
           <div className="grid grid-cols-2">
             <div
               className="sm:text-3xl text-2xl font-spaceGrotesk font-bold text-white mb-12"
@@ -44,6 +67,7 @@ function RegisterForm() {
                 name="name"
                 className="focus:outline-none border-b w-full bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500"
                 placeholder="NAME"
+                readOnly={true}
               />
             </div>
             <div>
@@ -71,10 +95,11 @@ function RegisterForm() {
                 name="email"
                 className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                 placeholder="EMAIL"
+                readOnly={true}
               />
             </div>
             <div className="my-6 flex justify-center">
-              <button type='submit' className="p-3 px-24 lg:px-36 w-100 bg-lime-600 text-black text-lg font-bold font-spaceGrotesk">
+              <button type='submit' className="p-3 px-24 lg:px-36 w-100 bg-[#CCFF00] text-black text-lg font-bold font-spaceGrotesk">
                 SUBMIT
               </button>
             </div>

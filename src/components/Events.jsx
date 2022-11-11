@@ -23,7 +23,7 @@ function Events(props) {
       });
   }, [props.eventType]);
   return (
-    <div className="bg-black grid grid-rows-2 lg:grid-cols-3">
+    <div className="bg-black inline-grid grid-rows-2 lg:grid-cols-3">
       {data.map((data, key) => {
         return (
           <HomeCard
@@ -32,7 +32,8 @@ function Events(props) {
             eventName={data.name}
             date={data.date_time}
             time={data.time}
-            active={data.active}
+            active={data.status}
+            suspended={data.suspended}
           />
         );
       })}

@@ -45,7 +45,7 @@ function App() {
       console.log(err)
     })
   }, []);
-  console.log(data)
+  // console.log(data)
 
   if (!loading) {
     return (

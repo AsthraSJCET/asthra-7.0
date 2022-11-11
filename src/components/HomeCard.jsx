@@ -1,16 +1,21 @@
 import { NavLink } from "react-router-dom";
 
-function HomeCard({ index, eventName, date, time, active }) {
+function HomeCard({ index, eventName, date, time, active, suspended }) {
   let event_date = new Date(date)
   const formattedDate = event_date.toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
   })
+  console.log(suspended)
   return (
-    <NavLink to={`${index}`}>
-      <div className="flex justify-center py-10 lg:px-10 duration-700 hover:scale-105">
-        <div className="lg shadow-lg bg-gradient-to-br from-blue-500 via-violet-500  to-green-400 p-1 cursor-pointer">
+    <NavLink to={suspended === 0 ?`${index}`: "#"}>
+      <div className="flex justify-center py-10 lg:px-10 ">
+        <div className={"lg shadow-lg p-1 cursor-pointer duration-200 "  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-105")}>
+          {!suspended === 0? ( <div className="absolute bg-white/50 text-black p-2 ">
+            Suspended
+          </div>): <></>}
+         
           <img className=""
             src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
             alt=""
@@ -26,7 +31,7 @@ function HomeCard({ index, eventName, date, time, active }) {
               {time}
             </h6>
             <p className="font-sans">
-              {(active ? "active": "registration closed")}
+              {(!active ? "Registrations open" : "Registration closed")}
             </p>
 
           </div>
