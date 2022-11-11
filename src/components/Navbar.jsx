@@ -15,12 +15,13 @@ export default function Navbar() {
               className="font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-2xl text-white"
               to={"/"}
             >
-              ASTHRA
+              <img src="/images/asthra-logo.svg" className="h-10" />
+
             </NavLink>
-            <div className="flex">
-              <p className="text-white p-4 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
+            <div className="inline-flex">
+              <p className="text-white p-3 font-spaceGrotesk font-bold">{isAuthenticated ? user.given_name : ""}</p>
               <button
-                className={"text-white p-4 z-50 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
+                className={"text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
@@ -35,7 +36,7 @@ export default function Navbar() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
+                    d="M4 6h16M8 12h16M8"
                   />
                 </svg>
               </button>
@@ -50,7 +51,7 @@ export default function Navbar() {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
-            {isAuthenticated ? (<li className="nav-item">
+              {isAuthenticated ? (<li className="nav-item">
                 <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                 >

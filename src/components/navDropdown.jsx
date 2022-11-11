@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function NavbarDropdown() {
   return (
-    <div className="h-screen w-screen fixed top-0 left-0 right-0 grid grid-cols-1 py-20 bg-[#CCFF00] text-2xl lg:text-5xl font-spaceGrotesk font-bold">
+    <div className="h-screen w-screen top-0 left-0 right-0 grid grid-rows-3 lg:text-5xl py-20 bg-[#CCFF00] text-2xl font-spaceGrotesk font-bold">
       <NavLink to="/">HOME</NavLink>
       <NavLink to="/workshops">WORKSHOPS</NavLink>
       <NavLink to="/talks">TALKS</NavLink>
