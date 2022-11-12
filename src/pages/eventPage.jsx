@@ -21,6 +21,17 @@ const Capture = () => {
 
   const [cookies, setCookie] = useCookies(['introViewed'])
 
+  useEffect(() => {
+    publicAPI
+      .get(`/event/${code}`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [code]);
+
 
   useEffect(() => {
     console.log("Loaded, viewed")
@@ -62,16 +73,7 @@ const Capture = () => {
     }
   }, [isAuthenticated, user])
 
-  useEffect(() => {
-    publicAPI
-      .get(`/event/${code}`)
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [code]);
+
 
 
   const rules_formatted = String(data.rules);
@@ -93,8 +95,9 @@ const Capture = () => {
           <div className="grid lg:grid-cols-2 grid-rows">
             <div className="">
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-                <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} />
-
+                {isAuthenticated ?
+                  <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} /> : <></>
+                }
                 <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
                   Seats left:&nbsp;
                   <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat - data.event_sold}</span>
