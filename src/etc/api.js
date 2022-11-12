@@ -25,6 +25,7 @@ const response_error_capture = function (error) {
         }
     } catch (e) {
         err = " - ";
+        console.log(err)
     }
     return Promise.reject(error);
 }
@@ -32,6 +33,9 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 let baseURL = API_ENDPOINT;
 let config = {
     baseURL: baseURL,
+    headers: {
+        'Content-Type': 'application/json'
+    }
 };
 let infoxAPI = axios.create(config);
 let publicAPI = axios.create(config);

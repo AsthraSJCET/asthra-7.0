@@ -13,3 +13,26 @@
 body {
   background-color: black;
 }
+
+.img-hover-arrow {
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(2px);
+  border-radius: 50%;
+  display: none;
+}
+ 
+.home-card:hover .img-hover-arrow {
+  display: block;
+}
+ 
+.arrow-hover {
+  transform: translate(-50%, -50%);
+ 
+}
+ 
+.home-cards-container:hover .home-card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+ 
+ 

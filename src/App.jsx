@@ -1,119 +1,65 @@
-import React, { useEffect, useState } from "react";
-import { Home } from "./pages/Home";
+import React from "react";
+import { IndexTemplate } from "./pages/template";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/eventPage";
 import Events from "./components/Events";
-import Profile from "./components/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Helmet } from 'react-helmet'
-import axios from "axios";
-import { publicAPI } from "./etc/api"
+import Home from "./pages/home";
+import MainTabs from "./components/MainTabs"
+import RegisterForm from "./components/RegisterForm"
+import { AsthraContext } from "./etc/context";
 
 
 function App() {
-  const { isLoading, error } = useAuth0();
-  const [loading, setLoading] = useState(true)
-  let eventDetails = [
-    {
-      name: "CAPTURE THE FLAG",
-      description:
-        "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publi",
-      rules:
-        "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley ",
-      contact: "PHONE NO AND EMAIL HERE",
-    },
-    {
-      name: "CAPTURE THE FLAG",
-      description:
-        "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publi",
-      rules:
-        "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley ",
-      contact: "PHONE NO AND EMAIL HERE",
-    },
-  ];
-  const [data, setData] = useState(eventDetails)
+  const { user, isLoading, error, isAuthenticated } = useAuth0();
 
-  // let data = null
+  if (!isLoading) {
+    let data = {
+      isAuthenticated: isAuthenticated,
+      user: user
+    }
 
-  useEffect(() => {
-    publicAPI.get("/events/event").then(async resp => {
-      // data = resp.data
-      setData(resp.data)
-      setLoading(false)
-    }).catch(err => {
-      console.log(err)
-    })
-  }, []);
-  // console.log(data)
-
-  if (!loading) {
     return (
       <main className="column">
         <Helmet>
           <title>Asthra 7.0</title>
-          <link rel="favicon" href="Logo.svg" type="image/svg" />
+          <link rel="favicon" href="https://picsum.photos/256/256" type="image/svg" />
         </Helmet>
-        {/* <h1>Auth0 Login</h1> */}
-        {error && <p>Authentication Error</p>}
-        {/* {!error && isLoading && <p>Loading...</p>} */}
-        {!error && !isLoading && (
+        {!error ? (
           <>
-            {/* <LoginButton />
-              <LogoutButton />  */}
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />}>
-                  <Route index element={<Events eventType="workshop" />} />
-                  <Route
-                    path="/workshops"
-                    element={<Events eventType="workshop" />}
-                  />
-                  <Route
-                    path="/competitions"
-                    element={<Events eventType="competition" />}
-                  />
-                  <Route
-                    path="/events"
-                    element={<Events eventType="event" />}
-                  />
-                  <Route path="/talks" element={<Events eventType="talks" />} />
+            <AsthraContext.Provider value={data}>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<IndexTemplate />}>
+                    <Route index element={<Home />} />
+                    <Route path="/about" element={<></>} />
+                    <Route path="/tickets" element={<></>} />
+                    <Route path="/ambassador" element={<></>} />
+                    <Route path="/contact" element={<></>} />
+
+                    <Route path="/workshops" element={<>< MainTabs /><Events eventType="workshop" /></>} />
+                    <Route path="/competitions" element={<>< MainTabs /><Events eventType="competition" /></>} />
+                    <Route path="/events" element={<>< MainTabs /><Events eventType="event" /></>} />
+                    <Route path="/talks" element={<Events eventType="talks" />} />
+                    <Route path="/workshop/:code" element={<Capture />} />
+                    <Route path="/competition/:code" element={<Capture />} />
+                    <Route path="/event/:code" element={<Capture />} />
+                    <Route path="/register/:code" element={<RegisterForm />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Route>
                   <Route path="*" element={<NotFound />} />
-                </Route>
-                <Route
-                  path="/workshop"
-                  element={
-                    <Capture
-                    />
-                  }
-                />
-
-                <Route
-                  path="/competition"
-                  element={
-                    <Capture
-                    />
-                  }
-                />
-
-                <Route
-                  path="/event/"
-                  element={
-                    <Capture
-                    />
-                  }
-                />
-                <Route path="*" element={<NotFound />} />
-                <Route path="/profile" element={<Profile />} />
-              </Routes>
-            </BrowserRouter>
+                </Routes>
+              </BrowserRouter>
+            </AsthraContext.Provider>
           </>
-        )}
+        ) : <div>{error}</div>}
       </main>
     );
   } else {
     return (
-      <div className="text-white">Loading</div>
+      <div className="text-white">Loading...</div>
     )
   }
 

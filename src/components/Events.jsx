@@ -4,41 +4,49 @@ import HomeCard from "../components/HomeCard";
 
 
 function Events(props) {
-  let [data, setData] = useState([
-    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,9AM" },
-    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,10AM" },
-    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,9AM" },
-    { eventName: "BUILDING BLOCKS", dateTime: "Dec2,10AM" },
-  ]);
-
+  let [data, setData] = useState([]);
+  let [loading, setLoading] = useState(false);
+  let [error, setError] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     publicAPI
       .get(`/events/${props.eventType}`)
       .then((response) => {
         setData(response.data);
-        // console.log(response.data);
+        setLoading(false)
       })
       .catch((e) => {
+        setLoading(false)
+        setError(e)
         console.log(e);
       });
+
   }, [props.eventType]);
+
   return (
-    <div className="bg-black grid grid-rows-2 items-stretch lg:grid-cols-3">
-      {data.map((data, key) => {
-        return (
-          <HomeCard
-            key={key}
-            index={`/${props.eventType}?c=${data.code}`}
-            eventName={data.name}
-            date={data.date_time}
-            time={data.time}
-            active={data.status}
-            suspended={data.suspended}
-          />
-        );
-      })}
-    </div>
+    <>
+      {loading ? <div className="text-white">Loading...</div> : <>{
+        error ? <div className="text-white">An error occured</div> :
+          <div className="bg-black grid grid-rows-2 items-stretch lg:grid-cols-3 home-cards-container">
+            {data.map((data, key) => {
+              return (
+                <HomeCard
+                  key={key}
+                  index={`/${props.eventType}/${data.code}`}
+                  eventName={data.name}
+                  date={data.date_time}
+                  time={data.time}
+                  active={data.status}
+                  suspended={data.suspended}
+                />
+              );
+            })}
+          </div>
+      }
+      </>
+      }
+    </>
   );
 }
 
