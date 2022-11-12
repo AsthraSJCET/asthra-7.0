@@ -15,34 +15,35 @@ function RegisterForm() {
   if (isLoading) {
     console.log("Loading")
   }
-  useEffect(()=> {
-    if (isAuthenticated && user) {
-      document.getElementById("name").value = user.name
-      document.getElementById('email').value = user.email
-    }
+  useEffect(() => {
+    // if (isAuthenticated && user) {
+    //   document.getElementById("name").value = user.name
+    //   document.getElementById('email').value = user.email
+    // }
   })
+
 
   function handleSubmit(event) {
     event.preventDefault();
     if (isAuthenticated) {
 
-        let data = {
-          email: event.target.email.value,
-          college: event.target.college.value,
-          phone: event.target.phone.value,
-          name: event.target.phone.value
-        }
-        // console.log();
-        publicAPI({
-          method: 'post',
-          url: '/register/A01MECE',
-          data: data,
-        }).then(resp=> {
-          console.log(resp)
-          navigate('/')
-        }).catch(err=> {
-          console.log(err)
-        });
+      let data = {
+        email: event.target.email.value,
+        college: event.target.college.value,
+        phone: event.target.phone.value,
+        name: event.target.phone.value
+      }
+      // console.log();
+      publicAPI({
+        method: 'post',
+        url: '/register/A01MECE',
+        data: data,
+      }).then(resp => {
+        console.log(resp)
+        navigate('/')
+      }).catch(err => {
+        console.log(err)
+      });
     } else {
       console.log("No session")
     }

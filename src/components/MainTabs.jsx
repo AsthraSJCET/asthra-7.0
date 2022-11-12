@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+
 function MainTabs() {
+
   return (
-    <div className="sticky z-10 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
+    <div   onScroll={(()=>{
+      console.log("Loaded")
+    })} className="sticky z-10 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
       <div className="flex z-10 flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0">
         <NavLink
           to="/workshops"

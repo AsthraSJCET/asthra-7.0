@@ -7,10 +7,10 @@ function HomeCard({ index, eventName, date, time, active, suspended }) {
     month: "long",
     year: "numeric",
   })
-  console.log(suspended)
+  // console.log(suspended)
   return (
     <NavLink to={suspended === 0 ?`${index}`: "#"}>
-      <div className="flex justify-center py-10 lg:px-10 ">
+      <div className="flex justify-center h-full py-10 lg:px-10 ">
         <div className={"lg shadow-lg p-1 cursor-pointer duration-200 "  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-105")}>
           {!suspended === 0? ( <div className="absolute bg-white/50 text-black p-2 ">
             Suspended

@@ -5,51 +5,67 @@ import Navbar from "../components/Navbar";
 import React, { useEffect, useState } from "react";
 import { publicAPI } from "../etc/api";
 import RegisterForm from "../components/RegisterForm";
-import axios from "axios";
+import Ticket from "../components/Ticket"
+import { useCookies } from 'react-cookie'
+
 
 
 const Capture = () => {
-  const { user, isAuthenticated } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const [data, setData] = useState([])
   const [postData, setPostData] = useState([])
-  const [loading, setLoading] = useState(true)
   const [isRegistered, setRegistered] = useState(true)
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("c");
 
-  var _data = JSON.stringify({
-    "email": user.email
-  });
-  var config = {
-    method: 'post',
-    url: '/get-user',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    data: _data
-  };
+  const [cookies, setCookie] = useCookies(['introViewed'])
+
+
+  useEffect(()=>{
+    console.log("Loaded, viewed")
+    setCookie('introViewed', true)
+  })
 
   const handleEventRegistration = () => {
-    var Postconfig = {
-      method: 'post',
-      url: `/register/${code}`,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: JSON.stringify(postData)
-    };
-    publicAPI(Postconfig).then(resp=> {
-      console.log(resp)
-    })
+    if (isAuthenticated) {
+      var Postconfig = {
+        method: 'post',
+        url: `/register/${code}`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: JSON.stringify(postData)
+      };
+      publicAPI(Postconfig).then(resp => {
+        console.log(resp)
+      })
+    } else {
+      loginWithRedirect()
+    }
   }
 
+
   useEffect(() => {
     if (isAuthenticated) {
+      // console.log(user)
+      var _data = JSON.stringify({
+        "email": user.email
+      });
+      var config = {
+        method: 'post',
+        url: '/get-user',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: _data
+      };
+
       publicAPI(config)
         .then(function (response) {
           let resp = response.data
           if (resp === null) {
             setRegistered(false)
+            console.log(resp)
           }
           else if (resp.college !== null && resp.phone !== null) {
             setRegistered(true)
@@ -60,52 +76,7 @@ const Capture = () => {
           console.log(error);
         });
     }
-  }, )
-
-  var _data = JSON.stringify({
-    "email": user.email
-  });
-  var config = {
-    method: 'post',
-    url: '/get-user',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    data: _data
-  };
-
-  // const handleEventRegistration = () => {
-  //   var Postconfig = {
-  //     method: 'post',
-  //     url: `/register/${code}`,
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     data: JSON.stringify(postData)
-  //   };
-  //   publicAPI(Postconfig).then(resp=> {
-  //     console.log(resp)
-  //   })
-  // }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      publicAPI(config)
-        .then(function (response) {
-          let resp = response.data
-          if (resp === null) {
-            setRegistered(false)
-          }
-          else if (resp.college !== null && resp.phone !== null) {
-            setRegistered(true)
-            setPostData(resp)
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  }, )
+  }, [isAuthenticated, user])
 
   useEffect(() => {
     publicAPI
@@ -121,10 +92,11 @@ const Capture = () => {
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
 
+
   return (
     <>
       <Navbar />
-      {isRegistered ? <></> : <RegisterForm props={code} />}
+      {isRegistered ? <></> : <RegisterForm />}
       <div className="bg-black w-screen px-5 pt-10 lg:px-20 lg:pb-28 pb-5">
         <div>
           <div className="max-w-screen lg:px-20 md:p-8">
@@ -132,52 +104,54 @@ const Capture = () => {
               {data.name} {data.active ? "" : ` (Registration closed)`}
             </h1>
             <hr className="bg-white mb-4" />
-            <button onClick={handleEventRegistration} className="font-bold p-4 mb-1 bg-[#CCFF00]">
-              ₹{data.event_price}
+          </div>
+          <div className="grid lg:grid-cols-2 grid-rows">
+            <div className="">
+              <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
+              <button onClick={handleEventRegistration} className="font-bold p-4 text-black bg-[#CCFF00]">
+              ₹{(!data.event_price === 0 ? data.event_price: "Asthra Free Pass")}
             </button>
-            <p className="text-white font-spaceGrotesk">
+            <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
               Seats left:&nbsp;
               <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat - data.event_sold}</span>
             </p>
-
-          </div>
-          <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-            <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
-            <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
-              {data.desc}
-            </p>
-          </div>
-          <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-            <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
-            {/* <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
+                <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
+                <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
+                  {data.desc}
+                </p>
+              </div>
+              <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
+                <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
+                {/* <p className="text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
               {data.rules}
             </p> */}
-            <div className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
-              {rules.map((rules, key) => (
-                <p key={key}>{key + 1}. {rules} </p>
-              ))}
-            </div>
-          </div>
-          <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-            <h3 className="font-bold font-mono text-2xl pb-6">CONTACT</h3>
-            {/* <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
+                <div className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
+                  {rules.map((rules, key) => (
+                    <p key={key}>{key + 1}. {rules} </p>
+                  ))}
+                </div>
+              </div>
+              <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
+                <h3 className="font-bold font-mono text-2xl pb-6">CONTACT</h3>
+                {/* <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
             </p> */}
-            <div className="px-4">
+                <div className="px-4">
 
-              <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator1_name}</p>
-              <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
-                <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator1_email}</p></div>
+                  <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator1_name}</p>
+                  <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
+                    <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator1_email}</p></div>
 
-              <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator2_name}</p>
-              <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
-                <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator2_email}</p></div>
+                  <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator2_name}</p>
+                  <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
+                    <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator2_email}</p></div>
 
-              <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator3_name}</p>
-              <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
-                <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator3_email}</p></div>
+                  <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator3_name}</p>
+                  <div className=" px-2 flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
+                    <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator3_email}</p></div>
+                </div>
+              </div>
             </div>
-
-
+            <Ticket EventName={data.name} Date={data.date} Time={data.time} />
           </div>
         </div>
       </div>

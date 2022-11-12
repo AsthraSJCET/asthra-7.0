@@ -8,7 +8,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="z-1000 flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
+      <nav id="navbarFocus" className="z-1000 flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
             <NavLink
@@ -56,7 +56,7 @@ export default function Navbar() {
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
-                  <span className="">MY WORKSHOPS</span>
+                  <span className="">MY TICKETS</span>
                 </NavLink>
               </li>) : (<></>)}
               <li className="nav-item">
