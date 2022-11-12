@@ -6,7 +6,7 @@ function Intro() {
                 height: '100vh',
                 overflow: "hidden",
                 overflowY: 'scroll'
-            }} frameBorder="0" allowFullScreen src="/_intro" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation"></iframe>
+            }} frameBorder="0" allowFullScreen src="/_intro"></iframe>
         </>
     )
 }

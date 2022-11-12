@@ -93,7 +93,7 @@ const Capture = () => {
           <div className="grid lg:grid-cols-2 grid-rows">
             <div className="">
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-                <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={postData.phone} price={data.event_price} code={code} />
+                <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} />
 
                 <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
                   Seats left:&nbsp;
