@@ -41,7 +41,7 @@ function RegisterForm({ price }) {
           error ? <div className="text-white">An error occured</div> :
             <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"} target="windowName" onSubmit={
               (e) => {
-                window.open(e.action, e.target, '...attributes...');
+                window.open(e.target.action, e.target, '...attributes...');
                 window.location.replace('/tickets'); return true;
               }}>
               <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">
