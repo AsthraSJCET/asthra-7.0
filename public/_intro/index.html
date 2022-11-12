@@ -54,7 +54,7 @@
     <div id="stage">
         <div class="main-bg">
             <a href="#main">Skip</a>
-            <img src="Planet.png" alt="" />
+            <img src="/_intro/Planet.png" alt="" />
         </div>
 
     </div>
@@ -223,7 +223,7 @@
         }
         // document.body.innerHTML = 0;
     </script>
-    <script src="./space/three.min.js"></script>
+    <script src="/_intro/space/three.min.js"></script>
     <script>
         let spaceScene, camera, renderer, stars, starGeo;
 
@@ -254,7 +254,7 @@
                 starGeo.vertices.push(star);
             }
 
-            let sprite = new THREE.TextureLoader().load('./space/star.png');
+            let sprite = new THREE.TextureLoader().load('/_intro/space/star.png');
             let starMaterial = new THREE.PointsMaterial({
                 color: 0xaaaaaa,
                 size: 0.7,
