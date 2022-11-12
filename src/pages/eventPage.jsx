@@ -15,10 +15,10 @@ import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 const Capture = () => {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const [data, setData] = useState([])
-  const [postData, setPostData] = useState({})
   const [isRegistered, setRegistered] = useState(true)
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("c");
+  console.log(isAuthenticated)
 
   const [cookies, setCookie] = useCookies(['introViewed'])
 
@@ -40,40 +40,14 @@ const Capture = () => {
   })
 
 
-  useEffect(() => {
+  const handleSignUpButton = () => {
     if (isAuthenticated) {
-      // console.log(user)
-      var _data = JSON.stringify({
-        "email": user.email
-      });
-      var config = {
-        method: 'post',
-        url: '/get-user',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: _data
-      };
+      setRegistered(false)
 
-      publicAPI(config)
-        .then(function (response) {
-          let resp = response.data
-          // console.log(resp)
-          if (resp.college === null && resp.phone === null) {
-            setRegistered(false)
-            console.log(resp)
-          }
-          else if (resp.college !== null && resp.phone !== null) {
-            setRegistered(true)
-            setPostData(resp)
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+    } else {
+      loginWithRedirect()
     }
-  }, [isAuthenticated, user])
-
+  }
 
 
   const rules_formatted = String(data.rules);
@@ -83,7 +57,7 @@ const Capture = () => {
   return (
     <>
       <Navbar />
-      {isRegistered ? <></> : <RegisterForm />}
+      {isRegistered ? <></> : <RegisterForm price={data.event_price}/>}
       <div className="bg-black w-screen px-5 pt-10 lg:px-20 lg:pb-28 pb-5">
         <div>
           <div className="max-w-screen lg:px-20 md:p-8">
@@ -96,10 +70,11 @@ const Capture = () => {
             <div className="">
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                 {isAuthenticated ?
-                  <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} /> : (<button className="font-bold p-4 text-black bg-[#CCFF00]">
-                    {(!data.event_price === 0 ? "₹" + data.event_price : "Asthra Free Pass")}
-                  </button>)
-                }
+                  <button type='submit' onClick={() => { setRegistered(false) }} className="font-bold p-4 text-black bg-[#CCFF00]">
+                    {(data.event_price !== 0 ? "Pay ₹" + data.event_price : "Asthra Free Pass")}
+                  </button> : <button type='submit' onClick={handleSignUpButton} className="font-bold p-4 text-black bg-[#CCFF00]">
+                    {(data.event_price !== 0 ? "Pay ₹" + data.event_price : "Asthra Free Pass")}
+                  </button>}
                 <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
                   Seats left:&nbsp;
                   <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat - data.event_sold}</span>

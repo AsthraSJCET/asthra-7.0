@@ -6,8 +6,10 @@ export default function Hidden({ name, email, phone, college, price, code }) {
             <input type={"hidden"} name="college" value={college} />
             <input type={"hidden"} name="email" value={email} />
             <button type='submit' className="font-bold p-4 text-black bg-[#CCFF00]">
-                  {(!price === 0 ? "₹" + price : "Asthra Free Pass")}
+                  {(price !== 0 ? "Pay ₹" + price : "Asthra Free Pass")}
                 </button>
         </form>
     )
 }
+
+{/* <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} />  */}
