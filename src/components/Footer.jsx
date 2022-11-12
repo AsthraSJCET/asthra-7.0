@@ -39,19 +39,19 @@ function Footer() {
       </div>
       <div className="px-5 text-white grid grid-cols-1 cursor-pointer lg:justify-items-end">
         <NavLink
-          href=""
+          href="/workshops"
           className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
         >
           WORKSHOPS
         </NavLink>
         <NavLink
-          href=""
+          href="./competitions"
           className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
         >
           COMPETITIONS
         </NavLink>
         <NavLink
-          href=""
+          href="./talks"
           className="hover:text-lime-400 text-lg font-bold font-spaceGrotesk lg:pr-20"
         >
           TALKS
