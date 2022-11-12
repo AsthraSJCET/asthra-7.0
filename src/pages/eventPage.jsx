@@ -10,33 +10,29 @@ import { AsthraContext } from "../etc/context";
 const Capture = () => {
   let [loading, setLoading] = useState(false);
   let [error, setError] = useState(false);
+  let [data, setData] = useState([])
   const context_ = useContext(AsthraContext);
-  const [data, setData] = useState([])
   const { code } = useParams()
-  const [cookies, setCookie] = useCookies(['introViewed'])
+  const [cookies, setCookie] = useCookies(['introViewed']);
 
+  setCookie('introViewed', true);
+  console.log(cookies)
 
   useEffect(() => {
-    setCookie('introViewed', true)
-    console.log(cookies)
-    setLoading(true)
-    publicAPI
-      .get(`/event/${code}`)
+    setLoading(true);
+    publicAPI.get(`/event/${code}`)
       .then((response) => {
-        setLoading(false)
         setData(response.data);
+        setLoading(false)
       })
       .catch((e) => {
         setLoading(false)
-        setError(error)
+        setError(e)
         console.log(e);
       });
-  }, [code, cookies, setCookie, error]);
-
-
+  }, [code]);
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
-
   return (
     <>
       {loading ? <div className="h-screen text-white">Loading...</div> : <>{
