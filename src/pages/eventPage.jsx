@@ -37,19 +37,25 @@ const Capture = () => {
         error ? <div className="text-white">An error occured</div> :
           <div>
             <div className="max-w-screen lg:px-20 md:p-8">
+              <div className="flex justify-between flex-row">
               <h1 className={"text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
                 {data.name} {data.active ? "" : ` (Registration closed)`}
               </h1>
+              <p className="text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight">
+              ₹{data.event_price}
+              </p>
+              </div>
               <hr className="bg-white mb-4" />
             </div>
-            <div className="grid lg:grid-cols-2 grid-rows">
+            <div className="align-center grid lg:grid-cols-2 grid-rows">
               <div className="">
-                <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-                  <NavLink to={`/register/${code}`} className="font-bold p-4 text-black bg-[#CCFF00]">
+                <div className="lg:px-20 py-8 font-spaceGrotesk text-white">
+                  <div className="mb-4">
+                    <NavLink to={`/register/${code}`} className="font-bold p-4 text-black bg-[#CCFF00]">
                     {(data.event_price !== 0 ? "Register Now" : "Asthra Free Pass")}
                   </NavLink>
-
-                  <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
+                  </div>
+                  <p className="text-white mx-4 my-1 font-spaceGrotesk mb-3">
                     Seats left:&nbsp;
                     <span className=" text-[#CCFF00] text-xl font-bold">{String(parseInt(data.event_seat) - parseInt(data.event_sold))}</span>
                   </p>
