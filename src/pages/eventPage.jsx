@@ -7,13 +7,14 @@ import { publicAPI } from "../etc/api";
 import RegisterForm from "../components/RegisterForm";
 import Ticket from "../components/Ticket"
 import { useCookies } from 'react-cookie'
+import Hidden from "../components/hiddenForm"
 
 
 
 const Capture = () => {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const [data, setData] = useState([])
-  const [postData, setPostData] = useState([])
+  const [postData, setPostData] = useState({})
   const [isRegistered, setRegistered] = useState(true)
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("c");
@@ -21,28 +22,10 @@ const Capture = () => {
   const [cookies, setCookie] = useCookies(['introViewed'])
 
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("Loaded, viewed")
     setCookie('introViewed', true)
   })
-
-  const handleEventRegistration = () => {
-    if (isAuthenticated) {
-      var Postconfig = {
-        method: 'post',
-        url: `/register/${code}`,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: JSON.stringify(postData)
-      };
-      publicAPI(Postconfig).then(resp => {
-        console.log(resp)
-      })
-    } else {
-      loginWithRedirect()
-    }
-  }
 
 
   useEffect(() => {
@@ -63,7 +46,8 @@ const Capture = () => {
       publicAPI(config)
         .then(function (response) {
           let resp = response.data
-          if (resp === null) {
+          // console.log(resp)
+          if (resp.college === null && resp.phone === null) {
             setRegistered(false)
             console.log(resp)
           }
@@ -89,6 +73,7 @@ const Capture = () => {
       });
   }, [code]);
 
+
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
 
@@ -108,13 +93,12 @@ const Capture = () => {
           <div className="grid lg:grid-cols-2 grid-rows">
             <div className="">
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-              <button onClick={handleEventRegistration} className="font-bold p-4 text-black bg-[#CCFF00]">
-              ₹{(!data.event_price === 0 ? data.event_price: "Asthra Free Pass")}
-            </button>
-            <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
-              Seats left:&nbsp;
-              <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat - data.event_sold}</span>
-            </p>
+                <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={postData.phone} price={data.event_price} code={code} />
+
+                <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
+                  Seats left:&nbsp;
+                  <span className=" text-[#CCFF00] text-xl font-bold">{data.event_seat - data.event_sold}</span>
+                </p>
                 <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
                 <p className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
                   {data.desc}
@@ -151,7 +135,7 @@ const Capture = () => {
                 </div>
               </div>
             </div>
-            <Ticket EventName={data.name} Date={data.date} Time={data.time} />
+            <Ticket UserName={isAuthenticated ? user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
           </div>
         </div>
       </div>

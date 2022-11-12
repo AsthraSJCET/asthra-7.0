@@ -16,10 +16,10 @@ function RegisterForm() {
     console.log("Loading")
   }
   useEffect(() => {
-    // if (isAuthenticated && user) {
-    //   document.getElementById("name").value = user.name
-    //   document.getElementById('email').value = user.email
-    // }
+    if (isAuthenticated) {
+      document.getElementById("name").value = user.name
+      document.getElementById('email').value = user.email
+    }
   })
 
 

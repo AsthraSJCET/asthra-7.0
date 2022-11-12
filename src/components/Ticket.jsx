@@ -1,6 +1,7 @@
+import { User } from "@auth0/auth0-react";
 import React from "react";
 
-function Ticket({ EventName, Date, Time }) {
+function Ticket({ UserName, EventName, Date, Time, Venue }) {
   return (
     <div className="mt-10 md:mt-0">
       <div className="bg-[#CCFF00] rounded-t-lg lg:w-auto lg:h-96 lg:mr-40 pb-10 lg:pb-0">
@@ -16,7 +17,7 @@ function Ticket({ EventName, Date, Time }) {
           <div className="px-10 pt-10">
             <h4 className="font-spaceGrotesk text-sm lg:text-md">VENUE</h4>
             <h1 className="font-bold font-spaceGrotesk text-md lg:text-2xl">
-              SEMINAR HALL, SJC
+              {Venue}
             </h1>
           </div>
           <div className="px-10 pt-10">
@@ -34,7 +35,7 @@ function Ticket({ EventName, Date, Time }) {
         <div className="px-10 pt-10">
           <h4 className="font-spaceGrotesk text-sm lg:text-md">NAME</h4>
           <h1 className="font-bold font-spaceGrotesk text-md lg:text-2xl">
-            MOHAMMED YASIM
+            {UserName}
           </h1>
         </div>
       </div>
