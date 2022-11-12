@@ -22,7 +22,6 @@ function RegisterForm() {
     }
   })
 
-
   function handleSubmit(event) {
     event.preventDefault();
     if (isAuthenticated) {
@@ -36,7 +35,7 @@ function RegisterForm() {
       // console.log();
       publicAPI({
         method: 'post',
-        url: '/register/A01MECE',
+        url: `/register/${code}`,
         data: data,
       }).then(resp => {
         console.log(resp)

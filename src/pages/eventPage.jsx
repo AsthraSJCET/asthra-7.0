@@ -8,6 +8,7 @@ import RegisterForm from "../components/RegisterForm";
 import Ticket from "../components/Ticket"
 import { useCookies } from 'react-cookie'
 import Hidden from "../components/hiddenForm"
+import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 
 
 
@@ -75,7 +76,6 @@ const Capture = () => {
 
 
 
-
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
 
@@ -96,7 +96,9 @@ const Capture = () => {
             <div className="">
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                 {isAuthenticated ?
-                  <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} /> : <></>
+                  <Hidden name={postData.name} college={postData.college} phone={postData.phone} email={user.email} price={data.event_price} code={code} /> : (<button className="font-bold p-4 text-black bg-[#CCFF00]">
+                    {(!data.event_price === 0 ? "₹" + data.event_price : "Asthra Free Pass")}
+                  </button>)
                 }
                 <p className="text-white mx-4 my-1 font-spaceGrotesk  mb-3">
                   Seats left:&nbsp;
@@ -114,7 +116,7 @@ const Capture = () => {
             </p> */}
                 <div className="px-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold max-w-xl">
                   {rules.map((rules, key) => (
-                    <p key={key}>{key + 1}. {rules} </p>
+                    <div className="flex flex-row"><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
                   ))}
                 </div>
               </div>
