@@ -1,0 +1,165 @@
+@font-face {
+    font-family: MBF;
+    src: url('./mbf.ttf');
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: #ccc;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    /* background: radial-gradient(circle farthest-side, #09214a, #0a0116); */
+    background: radial-gradient(circle farthest-side, #09214a, #0a0116),linear-gradient(180deg, #09214a 0%, #292433 51%, #0a0116 75%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    background-size: contain;
+    cursor: grab;
+    font-family: MBF !important;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+#cursor {
+    height: 50px;
+    width: 50px;
+    background: blueviolet;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+}
+#stage {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacer-small {
+    width: 100%;
+    height: 50vh;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.spacer-small img {
+    width: 500px;
+    max-width: 60vw;
+}
+
+.spacer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.spacer::before {
+    background: radial-gradient(circle farthest-side, #0c131e, #1e0342);
+}
+
+.h-80 {
+    height: 80vh;
+}
+
+.spacer h1 {
+    margin: 50px;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.main-bg {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    padding-top: 30vh;
+    /* background-image: url("./MacBook\ Air\ -\ 3.png"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-attachment: fixed;
+    transition: 0.7s;
+    z-index: 9999;
+}
+.pin {
+    transform: translateY(-40%);
+    width: 95vw;
+    text-align: center;
+    opacity: 0;
+}
+.main-bg img {
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+}
+.main-bg a{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    background-color: red;
+    position: absolute;
+    top: 85vh;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+
+}
+
+#countdown li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+#countdown li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+@media all and (max-width: 768px) {
+    #countdown li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    #countdown li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .spacer h1 {
+        margin: 50px;
+        font-size: 1.5rem;
+        overflow: hidden;
+    }
+    .main-bg img {
+        width: auto;
+        max-width: 150vw;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+    }
+}
+.container {
+    cursor: grab;
+    overflow: auto;
+}
