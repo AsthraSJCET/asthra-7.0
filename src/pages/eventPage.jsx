@@ -9,7 +9,7 @@ import { AsthraContext } from "../etc/context";
 
 const Capture = () => {
   let [loading, setLoading] = useState(true);
-  let [error, setError] = useState(true);
+  let [error, setError] = useState(false);
   let [data, setData] = useState([])
   const context_ = useContext(AsthraContext);
   const { code } = useParams()
@@ -24,11 +24,11 @@ const Capture = () => {
         setLoading(false)
       })
       .catch((e) => {
-        setLoading(false)
-        setError(e)
+        setLoading(false);
+        setError(e);
         console.log(e);
       });
-  }, [code,setCookie,cookies]);
+  }, [code, setCookie, cookies]);
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   return (
