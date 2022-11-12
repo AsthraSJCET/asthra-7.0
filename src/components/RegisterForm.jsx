@@ -39,11 +39,7 @@ function RegisterForm({ price }) {
       <>
         {loading || isLoading ? <div className="h-screen text-white">Loading...</div> : <>{
           error ? <div className="text-white">An error occured</div> :
-            <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"} target="windowName" onSubmit={
-              (e) => {
-                window.open(e.target.action, e.target, '...attributes...');
-                window.location.replace('/tickets'); return true;
-              }}>
+            <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"} target="windowName" onsubmit="window.open(this.action, this.target, '...attributes...');window.location.replace('/zsd');return true;">
               <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">
                 <div className="bg-gray-900 py-10 px-10 sm:max-w-md w-full ">
                   <div className="grid grid-cols-2">
