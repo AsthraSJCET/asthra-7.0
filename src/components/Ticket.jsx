@@ -1,4 +1,3 @@
-import { User } from "@auth0/auth0-react";
 import React from "react";
 
 function Ticket({ UserName, EventName, Date, Time, Venue }) {
@@ -29,7 +28,7 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
               {Time}
             </h1>
             <br />
-            <h1 className="font-bold font-spaceGrotesk mt-0 text-md lg:text-2xl"></h1>
+            <h1 className="font-bold font-spaceGrotesk mt-0 text-md lg:text-2xl"> </h1>
           </div>
         </div>
         <div className="px-10 pt-10">
@@ -42,10 +41,10 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
       <div className="bg-zinc-800 rounded-b-lg h-40 lg:mr-40">
         <div className="px-10 pt-10 grid grid-cols-2">
           <div className="grid justify-items-start">
-            <img src="/images/asthra-logo.svg" className="lg:h-20 h-12" />
+            <img alt="" src="/images/asthra-logo.svg" className="lg:h-20 h-12" />
           </div>
           <div className="grid justify-items-end">
-            <img src="/images/asthra.svg" className="lg:h-20 h-14" />
+            <img alt="" src="/images/asthra.svg" className="lg:h-20 h-14" />
           </div>
         </div>
       </div>

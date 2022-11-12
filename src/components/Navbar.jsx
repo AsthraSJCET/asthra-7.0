@@ -15,7 +15,7 @@ export default function Navbar() {
               className="font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-2xl text-white"
               to={"/"}
             >
-              <img src="/images/asthra-logo.svg" className="h-10" />
+              <img alt="Asthra 7.0" src="/images/asthra-logo.svg" className="h-10" />
 
             </NavLink>
             <div className="inline-flex">

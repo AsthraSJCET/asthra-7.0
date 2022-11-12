@@ -6,10 +6,10 @@ import Capture from "./pages/eventPage";
 import Events from "./components/Events";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Helmet } from 'react-helmet'
-import Home from "./pages/home";
 import MainTabs from "./components/MainTabs"
 import RegisterForm from "./components/RegisterForm"
 import { AsthraContext } from "./etc/context";
+import Home from "./pages/Home";
 
 
 function App() {

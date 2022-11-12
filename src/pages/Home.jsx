@@ -1,8 +1,7 @@
 import SpreadCard from "../components/SpreadCard";
 import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
-
-export default function Home() {
+function Home() {
     return (
         <>
             <MainTabs />
@@ -11,3 +10,4 @@ export default function Home() {
         </>
     )
 }
+export default Home;

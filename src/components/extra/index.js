@@ -1,7 +1,7 @@
 function Intro() {
     return (
         <>
-            <iframe id={"intro"} style={{
+            <iframe title="asthra-intro-screen" id={"intro"} style={{
                 width: '100%',
                 height: '100vh',
                 overflow: "hidden",

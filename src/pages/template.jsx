@@ -3,11 +3,10 @@ import { Intro } from "../components/extra";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useCookies } from 'react-cookie'
-// import Loader from "../components/loader";
 
 
 function IndexTemplate() {
-  const [cookies, setCookie] = useCookies(['introViewed'])
+  const [cookies] = useCookies(['introViewed'])
   return (
     <>
       {cookies.introViewed && cookies.introViewed !== null ? <></> : <Intro />
