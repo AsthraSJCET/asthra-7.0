@@ -5,7 +5,7 @@ import HomeCard from "../components/HomeCard";
 
 function Events(props) {
   let [data, setData] = useState([]);
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
   let [error, setError] = useState(false);
 
   useEffect(() => {

@@ -12,7 +12,7 @@ function RegisterForm({ price }) {
     name: ""
   })
   let context = useContext(AsthraContext);
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState(true);
   let [error, setError] = useState(false);
   const { code } = useParams()
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();

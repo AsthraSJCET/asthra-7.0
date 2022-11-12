@@ -8,18 +8,16 @@ import { AsthraContext } from "../etc/context";
 
 
 const Capture = () => {
-  let [loading, setLoading] = useState(false);
-  let [error, setError] = useState(false);
+  let [loading, setLoading] = useState(true);
+  let [error, setError] = useState(true);
   let [data, setData] = useState([])
   const context_ = useContext(AsthraContext);
   const { code } = useParams()
   const [cookies, setCookie] = useCookies(['introViewed']);
 
-  setCookie('introViewed', true);
-  console.log(cookies)
-
   useEffect(() => {
-    setLoading(true);
+    setCookie('introViewed', true);
+    console.log(cookies);
     publicAPI.get(`/event/${code}`)
       .then((response) => {
         setData(response.data);
@@ -30,7 +28,7 @@ const Capture = () => {
         setError(e)
         console.log(e);
       });
-  }, [code]);
+  }, [code,setCookie,cookies]);
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   return (
