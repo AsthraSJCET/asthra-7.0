@@ -40,8 +40,8 @@ function RegisterForm({ price }) {
         {loading || isLoading ? <div className="h-screen text-white">Loading...</div> : <>{
           error ? <div className="text-white">An error occured</div> :
             <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"} target="windowName" onSubmit={
-              (this) => {
-                window.open(this.action, this.target, '...attributes...');
+              (e) => {
+                window.open(e.action, e.target, '...attributes...');
                 window.location.replace('/tickets'); return true;
               }}>
               <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">
