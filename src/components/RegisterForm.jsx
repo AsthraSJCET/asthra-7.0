@@ -105,7 +105,11 @@ function RegisterForm({ price }) {
 
     );
   } else {
-    return loginWithRedirect();
+    return loginWithRedirect({
+      authorizationParams: {
+        redirect_uri: window.location.href
+      }
+    });
   }
 }
 

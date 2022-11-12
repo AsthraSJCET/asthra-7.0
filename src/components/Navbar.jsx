@@ -25,7 +25,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-             <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7"
                   fill="none"
@@ -124,7 +124,11 @@ export default function Navbar() {
               </li>) : (<li className="nav-item">
                 <NavLink
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                  onClick={() => loginWithRedirect()}
+                  onClick={() => loginWithRedirect({
+                    authorizationParams: {
+                      redirect_uri: window.location.href
+                    }
+                  })}
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
                   <span className="">SIGN IN</span>
