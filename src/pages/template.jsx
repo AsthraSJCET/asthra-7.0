@@ -17,7 +17,7 @@ function IndexTemplate() {
       <motion.div
         key={pathname}
       >
-        <div className="px-5 lg:px-20 py-5 max-w-8xl justify-center bg-black">
+        <div className="p-5 lg:pl-20 lg:pr-20 pt-8 mx-auto bg-black">
           <Outlet />
         </div>
       </motion.div>
