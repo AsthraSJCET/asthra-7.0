@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { publicAPI } from "../etc/api";
 import HomeCard from "../components/HomeCard";
+import { motion } from "framer-motion";
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1
+    }
+  }
+};
 
 function Events(props) {
   let [data, setData] = useState([]);
@@ -28,7 +40,11 @@ function Events(props) {
     <>
       {loading ? <div className="text-white">Loading...</div> : <>{
         error ? <div className="text-white">An error occured</div> :
-          <div className="bg-black grid grid-rows-2 items-stretch lg:grid-cols-3 home-cards-container">
+          <motion.div 
+          variants={container}
+          initial="hidden"
+          animate="visible" 
+          className="bg-black grid grid-rows-2 items-stretch lg:grid-cols-3 home-cards-container">
             {data.map((data, key) => {
               return (
                 <HomeCard
@@ -42,7 +58,7 @@ function Events(props) {
                 />
               );
             })}
-          </div>
+          </motion.div>
       }
       </>
       }

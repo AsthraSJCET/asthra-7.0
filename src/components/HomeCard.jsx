@@ -1,5 +1,15 @@
 import { NavLink } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
+
 function HomeCard({ index, eventName, date, time, active, suspended }) {
   let event_date = new Date(date)
   const formattedDate = event_date.toLocaleDateString("en-GB", {
@@ -8,13 +18,13 @@ function HomeCard({ index, eventName, date, time, active, suspended }) {
     year: "numeric",
   })
   return (
+    <motion.div variants={item}>
     <NavLink to={suspended === 0 ?`${index}`: "#"}>
-      <div className="flex justify-center h-full py-10 lg:px-10 ">
-        <div className={"lg shadow-lg p-1 cursor-pointer duration-200 "  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-105")}>
+      <div className="home-card flex justify-center h-full py-10 lg:px-10 ">
+        <div className={"lg shadow-lg p-1 cursor-pointer duration-200 "  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-none")}>
           {!suspended === 0? ( <div className="absolute bg-white/50 text-black p-2 ">
-            Suspended
+            Cancelled
           </div>): <></>}
-         
           <img className=""
             src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
             alt=""
@@ -37,6 +47,7 @@ function HomeCard({ index, eventName, date, time, active, suspended }) {
         </div>
       </div>
     </NavLink>
+    </motion.div>
   );
 }
 

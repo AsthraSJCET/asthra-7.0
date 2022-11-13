@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   let { isAuthenticated, user, logout, loginWithRedirect } = useAuth0();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  let trigger = () => { setNavbarOpen(false) }
+
   return (
     <>
       <nav id="navbarFocus" className="z-1000 flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
@@ -24,13 +27,13 @@ export default function Navbar() {
                 className={"text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
-              >
+              >{!navbarOpen ?
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke={navbarOpen ? "black" : "white"}
+                  stroke="white"
                   strokeWidth="2"
                 >
                   <path
@@ -38,7 +41,27 @@ export default function Navbar() {
                     strokeLinejoin="round"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
-                </svg>
+                </svg> :
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="black"
+                  strokeWidth="2">
+                  <line x1="1" y1="24"
+                    x2="24" y2="1"
+                    stroke="black"
+                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round" />
+                  <line x1="1" y1="1"
+                    x2="24" y2="24"
+                    stroke="black"
+                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round" />
+                </svg>}
               </button>
             </div>
 
@@ -52,7 +75,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
               {isAuthenticated ? (<li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
@@ -60,7 +83,7 @@ export default function Navbar() {
                 </NavLink>
               </li>) : (<></>)}
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="py-3 px-12 flex items-center uppercase font-bold leading-snug text-black justify-left hover:opacity-75"
                   to="/about"
                 >
@@ -69,7 +92,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/workshops"
                 >
@@ -78,7 +101,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/talks"
                 >
@@ -87,7 +110,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/competitions"
                 >
@@ -96,7 +119,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/ambassadors"
                 >
@@ -105,7 +128,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="contact"
                 >

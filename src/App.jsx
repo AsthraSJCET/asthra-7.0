@@ -10,6 +10,7 @@ import MainTabs from "./components/MainTabs"
 import RegisterForm from "./components/RegisterForm"
 import { AsthraContext } from "./etc/context";
 import Home from "./pages/Home";
+import ScrollToTop from "./lib/ScrollToTop";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <>
             <AsthraContext.Provider value={data}>
               <BrowserRouter>
+              <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<IndexTemplate />}>
                     <Route index element={<Home />} />
