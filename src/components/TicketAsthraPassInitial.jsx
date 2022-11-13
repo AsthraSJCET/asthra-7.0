@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 function TicketAsthraPassInitial({ data, user_data }) {
   return (
-    <div className=" md:mt-0 w-full overflow-hidden">
-      <div className="bg-[#CCFF00] rounded-t-lg lg:w-full  lg:mr-40 pb-10 lg:pb-0">
+    <div className="max-w-lg">
+      <div className="bg-[#CCFF00] rounded-t-lg w-full lg:mr-40 pb-10 lg:pb-0">
         <div className="pl-10 pr-10 pt-10">
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] uppercase">
             {data.event_type}

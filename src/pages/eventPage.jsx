@@ -50,12 +50,17 @@ const Capture = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-6">
             <div id="block1" className="md:col-span-3">
-
-              <div className="w-full lg:pl-20 py-4 font-spaceGrotesk text-white">
+              <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
+                <div className="mb-4">
+                  <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS}`)} className="font-bold p-4 text-black bg-[#CCFF00]">
+                    {(data.event_price !== 0 ? "Register Now" : "Free with Asthra Pass")}
+                  </NavLink>&nbsp; 
+              {data.event_seat !== 0 && data.event_price !== 0 ? <>
                 Seats left:&nbsp;
                 <span className=" text-[#CCFF00] text-xl font-bold">{String(parseInt(data.event_seat) - parseInt(data.event_sold))}</span>
+              </>:null}
+                </div>
               </div>
-
               <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
                 <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
                 <p className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
@@ -68,13 +73,6 @@ const Capture = () => {
                   {rules.map((rules, key) => (
                     <div key={key} className="flex flex-row"><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
                   ))}
-                </div>
-              </div>
-              <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-                <div className="mb-4">
-                  <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS}`)} className="font-bold p-4 text-black bg-[#CCFF00]">
-                    {(data.event_price !== 0 ? "Register Now" : "Free with Asthra Pass")}
-                  </NavLink>
                 </div>
               </div>
               <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
@@ -96,8 +94,8 @@ const Capture = () => {
                 </div>
               </div>
             </div>
-            <div id="block2" className="md:col-span-3">
-              <div className="max-w-lg pt-10 flex justify-center">
+            <div id="block2" className="md:col-span-3 pt-8">
+              <div className="w-full flex items-center justify-center">
                 {data.event_price === 0 ?
                   <TicketAsthraPassInitial data={data} user_data={context_} />
                   :
