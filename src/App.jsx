@@ -10,7 +10,9 @@ import MainTabs from "./components/MainTabs"
 import RegisterForm from "./components/RegisterForm"
 import { AsthraContext } from "./etc/context";
 import Home from "./pages/Home";
+import MyTickets from "./pages/tickets";
 import ScrollToTop from "./lib/ScrollToTop";
+import Loader from "./lib/Loader";
 
 
 function App() {
@@ -26,18 +28,17 @@ function App() {
       <main className="column">
         <Helmet>
           <title>Asthra 7.0</title>
-          <link rel="favicon" href="https://picsum.photos/256/256" type="image/svg" />
+          {/* <link rel="favicon" href="https://picsum.photos/256/256" type="image/svg" /> */}
         </Helmet>
         {!error ? (
           <>
             <AsthraContext.Provider value={data}>
               <BrowserRouter>
-              <ScrollToTop />
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<IndexTemplate />}>
                     <Route index element={<Home />} />
                     <Route path="/about" element={<></>} />
-                    <Route path="/tickets" element={<></>} />
                     <Route path="/ambassador" element={<></>} />
                     <Route path="/contact" element={<></>} />
 
@@ -47,6 +48,7 @@ function App() {
                     <Route path="/talks" element={<Events eventType="talks" />} />
                     <Route path="/workshop/:code" element={<Capture />} />
                     <Route path="/competition/:code" element={<Capture />} />
+                    <Route path="/tickets" element={<MyTickets />} />
                     <Route path="/event/:code" element={<Capture />} />
                     <Route path="/register/:code" element={<RegisterForm />} />
                     <Route path="*" element={<NotFound />} />
@@ -61,7 +63,9 @@ function App() {
     );
   } else {
     return (
-      <div className="text-white">Loading...</div>
+      <div className="text-white">Loading...
+      <Loader/>
+      </div>
     )
   }
 

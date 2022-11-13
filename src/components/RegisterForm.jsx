@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useParams } from "react-router-dom";
 import { publicAPI } from "../etc/api";
 import { AsthraContext } from "../etc/context";
+import Loader from "../lib/Loader";
 
 function RegisterForm({ price }) {
   const [data, setData] = useState({
@@ -37,7 +38,7 @@ function RegisterForm({ price }) {
   if (isAuthenticated) {
     return (
       <>
-        {loading || isLoading ? <div className="h-screen text-white">Loading...</div> : <>{
+        {loading || isLoading ? <div className="h-screen text-white">Loading...<Loader/> </div> : <>{
           error ? <div className="text-white">An error occured</div> :
             <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"}target="windowName" onsubmit="window.open(this.action, this.target, '...attributes...');window.location.replace('/zsd');return true;">
               <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">

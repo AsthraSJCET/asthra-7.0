@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
+import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 export default function Navbar() {
@@ -27,41 +28,9 @@ export default function Navbar() {
                 className={"text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" + (navbarOpen ? "bg-black" : "bg-transparent")}
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
-              >{!navbarOpen ?
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="white"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg> :
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="black"
-                  strokeWidth="2">
-                  <line x1="1" y1="24"
-                    x2="24" y2="1"
-                    stroke="black"
-                    stroke-width="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round" />
-                  <line x1="1" y1="1"
-                    x2="24" y2="24"
-                    stroke="black"
-                    stroke-width="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round" />
-                </svg>}
+              >
+                {navbarOpen ? <XMarkIcon className="h-7 text-black"></XMarkIcon> :
+                  <Bars2Icon className="h-7 "></Bars2Icon>}
               </button>
             </div>
 
@@ -75,7 +44,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
               {isAuthenticated ? (<li className="nav-item">
-                <NavLink onClick={trigger}
+                <NavLink to={"/tickets"} onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
@@ -93,6 +62,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink onClick={trigger}
+
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/workshops"
                 >
