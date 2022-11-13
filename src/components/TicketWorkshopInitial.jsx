@@ -1,6 +1,6 @@
 import React from "react";
 
-function Ticket({ UserName, EventName, Date, Time, Venue }) {
+function TicketWorkshopInitial({ UserName, EventName, Date, Time, Venue }) {
   return (
     <div className="mt-10 md:mt-0 max-w-3xl overflow-hidden">
       <div className="bg-[#CCFF00] rounded-t-lg lg:w-auto  lg:mr-40 pb-10 lg:pb-0">
@@ -19,7 +19,7 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
               {Venue}
             </h1>
           </div>
-          <div className="px-10 pt-5">
+          <div className="px-10 pt-5 pb-5">
             <h4 className="font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] font-medium">
               DATE AND TIME
             </h4>
@@ -31,13 +31,13 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
             <h1 className="font-medium font-spaceGrotesk mt-0 text-md lg:text-2xl"> </h1>
           </div>
         
-        <div className="px-10 pt-5 pb-5">
+        {/* <div className="px-10 pt-5 pb-5">
           <h4 className="font-spaceGrotesk text-sm lg:text-lg font-medium text-[#5c5c5c]">NAME</h4>
           <h1 className="font-medium font-spaceGrotesk text-2xl lg:text-2xl">
             {UserName}
             Mohammed Yasim
           </h1>
-        </div>
+        </div> */}
       </div>
       <div className="bg-zinc-800 rounded-b-lg pb-8 lg:mr-40">
         {/* <div className="px-10 pt-10 grid grid-cols-2">
@@ -49,11 +49,13 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
           </div>
         </div> */}
 
-<h1 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm">You're in!</h1>
-        <p className="px-8 pb-4 text-gray-300">Your registration for this event was successfull. Any further communications will be made via email.  </p>
+<h1 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm tracking-tight">Grab your seats <br /> for ₹ 799</h1>
+        <p className="px-8 pb-4 text-gray-300">*This event is not included with 
+            <a className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</a>
+        </p>
         
         <div className="mx-8">
-        <a href="#" className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">View your ticket</a>
+        <a href="#" className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your ticket</a>
 
         </div>
       </div>
@@ -61,4 +63,4 @@ function Ticket({ UserName, EventName, Date, Time, Venue }) {
   );
 }
 
-export default Ticket;
+export default TicketWorkshopInitial;

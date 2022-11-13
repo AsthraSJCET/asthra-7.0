@@ -1,7 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import { publicAPI } from "../etc/api";
-import Ticket from "../components/Ticket"
+import TicketAsthraPassInitial from "../components/TicketAsthraPassInitial"
 import { useCookies } from 'react-cookie'
 import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 import { AsthraContext } from "../etc/context";
@@ -95,7 +95,7 @@ const Capture = () => {
                   </div>
                 </div>
               </div>
-              <Ticket UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
+              <TicketAsthraPassInitial UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
             </div>
           </div>}
       </>
