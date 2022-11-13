@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { publicAPI } from "../etc/api";
 import HomeCard from "../components/HomeCard";
 import { motion } from "framer-motion";
+import Loader from "../lib/Loader";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -38,7 +39,7 @@ function Events(props) {
 
   return (
     <>
-      {loading ? <div className="text-white">Loading...</div> : <>{
+      {loading ? <div className="text-white">Loading...<Loader/> </div> : <>{
         error ? <div className="text-white">An error occured</div> :
           <motion.div 
           variants={container}

@@ -44,7 +44,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col md:text-4xl text-2xl font-spaceGrotesk">
               {isAuthenticated ? (<li className="nav-item">
-                <NavLink to={"/tickets"} onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink to={"/tickets"} onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                 >
                   <i className="text-lg leading-lg opacity-75"></i>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 </NavLink>
               </li>) : (<></>)}
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
                   className="py-3 px-12 flex items-center uppercase font-bold leading-snug text-black justify-left hover:opacity-75"
                   to="/about"
                 >
@@ -61,7 +61,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
 
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/workshops"
@@ -71,7 +71,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/talks"
                 >
@@ -80,7 +80,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/competitions"
                 >
@@ -89,7 +89,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="/ambassadors"
                 >
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink onClick={() => setNavbarOpen(!navbarOpen)}
+                <NavLink onClick={trigger}
                   className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   to="contact"
                 >

@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { AsthraContext } from "../etc/context";
 import { publicAPI } from "../etc/api";
 import Ticket from "../components/Ticket"
+import Loader from "../lib/Loader";
 
 
 export default function MyTickets() {
@@ -30,11 +31,15 @@ export default function MyTickets() {
 
     return (
         <>
-            <div className="grid grid-cols-2 align-center">
-                {data.map((data, key) => {
-                    return (<div className="m-8 max-w-md"><Ticket key={key} UserName={context_.user.name} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} /></div>)
-                })}
-            </div>
+            {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
+                error ? <div className="text-white">An error occured</div> :
+                    <div className="grid grid-cols-2 align-center">
+                        {data.map((data, key) => {
+                            return (<div className="m-8 max-w-md"><Ticket key={key} UserName={context_.user.name} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} /></div>)
+                        })}
+                    </div>}
+            </>
+            }
 
         </>
     )

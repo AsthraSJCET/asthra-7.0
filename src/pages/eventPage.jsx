@@ -5,6 +5,7 @@ import Ticket from "../components/Ticket"
 import { useCookies } from 'react-cookie'
 import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 import { AsthraContext } from "../etc/context";
+import Loader from "../lib/Loader";
 
 
 const Capture = () => {
@@ -33,7 +34,7 @@ const Capture = () => {
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   return (
     <>
-      {loading ? <div className="h-screen text-white">Loading...</div> : <>{
+      {loading ? <div className="h-screen text-white">Loading... <Loader/> </div> : <>{
         error ? <div className="text-white">An error occured</div> :
           <div>
             <div className="max-w-screen lg:px-20 md:p-8">

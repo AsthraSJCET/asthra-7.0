@@ -12,6 +12,7 @@ import { AsthraContext } from "./etc/context";
 import Home from "./pages/Home";
 import MyTickets from "./pages/tickets";
 import ScrollToTop from "./lib/ScrollToTop";
+import Loader from "./lib/Loader";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <>
             <AsthraContext.Provider value={data}>
               <BrowserRouter>
-              <ScrollToTop />
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<IndexTemplate />}>
                     <Route index element={<Home />} />
@@ -47,7 +48,7 @@ function App() {
                     <Route path="/talks" element={<Events eventType="talks" />} />
                     <Route path="/workshop/:code" element={<Capture />} />
                     <Route path="/competition/:code" element={<Capture />} />
-                    <Route path="/tickets" element={<MyTickets/>}/>
+                    <Route path="/tickets" element={<MyTickets />} />
                     <Route path="/event/:code" element={<Capture />} />
                     <Route path="/register/:code" element={<RegisterForm />} />
                     <Route path="*" element={<NotFound />} />
@@ -62,7 +63,9 @@ function App() {
     );
   } else {
     return (
-      <div className="text-white">Loading...</div>
+      <div className="text-white">Loading...
+      <Loader/>
+      </div>
     )
   }
 
