@@ -97,7 +97,7 @@ const Capture = () => {
                 </div>
               </div>
               <div className="max-w-lg">
-                <Ticket UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
+                <TicketAsthraPassInitial UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
               </div>
             </div>
           </div>}
