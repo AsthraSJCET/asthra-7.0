@@ -46,7 +46,7 @@ function TicketAsthraPassInitial({ data, user_data }) {
         <p className="pl-8 pr-8  pb-4 text-gray-300">*This event  is included with
           <a className="text-blue-300 hover:text-blue-500 font-bold" href="#a"> AsthraPass</a>
         </p>
-        <div className="ml-8">
+        <div className="mr-8 ml-8">
           <NavLink to={'/register/ASTHRA_PASS'} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your AsthraPass</NavLink>
         </div>
       </div>
