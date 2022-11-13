@@ -58,7 +58,7 @@ function TicketAsthraPassInitial({ UserName, EventName, Date, Time, Venue }) {
 </defs>
 </svg>
 <h1 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-4 max-w-sm tracking-tight">Get all-access with AsthraPass!</h1>
-<p className="px-8 pt-2 pb-4 text-gray-300 text-md">With AsthraPass, you can now get access to all events (excluding workshops) for just ₹ 300! Hurry up now to save 20% on the deal!</p>
+<p className="px-8 pt-2 pb-4 text-gray-300 text-sm md:text-md">With AsthraPass, you can now get access to all events (excluding workshops) for just ₹ 300! Hurry up now to save 20% on the deal!</p>
         <p className="px-8 pb-4 text-gray-300">*This event  is included with 
             <a className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</a>
         </p>

@@ -34,7 +34,7 @@ const Capture = () => {
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   return (
     <>
-      {loading ? <div className="h-screen text-white">Loading... <Loader/> </div> : <>{
+      {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> :
           <div>
             <div className="max-w-screen lg:px-20 md:p-8">
@@ -96,7 +96,7 @@ const Capture = () => {
                   </div>
                 </div>
               </div>
-              <div className="max-w-lg">
+              <div className="max-w-2xl">
                 <TicketAsthraPassInitial UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
               </div>
             </div>
