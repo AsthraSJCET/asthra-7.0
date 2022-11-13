@@ -38,12 +38,12 @@ const Capture = () => {
           <div>
             <div className="max-w-screen lg:px-20 md:p-8">
               <div className="flex justify-between flex-row">
-              <h1 className={"text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
-                {data.name} {data.active ? "" : ` (Registration closed)`}
-              </h1>
-              <p className="text-5xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight">
-              ₹{data.event_price}
-              </p>
+                <h1 className={"lg:text-5xl text-3xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
+                  {data.name} {data.active ? "" : ` (Registration closed)`}
+                </h1>
+                <p className="lg:text-5xl text-3xl font-spaceGrotesk text-[#CCFF00] font-bold pb-4 tracking-tight">
+                  ₹{data.event_price}
+                </p>
               </div>
               <hr className="bg-white mb-4" />
             </div>
@@ -52,8 +52,8 @@ const Capture = () => {
                 <div className="lg:px-20 py-8 font-spaceGrotesk text-white">
                   <div className="mb-4">
                     <NavLink to={`/register/${code}`} className="font-bold p-4 text-black bg-[#CCFF00]">
-                    {(data.event_price !== 0 ? "Register Now" : "Asthra Free Pass")}
-                  </NavLink>
+                      {(data.event_price !== 0 ? "Register Now" : "Asthra Free Pass")}
+                    </NavLink>
                   </div>
                   <p className="text-white mx-4 my-1 font-spaceGrotesk mb-3">
                     Seats left:&nbsp;
@@ -95,7 +95,9 @@ const Capture = () => {
                   </div>
                 </div>
               </div>
-              <Ticket UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
+              <div className="max-w-lg">
+                <Ticket UserName={context_.isAuthenticated ? context_.user.name : ""} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} />
+              </div>
             </div>
           </div>}
       </>
