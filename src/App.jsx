@@ -37,8 +37,12 @@ class AsthraAppMain extends React.Component {
     })
   }
   componentDidMount() {
+    if (
+      this.props.data.isAuthenticated
+    ) {
       this.syncData();
     }
+  }
   render() {
     return (<main className="column">
       <Helmet>
@@ -46,32 +50,32 @@ class AsthraAppMain extends React.Component {
         {/* <link rel="favicon" href="https://picsum.photos/256/256" type="image/svg" /> */}
       </Helmet>
       <AsthraContext.Provider value={this.state}>
-      <BrowserRouter>
-    <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<IndexTemplate />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<></>} />
-            <Route path="/ambassador" element={<></>} />
-            <Route path="/contact" element={<></>} />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<IndexTemplate />}>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<></>} />
+              <Route path="/ambassador" element={<></>} />
+              <Route path="/contact" element={<></>} />
 
-            <Route path="/workshops" element={<><ListPageTemplate page="workshop" /></>} />
-            <Route path="/competitions" element={<><ListPageTemplate page="competition" /></>} />
-            <Route path="/events" element={<><ListPageTemplate page="event" /></>} />
-            <Route path="/expo" element={<><ListPageTemplate page="exhibition" /></>} />
+              <Route path="/workshops" element={<><ListPageTemplate page="workshop" /></>} />
+              <Route path="/competitions" element={<><ListPageTemplate page="competition" /></>} />
+              <Route path="/events" element={<><ListPageTemplate page="event" /></>} />
+              <Route path="/expo" element={<><ListPageTemplate page="exhibition" /></>} />
 
-            <Route path="/workshop/:code" element={<Capture />} />
-            <Route path="/competition/:code" element={<Capture />} />
-            <Route path="/event/:code" element={<Capture />} />
-            <Route path="/exhibition/:code" element={<Capture />} />
-            
-            <Route path="/tickets" element={<MyTickets />} />
-            <Route path="/register/:code" element={<RegisterForm />} />
+              <Route path="/workshop/:code" element={<Capture />} />
+              <Route path="/competition/:code" element={<Capture />} />
+              <Route path="/event/:code" element={<Capture />} />
+              <Route path="/exhibition/:code" element={<Capture />} />
 
+              <Route path="/tickets" element={<MyTickets />} />
+              <Route path="/register/:code" element={<RegisterForm />} />
+
+              <Route path="*" element={<NotFound />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
         </BrowserRouter>
       </AsthraContext.Provider>
     </main>
