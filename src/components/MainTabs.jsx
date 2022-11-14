@@ -1,21 +1,21 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-
 function MainTabs() {
-let { pathname } = useLocation();
+  let { pathname } = useLocation();
 
   return (
-    <div className="sticky z-10 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
+    <div className="sticky z-10 inset-x-0 top-0 bg-black">
       <div className="flex z-10 flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0">
         <NavLink
           to="/workshops"
           className={({ isActive }) =>
-            isActive || pathname === '/'
+            isActive || pathname === "/"
               ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
           }
-        end>
+          end
+        >
           WORKSHOPS
         </NavLink>
         <NavLink
@@ -39,12 +39,11 @@ let { pathname } = useLocation();
           COMPETITIONS
         </NavLink>
       </div>
-      <div className="lg:mx-10 lg:mb-20 mb-10">
+      <div className="lg:mx-10">
         <hr />
       </div>
     </div>
   );
 }
-
 
 export default MainTabs;
