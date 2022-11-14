@@ -10,7 +10,7 @@ const item = {
   }
 };
 
-function HomeCard({ index, eventName, date, time, active, suspended }) {
+function HomeCard({ index, data, eventName, date, time, active, suspended }) {
   let event_date = new Date(date)
   const formattedDate = event_date.toLocaleDateString("en-GB", {
     day: "numeric",
@@ -26,7 +26,7 @@ function HomeCard({ index, eventName, date, time, active, suspended }) {
             Cancelled
           </div>): <></>}
           <img className=""
-            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+            src={`/event-images/${data.code}.png`}
             alt=""
           />
           <div className="p-6">
