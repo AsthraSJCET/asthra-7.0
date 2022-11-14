@@ -50,6 +50,7 @@ function Events(props) {
               return (
                 <HomeCard
                   key={key}
+                  data={data}
                   index={`/${props.eventType}/${data.code}`}
                   eventName={data.name}
                   date={data.date_time}
