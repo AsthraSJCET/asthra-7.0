@@ -88,7 +88,7 @@ function AllEvents(props) {
                 <HomeCard
                   key={key}
                   data={data}
-                  index={`/${props.eventType}/${data.code}`}
+                  index={`/${data.event_type}/${data.code}`}
                   eventName={data.name}
                   date={data.date_time}
                   time={data.time}
