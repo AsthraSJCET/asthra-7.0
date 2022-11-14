@@ -1,44 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useParams } from "react-router-dom";
-import { publicAPI } from "../etc/api";
 import { AsthraContext } from "../etc/context";
 import Loader from "../lib/Loader";
 
-function RegisterForm({ price }) {
-  const [data, setData] = useState({
-    email: '',
-    college: "",
-    phone: "",
-    name: ""
-  })
+function RegisterForm() {
   let context = useContext(AsthraContext);
-  let [loading, setLoading] = useState(true);
-  let [error, setError] = useState(false);
   const { code } = useParams()
-  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  useEffect(() => {
-    setLoading(true)
-    let _data = JSON.stringify({
-      "email": context.user.email
-    });
-    publicAPI.post("/get-user", _data)
-      .then((response) => {
-        setData(response.data);
-        setLoading(false);
-        setError(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-        console.log(error);
-      });
-  }, [context])
-
+  const { isAuthenticated, isLoading,error, loginWithRedirect } = useAuth0();
   if (isAuthenticated) {
     return (
       <>
-        {loading || isLoading ? <div className="h-screen text-white">Loading...<Loader/> </div> : <>{
+        {isLoading ? <div className="h-screen text-white">Loading...<Loader /> </div> : <>{
           error ? <div className="text-white">An error occured</div> :
             <form action={`https://asthra.azba.in/_api/register/${code}`} method={"post"}>
               <div className="w-full hoverflow-scroll h-screen p-4 flex items-center justify-center">
@@ -54,7 +27,7 @@ function RegisterForm({ price }) {
                         id="name"
                         type="text"
                         name="name"
-                        defaultValue={data.name === null ? context.user.name : data.name}
+                        defaultValue={context.asthra_user.name === null ? context.user.name : context.asthra_user.name}
                         className="focus:outline-none border-b w-full bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500"
                         placeholder="NAME"
                       />
@@ -64,7 +37,7 @@ function RegisterForm({ price }) {
                         id="college"
                         type="text"
                         name="college"
-                        defaultValue={data.college}
+                        defaultValue={context.asthra_user.college}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 my-8"
                         placeholder="COLLEGE"
                       />
@@ -74,7 +47,7 @@ function RegisterForm({ price }) {
                         id="phone"
                         type="phone"
                         name="phone"
-                        defaultValue={data.phone}
+                        defaultValue={context.asthra_user.phone}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                         placeholder="PHONE NO."
                       />
@@ -84,7 +57,7 @@ function RegisterForm({ price }) {
                         id="email"
                         type="email"
                         name="email"
-                        defaultValue={context.user.email}
+                        value={context.user.email}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                         placeholder="EMAIL"
                         readOnly={true}
@@ -103,7 +76,6 @@ function RegisterForm({ price }) {
         </>
         }
       </>
-
     );
   } else {
     return loginWithRedirect({
