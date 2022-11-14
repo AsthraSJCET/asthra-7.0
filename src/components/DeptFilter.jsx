@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const dept = [
-  { name: "Radience" },
+  { name: "Radience",value:'RAD' },
   { name: "ceasda" },
   { name: "Lorem" },
   { name: "Ipsum" },

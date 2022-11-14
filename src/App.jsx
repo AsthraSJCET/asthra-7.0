@@ -60,12 +60,16 @@ class AsthraAppMain extends React.Component {
             <Route path="/workshops" element={<><ListPageTemplate page="workshop" /></>} />
             <Route path="/competitions" element={<><ListPageTemplate page="competition" /></>} />
             <Route path="/events" element={<><ListPageTemplate page="event" /></>} />
-            <Route path="/talk" element={<><ListPageTemplate page="talk" /></>} />
+            <Route path="/expo" element={<><ListPageTemplate page="exhibition" /></>} />
+
             <Route path="/workshop/:code" element={<Capture />} />
             <Route path="/competition/:code" element={<Capture />} />
-            <Route path="/tickets" element={<MyTickets />} />
             <Route path="/event/:code" element={<Capture />} />
+            <Route path="/exhibition/:code" element={<Capture />} />
+            
+            <Route path="/tickets" element={<MyTickets />} />
             <Route path="/register/:code" element={<RegisterForm />} />
+            
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path="*" element={<NotFound />} />
