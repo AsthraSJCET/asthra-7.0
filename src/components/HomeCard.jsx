@@ -26,7 +26,7 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
             Cancelled
           </div>): <></>}
           <img className=""
-            src={`/events-images/${data.code}.png`}
+            src={`/event-images/${data.code}.png`}
             alt=""
           />
           <div className="p-6">
