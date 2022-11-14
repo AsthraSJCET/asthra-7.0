@@ -16,9 +16,10 @@ export default function Footer() {
               <ul className="text-white/70 text-left">
                 <h4 className="text-xl font-bold text-white">LINKS</h4>
                 <li><Link className="text-xl hover:text-gray-300" to="/about">ABOUT</Link></li>
-                <li><Link className="text-xl hover:text-gray-300" to="/workshops">WORKSHOPS</Link></li>
-                <li><Link className="text-xl hover:text-gray-300" to="/expo">EXHIBITIONS</Link></li>
+                <li><Link className="text-xl hover:text-gray-300" to="/competitions">COMPETITIONS</Link></li>
                 <li><Link className="text-xl hover:text-gray-300" to="/events">EVENTS</Link></li>
+                <li><Link className="text-xl hover:text-gray-300" to="/expo">EXHIBITIONS</Link></li>
+                <li><Link className="text-xl hover:text-gray-300" to="/workshops">WORKSHOPS</Link></li>
                 <li><Link className="text-xl hover:text-gray-300" to="/patron">SPONSORSHIPS</Link></li>
                 <li><Link className="text-xl hover:text-gray-300" to="/team">TEAM</Link></li>
                 <li><Link className="text-xl hover:text-gray-300" to="/contact">CONTACT</Link></li>
@@ -57,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="bg-teal-900">
-          <p className="py-3 text-center text-white"> Made with 💗  by <a to="/" className="font-bold text-blue-300 hover:text-black">Team Asthra</a></p>
+          <p className="py-3 text-center text-white"> Made with 💗  by <a href="/" className="font-bold text-blue-300 hover:text-black">Team Asthra</a></p>
         </div>
 
       </footer>
