@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useCookies } from 'react-cookie'
 import { motion } from "framer-motion";
 import { Intro } from "../components/extra";
-import Footer from "../components/Footer";
+import Footer from "../components/FooterFinal";
 import Navbar from "../components/Navbar";
 import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";

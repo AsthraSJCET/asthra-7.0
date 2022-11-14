@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import { publicAPI } from "../etc/api";
 import TicketAsthraPassInitial from "../components/TicketAsthraPassInitial"
@@ -25,6 +25,7 @@ const Capture = () => {
       .then((response) => {
         let temp_data = response.data
         if (temp_data.event_price === 0) {
+          temp_data['event_code'] = temp_data.code;
           temp_data['code'] = "ASTHRA_PASS"
         }
         setData(temp_data);
@@ -50,7 +51,7 @@ const Capture = () => {
                 <h1 className={"lg:text-5xl text-3xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
                   {data.name} {data.active ? "" : ` (Registration closed)`}
                 </h1>
-                <p className="lg:text-5xl text-3xl font-spaceGrotesk text-[#CCFF00] font-bold pb-4 tracking-tight">
+                <p className="sm:hidden lg:text-5xl text-3xl font-spaceGrotesk text-[#CCFF00] font-bold pb-4 tracking-tight">
                   ₹{data.event_price}
                 </p>
               </div>
@@ -60,14 +61,20 @@ const Capture = () => {
               <div id="block1" className="md:col-span-3">
                 <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                   <div className="mb-4">
-                    <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS`)} className="font-bold p-4 text-black bg-[#CCFF00]">
+                    {/* <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS`)} className="font-bold p-4 text-black bg-[#CCFF00]">
                       {(data.event_price !== 0 ? "Register Now" : "Free with Asthra Pass")}
-                    </NavLink>&nbsp;
+                    </NavLink>&nbsp; */}
                     {data.event_seat !== 0 && data.event_price !== 0 ? <>
-                      Seats left:&nbsp;
+                      Seats left :&nbsp;
                       <span className=" text-[#CCFF00] text-xl font-bold">{String(parseInt(data.event_seat) - parseInt(data.event_sold))}</span>
                     </> : null}
                   </div>
+                </div>
+                <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
+                  <img className=""
+                    src={`/event-images/${data.event_code}.png`}
+                    alt=""
+                  />
                 </div>
                 <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
                   <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
