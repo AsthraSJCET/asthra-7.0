@@ -6,20 +6,30 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
+import { useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 function IndexTemplate() {
+  const search = useLocation().search;
+  const backend = new URLSearchParams(search).get('backend');
   const [cookies] = useCookies(['introViewed']);
   const { pathname } = useLocation();
+  useEffect(() => {
+    if (backend && backend !== null) {
+      toast.info(backend, {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  }, [backend])
   return (
     <>
-      {cookies.introViewed && cookies.introViewed !== null ? <></> : <Intro />
-      }
-      {/* <Loader/> */}
+      <ToastContainer autoClose={false} />
+      {cookies.introViewed && cookies.introViewed !== null ? <></> : <Intro />}
       <Navbar />
       <motion.div
         key={pathname}
       >
-          <Outlet />
+        <Outlet />
       </motion.div>
       <Footer />
     </>
@@ -32,4 +42,4 @@ function ListPageTemplate({ page }) {
       <MainTabs /><Events eventType={page} />
     </div>)
 }
-export { IndexTemplate,ListPageTemplate };
+export { IndexTemplate, ListPageTemplate };

@@ -1,4 +1,4 @@
-import SpreadCard from "../components/SpreadCard";
+// import SpreadCard from "../components/SpreadCard";
 import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
 import { Hero } from "../components/extra";

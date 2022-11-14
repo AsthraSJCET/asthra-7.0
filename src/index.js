@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import './stylesheets/index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
