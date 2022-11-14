@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { BiChevronDown } from "react-icons/bi";
+import React, { useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const dept = [
   { name: "Radience" },
@@ -36,7 +36,9 @@ const Selector = () => {
             ? selected?.substring(0, 25) + "..."
             : selected
           : "All"}
-        <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
+        <ChevronDownIcon
+          className={`${open ? "rotate-180 h-7" : "h-7"} `}
+        ></ChevronDownIcon>
       </div>
       <ul
         className={`backdrop-blur-xl bg-black/70 text-white overflow-y-auto ${
