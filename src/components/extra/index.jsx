@@ -1,27 +1,7 @@
-import { useEffect, useState } from "react";
-
 function Intro() {
-    const [offset, setOffset] = useState('flex');
-
-    useEffect(() => {
-        const onScroll = () => function (ev) {
-            var Frame = document.getElementById("intro");
-            if ((Frame.innerHeight + Frame.scrollY) >= document.body.offsetHeight) {
-                setOffset('hidden')
-            }
-        }
-        // clean up code
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, [offset, setOffset]);
-
-    console.log(offset);
-    // window.onscroll = 
-    // };
     return (
         <>
-            <iframe className={offset} title="asthra-intro-screen" id={"intro"} style={{
+            <iframe title="asthra-intro-screen" id={"intro"} style={{
                 width: '100%',
                 height: '100vh',
                 overflow: "hidden",
@@ -79,4 +59,4 @@ function DaretoDance() {
     )
 }
 
-export { Intro, Hero, DaretoDance }
+export { Intro, Hero,DaretoDance }
