@@ -39,6 +39,7 @@ const Capture = () => {
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   const tickets = context_.tickets !== null ? Object.values(context_.tickets).map(a => { return a.event_code }) : [];
+  console.log(tickets)
   return (
     <>
       {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{

@@ -1,6 +1,6 @@
 import React from "react";
 import { IndexTemplate, ListPageTemplate } from "./pages/template";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/eventPage";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import MyTickets from "./pages/tickets";
 import Loader from "./lib/Loader";
 import { publicAPI } from "./etc/api";
+import ScrollToTop from "./lib/ScrollToTop";
 
 class AsthraAppMain extends React.Component {
   constructor(props) {
@@ -36,12 +37,8 @@ class AsthraAppMain extends React.Component {
     })
   }
   componentDidMount() {
-    if (
-      this.props.data.isAuthenticated
-    ) {
       this.syncData();
     }
-  }
   render() {
     return (<main className="column">
       <Helmet>
@@ -49,7 +46,8 @@ class AsthraAppMain extends React.Component {
         {/* <link rel="favicon" href="https://picsum.photos/256/256" type="image/svg" /> */}
       </Helmet>
       <AsthraContext.Provider value={this.state}>
-
+      <BrowserRouter>
+    <ScrollToTop />
         <Routes>
           <Route path="/" element={<IndexTemplate />}>
             <Route index element={<Home />} />
@@ -69,11 +67,12 @@ class AsthraAppMain extends React.Component {
             
             <Route path="/tickets" element={<MyTickets />} />
             <Route path="/register/:code" element={<RegisterForm />} />
-            
+
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </BrowserRouter>
       </AsthraContext.Provider>
     </main>
     )
