@@ -79,9 +79,7 @@ function RegisterForm() {
     );
   } else {
     return loginWithRedirect({
-      authorizationParams: {
         redirect_uri: window.location.href
-      }
     });
   }
 }

@@ -147,9 +147,7 @@ export default function Navbar() {
                     className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                     onClick={() =>
                       loginWithRedirect({
-                        authorizationParams: {
                           redirect_uri: window.location.href,
-                        },
                       })
                     }
                   >
