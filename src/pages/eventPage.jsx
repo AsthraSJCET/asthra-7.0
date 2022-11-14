@@ -37,6 +37,7 @@ const Capture = () => {
     <>
       {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
+            <div className="p-5 lg:pl-20 lg:pr-20 pt-8 mx-auto bg-black">
           <div className="lg:pl-20 lg:pr-20">
             <div className="flex justify-between flex-row">
               <h1 className={"lg:text-5xl text-3xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
@@ -105,6 +106,7 @@ const Capture = () => {
             </div>
           </div>
           <div>
+          </div>
           </div>
         </>}
       </>

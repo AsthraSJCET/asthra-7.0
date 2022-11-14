@@ -3,19 +3,19 @@ import { NavLink, useLocation } from "react-router-dom";
 
 
 function MainTabs() {
-let { pathname } = useLocation()
+let { pathname } = useLocation();
+
   return (
     <div className="sticky z-10 inset-x-0 top-0 backdrop-blur-xl bg-black/50 mb-5">
       <div className="flex z-10 flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0">
         <NavLink
           to="/workshops"
-          isActive = {()=>["workshops", "/"].includes(pathname)}
           className={({ isActive }) =>
-            isActive
+            isActive || pathname === '/'
               ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
           }
-        >
+        end>
           WORKSHOPS
         </NavLink>
         <NavLink

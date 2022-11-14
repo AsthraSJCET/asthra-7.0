@@ -1,12 +1,10 @@
 import React from "react";
-import { IndexTemplate } from "./pages/template";
+import { IndexTemplate,ListPageTemplate } from "./pages/template";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/eventPage";
-import Events from "./components/Events";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Helmet } from 'react-helmet'
-import MainTabs from "./components/MainTabs"
 import RegisterForm from "./components/RegisterForm"
 import { AsthraContext } from "./etc/context";
 import Home from "./pages/Home";
@@ -42,10 +40,10 @@ function App() {
                     <Route path="/ambassador" element={<></>} />
                     <Route path="/contact" element={<></>} />
 
-                    <Route path="/workshops" element={<>< MainTabs /><Events eventType="workshop" /></>} />
-                    <Route path="/competitions" element={<>< MainTabs /><Events eventType="competition" /></>} />
-                    <Route path="/events" element={<>< MainTabs /><Events eventType="event" /></>} />
-                    <Route path="/talks" element={<Events eventType="talks" />} />
+                    <Route path="/workshops" element={<><ListPageTemplate page="workshop" /></>} />
+                    <Route path="/competitions" element={<><ListPageTemplate page="competition" /></>} />
+                    <Route path="/events" element={<><ListPageTemplate page="event" /></>} />
+                    <Route path="/talk" element={<><ListPageTemplate page="talk" /></>} />
                     <Route path="/workshop/:code" element={<Capture />} />
                     <Route path="/competition/:code" element={<Capture />} />
                     <Route path="/tickets" element={<MyTickets />} />
@@ -64,7 +62,7 @@ function App() {
   } else {
     return (
       <div className="text-white">Loading...
-      <Loader/>
+        <Loader />
       </div>
     )
   }

@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav id="navbarFocus" className="z-1000 flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
+      <nav id="navbarFocus" className="flex flex-wrap items-center justify-between px-2 pt-5 lg:pt-10 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
             <NavLink
@@ -38,7 +38,7 @@ export default function Navbar() {
           <div
             className={
               "fixed p-4 z-40 top-0 left-0 right-0 transition h-screen flex flex-grow justify-left items-center bg-[#CCFF00]" +
-              (navbarOpen ? " flex" : " hidden")
+              (navbarOpen ? " " : " hidden")
             }
             id="example-navbar-danger"
           >
