@@ -4,8 +4,7 @@ import { publicAPI } from "../etc/api";
 import Ticket from "../components/Ticket"
 import Loader from "../lib/Loader";
 
-
-export default function MyTickets() {
+function MyTickets() {
     let [data, setData] = useState([]);
     let [loading, setLoading] = useState(true);
     let [error, setError] = useState(false);
@@ -35,7 +34,7 @@ export default function MyTickets() {
                 error ? <div className="text-white">An error occured</div> :
                     <div className="grid grid-cols-2 align-center">
                         {data.map((data, key) => {
-                            return (<div className="m-8 max-w-md"><Ticket key={key} UserName={context_.user.name} EventName={data.name} Date={data.date} Time={data.time} Venue={data.venue} /></div>)
+                            return (<div className="m-8 max-w-md"><Ticket data={data} user_data={context_} /></div>)
                         })}
                     </div>}
             </>
@@ -44,3 +43,6 @@ export default function MyTickets() {
         </>
     )
 }
+
+
+export default MyTickets

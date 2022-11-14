@@ -60,7 +60,7 @@ export default function Navbar() {
               {isAuthenticated ? (
                 <li className="nav-item">
                   <NavLink
-                    to={"/tickets"}
+                    to="/tickets"
                     onClick={trigger}
                     className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                   >
