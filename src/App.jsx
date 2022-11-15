@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import MyTickets from "./pages/tickets";
 import Loader from "./lib/Loader";
 import { publicAPI } from "./etc/api";
+import Team from "./pages/team";
 
 class AsthraAppMain extends React.Component {
   constructor(props) {
@@ -69,9 +70,10 @@ class AsthraAppMain extends React.Component {
 
               <Route path="/tickets" element={<MyTickets />} />
               <Route path="/register/:code" element={<RegisterForm />} />
-
+              
               <Route path="*" element={<NotFound />} />
             </Route>
+            <Route path="/team" element={<Team/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
