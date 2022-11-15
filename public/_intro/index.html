@@ -53,7 +53,7 @@
 
     <div id="stage">
         <div class="main-bg">
-            <a href="#main">Skip</a>
+            <a style="display: none ;" href="#main">Skip</a>
             <img src="/_intro/Planet.png" alt="" />
         </div>
 
@@ -125,22 +125,22 @@
             <h1>Now, the time has come to restore order within the realm.</h1>
         </div>
     </div>
-
-    <div class="spacer">
-    </div>
     <div class="spacer">
         <div id="pin3" class="pin">
             <h1>With the creators joining forces, we are taking a voyage into the future</h1>
         </div>
     </div>
-
     <div id="main" class="spacer">
         <div id="pin4" class="pin">
             <h1>Gear yourselves up to witness the <b>Asthraverse</b> </h1>
         </div>
     </div>
-    <div></div>
+    <div class="spacer"></div>
     <script>
+        var audio = new Audio('/_intro/22.mp3');
+        audio.loop = false;
+        audio.volume = 1;
+    
         var tlpin1 = new TimelineMax();
         tlpin1
             .to("#pin1", 100, {
@@ -183,22 +183,20 @@
             .setTween(tlpin3).setPin("#pin3", { pushFollowers: false })
             //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
             .addTo(controller);
+
         var tlpin4 = new TimelineMax();
-        tlpin
-            .to("#pin3", 100, {
+        tlpin4
+            .to("#pin4", 100, {
                 opacity: 1
             })
-            .to("#pin3", 600, {
+            .to("#pin4", 600, {
                 opacity: 1
-            }).to("#pin3", 100, {
+            }).to("#pin4", 100, {
                 opacity: 0,
             });
         var scene4 = new ScrollMagic.Scene({ triggerElement: "#pin4", duration: 800 })
             .on('enter', function () {
-                var audio = new Audio('/_intro/22.mp3');
-                audio.loop = false;
-                audio.volume = 1;
-                audio.pause();
+               audio.pause();
             })
             .setTween(tlpin4).setPin("#pin4", { pushFollowers: false })
             //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
@@ -219,9 +217,6 @@
             triggerElement: "#stage",
             duration: 500,
         }).on('enter', function () {
-            var audio = new Audio('/_intro/22.mp3');
-            audio.loop = false;
-            audio.volume = 1;
             audio.play();
         })
             //.addIndicators({ colorTrigger: "white", colorStart: "white", colorEnd: "white"})
