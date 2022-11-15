@@ -5,24 +5,24 @@ function MainTabs() {
   let { pathname } = useLocation();
 
   return (
-    <div className="sticky z-10 inset-x-0 top-0 bg-black">
+    <div id="mtabs" className="sticky z-10 inset-x-0 top-0 bg-black">
       <div className="flex z-10 flex-row justify-start whitespace-nowrap overflow-auto scrollbar-hide mx-0">
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive || pathname === "/"
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
           }
           end
         >
-          All
+          ALL
         </NavLink>
         <NavLink
           to="/workshops"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-5 my-4 cursor-pointer"
           }
           end
@@ -33,7 +33,7 @@ function MainTabs() {
           to="/competitions"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
           }
         >
@@ -43,7 +43,7 @@ function MainTabs() {
           to="/expo"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
           }
         >
@@ -53,7 +53,7 @@ function MainTabs() {
           to="/events"
           className={({ isActive }) =>
             isActive
-              ? "text-white font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-4 cursor-pointer"
               : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
           }
         >
@@ -61,7 +61,8 @@ function MainTabs() {
         </NavLink>
       </div>
       <div className="lg:mx-10">
-        <hr />
+        
+        <div className="w-full bg-gray-100/20 h-0.5"></div>
       </div>
     </div>
   );

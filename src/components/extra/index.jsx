@@ -25,14 +25,15 @@ function Hero() {
 
                     <h1 className="text-6xl lg:text-8xl font-bold mb-8 text-white font-spaceGrotesk">THE FUTURE IS <br /> LOOKING</h1>
                     <div className="flex">
-                        <NavLink to="/" className="  p-4 mr-2 text-black font-bold font-spaceGrotesk bg-lime-400">EXPLORE</NavLink>
+                        <a href="#mtabs" className="  px-8 py-5 mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
+                        {/* <NavLink to="#about" className="  ">REGISTER</NavLink> */}
 
                         {!isAuthenticated ?
                             <NavLink onClick={() =>
                                 loginWithRedirect({
                                     redirect_uri: window.location.href,
                                 })
-                            } className="  p-4 ml-2 text-white font-bold font-spaceGrotesk bg-zinc-800 text-white">REGISTER</NavLink> : <>
+                            } className=" px-8 py-5 mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
                                 <p>Welcome, <b>{user.name} </b></p>
                             </>}
 

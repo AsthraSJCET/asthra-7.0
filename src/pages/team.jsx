@@ -4,14 +4,31 @@ import Navbar from "../components/Navbar";
 export default function Team() {
     let coordinators = [
         {
+            name: "Prof. Nidhish Mathew",
+            image: "/team-images/nidhish.jpg",
+            lin_url: "",
+            desig: "Faculty Co-ordinator"
+        },
+        {
+            name: "Prof. Kishore Sebastian",
+            image: "/team-images/kishore.jpg",
+            lin_url: "",
+            desig: "Faculty Co-ordinator"
+
+        },
+        {
             name: "Abin Soji",
             image: "/team-images/abin_soji.png",
-            lin_url: ""
+            lin_url: "",
+            desig: "Student Co-ordinator"
+
         },
         {
             name: "Albin James",
             image: "/team-images/albin_james.png",
-            lin_url: ""
+            lin_url: "",
+            desig: "Student Co-ordinator"
+
 
         }]
 
@@ -50,17 +67,19 @@ export default function Team() {
             <div className="container px-6 mx-auto">
                 <Navbar />
                 <section className="mb-32 text-gray-800 text-center">
-                    <h2 className="lg:text-7xl text-5xl text-white text-left font-spaceGrotesk font-bold mb-24 mt-12">The Asthra Web Team</h2>
+                    <h2 className="lg:text-7xl text-5xl text-white text-left font-spaceGrotesk font-bold mb-24 mt-12">Team Asthra</h2>
                     <h3 className="text-white uppercase text-left  mb-12 text-semibold text-3xl">
-                        Web team coordinators
+                        Core Co-ordinators
                     </h3>
-                    <div className="grid md:grid-cols-2 gap-x-6 lg:gap-x-12 mb-20">
+                    
+
+                    <div className="grid md:grid-cols-4 gap-x-1 lg:gap-x-1">
                         {coordinators.map((team, key) => {
                             return (
-                                <div className="mb-6 lg:m-12 lg:mb-8">
+                                <div className="mb-6 lg:m-4 lg:mb-8">
                                     <div className="bg-white block shadow-lg">
                                         <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                            <img src={team.image} className="w-full" />
+                                            <img src={team.image} className="w-full" href={team.lin_url}/>
                                             <a href={team.lin_url}>
                                                 <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                             </a>
@@ -69,15 +88,15 @@ export default function Team() {
                                         </path>
                                     </svg> */}
                                         </div>
-                                        <div className="p-6 bg-[#ccff00]">
-                                            <h5 className="text-3xl font-bold mb-2">{team.name}</h5>
-                                            <p className="text-gray-500 text-2xl mb-4">Coordinator</p>
+                                        <div className="p-6">
+                                            <h5 className="text-2xl font-bold mb-4">{team.name}</h5>
+                                            <p className="text-gray-500 mb-4">{team.desig}</p>
                                             <ul className="list-inside flex mx-auto justify-center">
-                                                <a href="#!" className="px-2">
-                                                    {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="w-4 h-4 text-blue-600">
+                                                {/* <a href={team.lin_url} className="px-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="w-4 h-4 text-blue-600">
                                                 <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-                                            </svg> */}
-                                                </a>
+                                            </svg>
+                                                </a> */}
                                                 <a href="#!" className="px-2">
                                                     {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 text-blue-600">
                                                 <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
@@ -95,6 +114,9 @@ export default function Team() {
                             )
                         })}
                     </div>
+
+
+
                     <h3 className="text-white mb-20 text-left uppercase font-spaceGrotesk text-semibold text-3xl">
                         Web team
                     </h3>
@@ -116,6 +138,9 @@ export default function Team() {
                                         <div className="p-6">
                                             <h5 className="text-2xl font-bold mb-4">{team.name}</h5>
                                             <p className="text-gray-500 mb-4">Developer</p>
+                                            <a href={team.lin_url}>
+                                                <i className="fa-brands fa-linkedin"></i>
+                                            </a>
                                             <ul className="list-inside flex mx-auto justify-center">
                                                 {/* <a href={team.lin_url} className="px-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="w-4 h-4 text-blue-600">

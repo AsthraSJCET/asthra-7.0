@@ -29,11 +29,11 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
             src={`/event-images/${data.code}.png`}
             alt=""
           />
-          <div className="absolute bottom-4 right-4 bg-black/20 backdrop-blur-md px-4 py-1 rounded-xl">
+          <div className="absolute bottom-0 right-0 bg-white/20 tracking-tight backdrop-blur-md px-4 py-1 bglime-400 font-spaceGrotesk">
           {(data.code.substring(6,7) !== "W" ? "Included with AsthraPass" : "")}
             
           </div>
-          <div className="circle h-24 w-24 bg-white/30 absolute top-1/2 left-1/2 img-hover-arrow flex justify-center items-center">
+          <div className="circle h-24 w-24 bg-lime-400/70 absolute top-1/2 left-1/2 img-hover-arrow flex justify-center items-center">
            <svg className="absolute top-1/2 left-1/2 arrow-hover h-12"  viewBox="0 0 21 21"  xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 6)"><path d="m8.5 7.5v-7h-7"/><path d="m8.5.5-8 8"/></g></svg> 
           </div>
           </div>
@@ -41,13 +41,22 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
             <h1 className="text-white text-2xl md:text-3xl uppercase font-bold mb-2 font-spaceGrotesk md:truncate ">
               {eventName}
             </h1>
-            <h5 className="text-white font-semibold mb-1 font-spaceGrotesk">
+            <h5 className="text-gray-300 font-medium text-lg mb-1 font-spaceGrotesk">
               {formattedDate}, {time}
             </h5>
             
-            <p className="font-sans">
+            {/* <p className="font-sans">
               {(!active ? "Registrations open" : "Registration closed")}
+            </p> */}
+
+
+            {data.event_price_pool !== 0 && 
+            <p className="text-gray-500 text-md font-spaceGrotesk">
+              Prizes worth&nbsp;
+              {
+              data.event_price_pool}
             </p>
+            }
 
           </div>
         </div>

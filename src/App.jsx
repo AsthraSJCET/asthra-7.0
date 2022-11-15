@@ -8,10 +8,12 @@ import { Helmet } from 'react-helmet'
 import RegisterForm from "./components/RegisterForm"
 import { AsthraContext } from "./etc/context";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import MyTickets from "./pages/tickets";
 import Loader from "./lib/Loader";
 import { publicAPI } from "./etc/api";
 import Team from "./pages/team";
+import Contact from "./pages/Contact";
 
 class AsthraAppMain extends React.Component {
   constructor(props) {
@@ -54,9 +56,9 @@ class AsthraAppMain extends React.Component {
           <Routes>
             <Route path="/" element={<IndexTemplate />}>
               <Route index element={<Home />} />
-              <Route path="/about" element={<></>} />
-              <Route path="/ambassador" element={<></>} />
-              <Route path="/contact" element={<></>} />
+              <Route path="/about" element={<About></About>} />
+              {/* <Route path="/ambassador" element={<></>} /> */}
+              <Route path="/contact" element={<Contact></Contact>} />
 
               <Route path="/workshops" element={<><ListPageTemplate page="workshop" /></>} />
               <Route path="/competitions" element={<><ListPageTemplate page="competition" /></>} />

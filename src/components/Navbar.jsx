@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="container m-auto">
+      <div className=" m-auto">
         <nav className="flex p-4 pb-0">
           <div className="grow">
             <Link
@@ -22,7 +22,7 @@ export default function Navbar() {
               <img
                 alt="Asthra 7.0"
                 src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
-                className="h-24 lg:h-48"
+                className="h-24 lg:h-32"
               />
             </Link>
           </div>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <span className="">COMPETITIONS</span>
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 onClick={trigger}
                 className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
@@ -139,7 +139,7 @@ export default function Navbar() {
                 <i className="text-lg leading-lg opacity-75"></i>
                 <span className="">CAMPUS AMBASSADORS</span>
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink
                 onClick={trigger}

@@ -4,6 +4,7 @@ function ContactInfo({ data }) {
   return (
     <>
 
+<a href={"tel:\+91" + data.cordinator1_contact}>
       <div>
         <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-900 px-5 py-5 rounded-md hover:bg-white hover:text-black">
           <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
@@ -19,11 +20,12 @@ function ContactInfo({ data }) {
           </div>
         </div>
       </div>
+      </a>
     
 
 
       {data.cordinator2_name !== "" &&
-
+      <a href={"tel:\+91" + data.cordinator2_contact}>
         <div>
           <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-900 px-5 py-5 rounded-md hover:bg-white hover:text-black">
             <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
@@ -38,11 +40,12 @@ function ContactInfo({ data }) {
             </div>
           </div>
         </div>
+        </a>
       }
 
 
       {data.cordinator3_name !== "" &&
-
+      <a href={"tel:\+91" + data.cordinator3_contact}>
         <div>
           <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-900 px-5 py-5 rounded-md hover:bg-white hover:text-black">
             <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
@@ -57,6 +60,7 @@ function ContactInfo({ data }) {
             </div>
           </div>
         </div>
+        </a>
       }
     </>
   )
