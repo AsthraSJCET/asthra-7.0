@@ -8,6 +8,7 @@ import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import ScrollToTop from "../lib/ScrollToTop";
 
 function IndexTemplate() {
   const search = useLocation().search;
@@ -24,6 +25,7 @@ function IndexTemplate() {
   return (
     <>
       <ToastContainer autoClose={false} />
+      <ScrollToTop />
       {cookies.introViewed && cookies.introViewed !== null ? <></> : <Intro />}
       <Navbar />
       <motion.div

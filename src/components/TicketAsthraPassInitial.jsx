@@ -9,26 +9,26 @@ function TicketAsthraPassInitial({ data, user_data }) {
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] uppercase">
             {data.event_type}
           </h4>
-          <h1 className="font-bold font-spaceGrotesk text-3xl lg:text-4xl">
+          <h2 className="font-bold font-spaceGrotesk text-3xl lg:text-4xl">
             {data.name}
-          </h1>
+          </h2>
         </div>
 
         <div className="pl-10 pr-10 pt-5">
           <h4 className="font-spaceGrotesk font-medium text-sm lg:text-lg text-[#5c5c5c]">VENUE</h4>
-          <h1 className="font-medium font-spaceGrotesk text-2xl lg:text-2xl tracking-tight">
+          <h2 className="font-medium font-spaceGrotesk text-2xl lg:text-2xl tracking-tight">
             {data.venue}
-          </h1>
+          </h2>
         </div>
         <div className="pl-10 pr-10 pt-5 pb-5">
           <h4 className="font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] font-medium">
             DATE AND TIME
           </h4>
-          <h1 className="font-medium font-spaceGrotesk text-2xl mb-0 lg:text-2xl">
+          <h2 className="font-medium font-spaceGrotesk text-2xl mb-0 lg:text-2xl">
             {data.date}, &nbsp;
             {data.time}
-          </h1>
-          <h1 className="font-medium font-spaceGrotesk mt-0 text-md lg:text-2xl"> </h1>
+          </h2>
+          <h2 className="font-medium font-spaceGrotesk mt-0 text-md lg:text-2xl"> </h2>
         </div>
       </div>
       <div className="bg-zinc-800 rounded-b-lg w-full pb-8 lg:mr-40">
@@ -41,7 +41,7 @@ function TicketAsthraPassInitial({ data, user_data }) {
             </radialGradient>
           </defs>
         </svg>
-        <h1 className="pl-8 pr-8 text-4xl font-spaceGrotesk text-white font-medium pt-4 max-w-sm tracking-tight">Get all-access with AsthraPass!</h1>
+        <h2 className="pl-8 pr-8 text-4xl font-spaceGrotesk text-white font-medium pt-4 max-w-sm tracking-tight">Get all-access with AsthraPass!</h2>
         <p className="pl-8 pr-8  pt-2 pb-4 text-gray-300 text-md">With AsthraPass, you can now get access to all events (excluding workshops) for just ₹ 300! Hurry up now to save 20% on the deal!</p>
         <p className="pl-8 pr-8  pb-4 text-gray-300">*This event  is included with
           <a className="text-blue-300 hover:text-blue-500 font-bold" href="#a"> AsthraPass</a>

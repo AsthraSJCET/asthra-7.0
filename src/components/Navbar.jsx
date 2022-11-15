@@ -1,10 +1,10 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavLink } from "react-router-dom";
-import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link, NavLink } from "react-router-dom";
+import { Bars2Icon, XMarkIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
-  let { isAuthenticated, user, logout, loginWithRedirect } = useAuth0();
+  let { isAuthenticated,logout, loginWithRedirect } = useAuth0();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   let trigger = () => {
@@ -19,20 +19,18 @@ export default function Navbar() {
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
-            <NavLink
+            <Link
               className="font-bold leading-relaxed inline-flex mr-4 py-2 whitespace-nowrap uppercase text-2xl text-white"
               to={"/"}
             >
               <img
                 alt="Asthra 7.0"
                 src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
-                className="h-20"
+                className="h-24"
               />
-            </NavLink>
+            </Link>
             <div className="inline-flex">
-              <p className="text-white p-4 font-sans font-light">
-                {isAuthenticated ? user.given_name : ""}
-              </p>
+              {isAuthenticated ? <Link to="profile"><UserCircleIcon /></Link> : ""}
               <button
                 className={
                   "text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" +
@@ -147,7 +145,7 @@ export default function Navbar() {
                     className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
                     onClick={() =>
                       loginWithRedirect({
-                          redirect_uri: window.location.href,
+                        redirect_uri: window.location.href,
                       })
                     }
                   >

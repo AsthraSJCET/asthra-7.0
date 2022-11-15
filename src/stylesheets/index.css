@@ -12,6 +12,15 @@
 
 body {
   background-color: black;
+  user-select: text;
+}
+::selection {
+  color: white;
+  background: grey;
+}
+h1::selection {
+  color: #CCFF00;
+  background: transparent;
 }
 
 .img-hover-arrow {
@@ -35,13 +44,53 @@ body {
 }
 
 .home-cards-container:hover .home-card:not(:hover) {
-  opacity: 0.9;
+  opacity: 0.8;
   transition-duration: 0.5s;
 }
 
 .hero {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url('https://prytek.com/wp-content/uploads/2021/03/hacker-you-greenpaper.jpeg');
   background-position: center;
-  background-size: 100%,100%;
-  background-attachment: fixed,scroll;
+  background-size: 100%, 100%;
+  background-attachment: fixed, scroll;
+}
+
+/* SELECT */
+.home-card {
+  position: relative;
+  user-select: none;
+}
+
+.home-cards-container:hover .home-card:hover::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #CCFF00, #CCFF00);
+  background-size: 200% 200%;
+  animation: animateGlow 10s ease infinite;
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

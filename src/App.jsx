@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import MyTickets from "./pages/tickets";
 import Loader from "./lib/Loader";
 import { publicAPI } from "./etc/api";
-import ScrollToTop from "./lib/ScrollToTop";
 
 class AsthraAppMain extends React.Component {
   constructor(props) {
@@ -51,7 +50,6 @@ class AsthraAppMain extends React.Component {
       </Helmet>
       <AsthraContext.Provider value={this.state}>
         <BrowserRouter>
-          <ScrollToTop />
           <Routes>
             <Route path="/" element={<IndexTemplate />}>
               <Route index element={<Home />} />

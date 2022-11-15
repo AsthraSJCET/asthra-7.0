@@ -48,26 +48,32 @@ function AllEvents(props) {
     <>
       {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
-          <select value={typefilter} onChange={changeTypeFilter}>
+          <div class="flex p-1"> <select
+            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            value={typefilter} onChange={changeTypeFilter}>
             <option value="">ALL TYPE</option>
             <option value="workshop">WORKSHOPS</option>
             <option value="event">EVENTS</option>
             <option value="exhibition">EXPO</option>
             <option value="competition">COMPETITIONS</option>
           </select>
-          <select value={deptfilter} onChange={changeDeptFilter}>
-            <option value="">ALL Departments Events</option>
-            <option value="MEC">Mechaura</option>
-            <option value="RAD">Radiance </option>
-            <option value="AAK">Aakrti</option>
-            <option value="SPE">Spectra </option>
-            <option value="EME">Emerge</option>
-            <option value="YAN">Yanthrika</option>
-            <option value="AZT">Aztec Allure</option>
-            <option value="CRE">Creedorian </option>
-            <option value="TRI">Trilok</option>
-            <option value="FEN">Fenstra</option>
-          </select>
+            <hr />
+            <select
+              className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              value={deptfilter} onChange={changeDeptFilter}>
+              <option value="">ALL Departments Events</option>
+              <option value="MEC">Mechaura</option>
+              <option value="RAD">Radiance </option>
+              <option value="AAK">Aakrti</option>
+              <option value="SPE">Spectra </option>
+              <option value="EME">Emerge</option>
+              <option value="YAN">Yanthrika</option>
+              <option value="AZT">Aztec Allure</option>
+              <option value="CRE">Creedorian </option>
+              <option value="TRI">Trilok</option>
+              <option value="FEN">Fenstra</option>
+            </select>
+          </div>
           <motion.div
             variants={container}
             initial="hidden"
@@ -75,7 +81,7 @@ function AllEvents(props) {
             className="bg-black grid grid-rows-2 items-stretch lg:grid-cols-3 home-cards-container">
             {data.filter(event => {
               if (deptfilter !== '') {
-                return event.code.substring(3,6) === deptfilter
+                return event.code.substring(3, 6) === deptfilter
               }
               return event
             }).filter(event => {
