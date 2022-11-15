@@ -17,7 +17,7 @@ function Intro() {
 
 function Hero() {
 
-    let { loginWithRedirect, isAuthenticated } = useAuth0();
+    let { loginWithRedirect, isAuthenticated, user } = useAuth0();
     return (<>
         <div className="hero w-full overflow-hidden bg-no-repeat" style={{ height: "80vh", backgroundRepeat: "no-repeat" }}>
             <div className="container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
@@ -32,7 +32,9 @@ function Hero() {
                                 loginWithRedirect({
                                     redirect_uri: window.location.href,
                                 })
-                            } className="  p-4 ml-2 text-white font-bold font-spaceGrotesk bg-zinc-800 text-white">REGISTER</NavLink> : null}
+                            } className="  p-4 ml-2 text-white font-bold font-spaceGrotesk bg-zinc-800 text-white">REGISTER</NavLink> : <>
+                                <p>Welcome, <b>{user.name} </b></p>
+                            </>}
 
                     </div>
                 </div>

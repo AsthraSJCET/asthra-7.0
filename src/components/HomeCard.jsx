@@ -20,23 +20,27 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
   return (
     <motion.div variants={item}>
     <NavLink to={suspended === 0 ?`${index}`: "#"} onContextMenu={(e)=> e.preventDefault()}>
-      <div className="home-card h-full pt-5 pb-5 lg:pl-5 lg:pr-5 lg:w-auto w-full" style={{width:'88vw',maxWidth:'100%'}}>
-        <div className={"shadow-lg cursor-pointer duration-200 "  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-none")}>
-          {!suspended === 0?( <div className="absolute bg-white/50 text-black p-2 ">
-            Cancelled
-          </div>): <></>}
-          <img className="w-full p-0 m-0"
+      <div className="home-card h-full pt-5 pb-5 lg:pl-5 lg:pr-5 lg:w-auto w-full duration-300 hover:scale-105 text-white " style={{width:'88vw',maxWidth:'100%'}}>
+
+        <div className={"shadow-lg hover:bg-lime-400 hover:!text-black cursor-pointer"  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-none")}>
+          {!suspended === 0?( <div className="absolute bg-white/50 text-black p-2 "> Cancelled </div>): <></>}
+          <div className="bg-black relative">
+            <img className="m-0 p-0 w-full"
             src={`/event-images/${data.code}.png`}
             alt=""
           />
+          <div className="circle h-24 w-24 bg-white/30 absolute top-1/2 left-1/2 img-hover-arrow flex justify-center items-center">
+           <svg className="absolute top-1/2 left-1/2 arrow-hover h-12"  viewBox="0 0 21 21"  xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 6)"><path d="m8.5 7.5v-7h-7"/><path d="m8.5.5-8 8"/></g></svg> 
+          </div>
+          </div>
           <div className="p-5 lg:p-6">
-            <h1 className="text-black text-2xl md:text-3xl  font-bold mb-2 font-spaceGrotesk md:truncate ">
+            <h1 className="text-white text-2xl md:text-3xl  font-bold mb-2 font-spaceGrotesk md:truncate ">
               {eventName}
             </h1>
-            <h5 className="text-black font-semibold mb-1 font-spaceGrotesk">
+            <h5 className="text-white font-semibold mb-1 font-spaceGrotesk">
               {formattedDate}
             </h5>
-            <h6 className="text-black font-semibold font-spaceGrotesk">
+            <h6 className="text-white font-semibold font-spaceGrotesk">
               {time}
             </h6>
             <p className="font-sans">

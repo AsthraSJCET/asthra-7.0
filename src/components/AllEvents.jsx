@@ -48,7 +48,7 @@ function AllEvents(props) {
     <>
       {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
-          <div class="flex p-1"> <select
+          <div className="flex p-1"> <select
            className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"
             value={typefilter} onChange={changeTypeFilter}>
             <option value="">ALL TYPE</option>
