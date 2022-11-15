@@ -114,10 +114,10 @@ export default function Navbar() {
               <NavLink
                 onClick={trigger}
                 className="flex items-center py-3 px-12 bg-[#CCFF00] justify-left uppercase font-bold leading-snug text-black hover:opacity-75"
-                to="/talks"
+                to="/events"
               >
                 <i className="text-lg leading-lg opacity-75"></i>
-                <span className="">TALKS</span>
+                <span className="">EVENTS</span>
               </NavLink>
             </li>
             <li className="nav-item">

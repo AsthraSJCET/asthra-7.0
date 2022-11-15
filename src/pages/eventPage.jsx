@@ -9,6 +9,7 @@ import Loader from "../lib/Loader";
 import TicketWorkshopInitial from "../components/TicketWorkshopInitial";
 import Ticket from "../components/Ticket";
 import { ContactInfo } from "../components/rajat/contact";
+import ScrollToTop from "../lib/ScrollToTop";
 
 
 const Capture = () => {
@@ -46,6 +47,7 @@ const Capture = () => {
     <>
       {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
+        <ScrollToTop />
           <div className="p-5 lg:pl-20 lg:pr-20 pt-8 mx-auto bg-black">
             <div className="lg:pl-20 lg:pr-20">
               <div className="flex justify-between flex-row">

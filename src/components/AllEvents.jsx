@@ -21,7 +21,7 @@ function AllEvents(props) {
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(false);
 
-  let [typefilter, setTypefilter] = useState('');
+  // let [typefilter, setTypefilter] = useState('');
   let [deptfilter, setDeptfilter] = useState('');
 
 
@@ -41,14 +41,15 @@ function AllEvents(props) {
 
   }, [props.eventType]);
 
-  const changeTypeFilter = (e) => { setTypefilter(e.target.value) };
+  // const changeTypeFilter = (e) => { setTypefilter(e.target.value) };
   const changeDeptFilter = (e) => { setDeptfilter(e.target.value) };
 
   return (
     <>
       {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
-          <div className="flex p-1"> <select
+          <div className="flex p-1"> 
+          {/* <select
            className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"
             value={typefilter} onChange={changeTypeFilter}>
             <option value="">ALL TYPE</option>
@@ -57,7 +58,7 @@ function AllEvents(props) {
             <option value="exhibition">EXPO</option>
             <option value="competition">COMPETITIONS</option>
           </select>
-            <hr />
+            */}
             <select
               className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"
               value={deptfilter} onChange={changeDeptFilter}>
@@ -84,12 +85,14 @@ function AllEvents(props) {
                 return event.code.substring(3, 6) === deptfilter
               }
               return event
-            }).filter(event => {
-              if (typefilter !== '') {
-                return event.event_type === typefilter
-              }
-              return event
-            }).map((data, key) => {
+            })
+            // .filter(event => {
+            //   if (typefilter !== '') {
+            //     return event.event_type === typefilter
+            //   }
+            //   return event
+            // })
+            .map((data, key) => {
               return (
                 <HomeCard
                   key={key}
