@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="bg-teal-900">
-          <p className="py-3 text-center text-white"> Made with 💗  by <a href="/" className="font-bold text-blue-300 hover:text-black">Team Asthra</a></p>
+          <p className="py-3 text-center text-white"> Made with 💗  by <a href="/team" className="font-bold text-blue-300 hover:text-black">Team Asthra</a></p>
         </div>
 
       </footer>
