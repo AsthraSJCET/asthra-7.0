@@ -139,8 +139,6 @@
             <h1>Gear yourselves up to witness the <b>Asthraverse</b> </h1>
         </div>
     </div>
-    <div class="spacer">
-    </div>
     <div></div>
     <script>
         var tlpin1 = new TimelineMax();
@@ -196,6 +194,12 @@
                 opacity: 0,
             });
         var scene4 = new ScrollMagic.Scene({ triggerElement: "#pin4", duration: 800 })
+            .on('enter', function () {
+                var audio = new Audio('/_intro/22.mp3');
+                audio.loop = false;
+                audio.volume = 1;
+                audio.pause();
+            })
             .setTween(tlpin4).setPin("#pin4", { pushFollowers: false })
             //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
             .addTo(controller);
@@ -216,7 +220,7 @@
             duration: 500,
         }).on('enter', function () {
             var audio = new Audio('/_intro/22.mp3');
-            audio.loop = false;  
+            audio.loop = false;
             audio.volume = 1;
             audio.play();
         })
