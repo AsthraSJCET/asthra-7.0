@@ -6,14 +6,15 @@ import Footer from "../components/FooterFinal";
 import Navbar from "../components/Navbar";
 import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import ScrollToTop from "../lib/ScrollToTop";
 
 function IndexTemplate() {
   const search = useLocation().search;
   const backend = new URLSearchParams(search).get('backend');
-  const [cookies] = useCookies(['introViewed']);
+  const [intro, setIntro] = useState(true)
+  const [cookies, setCookie] = useCookies(['introViewed']);
   const { pathname } = useLocation();
   useEffect(() => {
     if (backend && backend !== null) {
@@ -26,10 +27,14 @@ function IndexTemplate() {
     <>
       <ToastContainer autoClose={false} />
       <ScrollToTop />
-      {cookies.introViewed && cookies.introViewed !== null ? <></> : <Intro />}
+      {cookies.introViewed && cookies.introViewed !== null ? <></> : <>{intro ? <Intro /> : null}</>}
       <Navbar />
-      <motion.div
+      <motion.div onclid
         key={pathname}
+        onClick={() => {
+          setIntro(false);
+          setCookie('introViewed', true);
+        }}
       >
         <Outlet />
       </motion.div>
