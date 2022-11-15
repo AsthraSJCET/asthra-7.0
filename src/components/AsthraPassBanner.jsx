@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export default function AsthraPassBanner() {
   return (
@@ -18,7 +18,7 @@ export default function AsthraPassBanner() {
     <div className="lg:pl-10 ">
       <h1 className="text-white font-bold text-3xl tracking-tight">Get all-access with AsthraPass!</h1>
       <p className="text-gray-300 font-regular text-p mb-2">With AsthraPass, you can now get access to all department events and competitions (excluding workshops) for just ₹ 300! <br /> Hurry up before the deal ends!</p>
-      <a href="#" className="text-lime-400 hover:text-lime-600 font-bold mt-6">GET YOUR ASTHRAPASS NOW
+      <a href="/register/ASTHRA_PASS" className="text-lime-400 hover:text-lime-600 font-bold mt-6">GET YOUR ASTHRAPASS NOW
         
 
       </a>

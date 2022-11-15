@@ -54,9 +54,7 @@ const Capture = () => {
                 <h1 className={"lg:text-5xl text-3xl font-spaceGrotesk text-white font-bold pb-4 tracking-tight"}>
                   {data.name} {data.active ? "" : ` (Registration closed)`}
                 </h1>
-                <p className="sm:hidden lg:text-5xl text-3xl font-spaceGrotesk text-[#CCFF00] font-bold pb-4 tracking-tight">
-                  ₹{data.event_price}
-                </p>
+
               </div>
               <hr className="bg-white mb-4" />
             </div>
@@ -85,6 +83,7 @@ const Capture = () => {
                     {data.desc}
                   </p>
                 </div>
+                {rules !== "NIL" &&
                 <div className="lg:pl-20  py-4 font-spaceGrotesk text-white">
                   <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
                   <div className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
@@ -93,6 +92,7 @@ const Capture = () => {
                     ))}
                   </div>
                 </div>
+                }
                 <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                   <h3 className="font-bold font-mono text-2xl pb-2">CONTACT</h3>
 
@@ -120,6 +120,7 @@ const Capture = () => {
             </div>
 
           </div>
+          {console.log(data)}
         </>}
       </>
       }

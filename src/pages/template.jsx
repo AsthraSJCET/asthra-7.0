@@ -8,6 +8,7 @@ import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import AsthraPassBanner from "../components/AsthraPassBanner";
 // import ScrollToTop from "../lib/ScrollToTop";
 
 
@@ -30,6 +31,7 @@ function IndexTemplate() {
       {/* <ScrollToTop /> */}
       {cookies.introViewed && cookies.introViewed !== null ? <></> : <>{intro ? <Intro /> : null}</>}
       <Navbar />
+      
       <motion.div
         key={pathname}
         onClick={() => {
@@ -47,6 +49,7 @@ function IndexTemplate() {
 function ListPageTemplate({ page }) {
   return (
     <><Hero />
+    
     <div className="py-28">
       <div className="px-4 lg:px-64 sm:px-4 container mx-auto">
 
@@ -56,6 +59,7 @@ function ListPageTemplate({ page }) {
         {/* <DaretoDance /> */}
       </div>
     </div>
+    
     <div className="container p-5  pt-8 mx-auto bg-black">
       <MainTabs /><Events eventType={page} />
     </div></>)
