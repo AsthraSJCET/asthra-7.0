@@ -34,7 +34,7 @@ export default function Navbar() {
               <button
                 className={
                   "text-white p-3 z-50 cursor-pointer text-xl leading-none border border-solid border-transparent rounded block outline-none focus:outline-none" +
-                  (navbarOpen ? "bg-black" : "bg-transparent")
+                  (navbarOpen ? "bg-black lg:fixed" : "bg-transparent")
                 }
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}

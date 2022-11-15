@@ -24,8 +24,8 @@ const Capture = () => {
     publicAPI.get(`/event/${code}`)
       .then((response) => {
         let temp_data = response.data
+        temp_data['event_code'] = temp_data.code;
         if (temp_data.event_price === 0) {
-          temp_data['event_code'] = temp_data.code;
           temp_data['code'] = "ASTHRA_PASS"
         }
         setData(temp_data);
@@ -71,7 +71,7 @@ const Capture = () => {
                   </div>
                 </div>
                 <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
-                  <img className=""
+                  <img className="inline"
                     src={`/event-images/${data.event_code}.png`}
                     alt=""
                   />
