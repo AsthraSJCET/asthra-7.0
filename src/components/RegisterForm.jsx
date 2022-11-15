@@ -27,7 +27,7 @@ function RegisterForm() {
                         id="name"
                         type="text"
                         name="name"
-                        defaultValue={context.asthra_user.name === null ? context.user.name : context.asthra_user.name}
+                        defaultValue={context.asthra_user === null ? context.user.name : context.asthra_user.name}
                         className="focus:outline-none border-b w-full bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500"
                         placeholder="NAME"
                       />
@@ -37,7 +37,7 @@ function RegisterForm() {
                         id="college"
                         type="text"
                         name="college"
-                        defaultValue={context.asthra_user.college}
+                        defaultValue={context.asthra_user?.college}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 my-8"
                         placeholder="COLLEGE"
                       />
@@ -47,7 +47,7 @@ function RegisterForm() {
                         id="phone"
                         type="phone"
                         name="phone"
-                        defaultValue={context.asthra_user.phone}
+                        defaultValue={context.asthra_user?.phone}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                         placeholder="PHONE NO."
                       />
