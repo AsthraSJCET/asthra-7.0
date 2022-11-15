@@ -1,7 +1,5 @@
-@font-face {
-    font-family: MBF;
-    src: url('./mbf.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
@@ -9,7 +7,7 @@ body {
     color: #ccc;
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     /* background: radial-gradient(circle farthest-side, #09214a, #0a0116); */
     background: radial-gradient(circle farthest-side, #09214a, #0a0116),linear-gradient(180deg, #09214a 0%, #292433 51%, #0a0116 75%);
     background-attachment: fixed;
@@ -17,7 +15,7 @@ body {
     background-attachment: scroll;
     background-size: contain;
     cursor: grab;
-    font-family: MBF !important;
+    /* font-family: MBF !important; */
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -73,7 +71,7 @@ body {
 
 .spacer h1 {
     margin: 50px;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
 }
 

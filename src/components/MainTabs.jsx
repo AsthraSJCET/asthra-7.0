@@ -33,8 +33,8 @@ function MainTabs() {
           to="/competitions"
           className={({ isActive }) =>
             isActive
-              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-8 my-4 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-8 my-4 cursor-pointer"
           }
         >
           COMPETITIONS
@@ -43,8 +43,8 @@ function MainTabs() {
           to="/expo"
           className={({ isActive }) =>
             isActive
-              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-8 my-4 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-8 my-4 cursor-pointer"
           }
         >
           EXPO
@@ -53,8 +53,8 @@ function MainTabs() {
           to="/events"
           className={({ isActive }) =>
             isActive
-              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mx-5 lg:mx-10 my-4 cursor-pointer"
-              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mx-5 my-4 cursor-pointer"
+              ? "text-lime-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl mr-8 lg:mx-10 my-4 cursor-pointer"
+              : "text-zinc-400 font-spaceGrotesk font-bold text-4xl lg:text-5xl lg:mx-10 mr-8 my-4 cursor-pointer"
           }
         >
           EVENTS
