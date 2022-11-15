@@ -49,7 +49,7 @@ function AllEvents(props) {
       {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
           <div class="flex p-1"> <select
-            className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+           className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"
             value={typefilter} onChange={changeTypeFilter}>
             <option value="">ALL TYPE</option>
             <option value="workshop">WORKSHOPS</option>
@@ -59,7 +59,7 @@ function AllEvents(props) {
           </select>
             <hr />
             <select
-              className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"
               value={deptfilter} onChange={changeDeptFilter}>
               <option value="">ALL Departments Events</option>
               <option value="MEC">Mechaura</option>

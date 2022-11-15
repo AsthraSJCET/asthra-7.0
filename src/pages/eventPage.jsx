@@ -8,6 +8,7 @@ import { AsthraContext } from "../etc/context";
 import Loader from "../lib/Loader";
 import TicketWorkshopInitial from "../components/TicketWorkshopInitial";
 import Ticket from "../components/Ticket";
+import { ContactInfo } from "../components/rajat/contact";
 
 
 const Capture = () => {
@@ -77,8 +78,8 @@ const Capture = () => {
                   />
                 </div>
                 <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
-                  <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3>
-                  <p className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
+                  {/* <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3> */}                  
+                  <p className=" pr-4 text-white font-spaceGrotesk text-xl tracking-tight font-semibold">
                     {data.desc}
                   </p>
                 </div>
@@ -91,21 +92,10 @@ const Capture = () => {
                   </div>
                 </div>
                 <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
-                  <h3 className="font-bold font-mono text-2xl pb-6">CONTACT</h3>
+                  <h3 className="font-bold font-mono text-2xl pb-2">CONTACT</h3>
 
-                  <div className="pl-4 pr-4">
-
-                    <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator1_name}</p>
-                    <div className=" pl-2 pr-2  flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator1_contact} &nbsp;</p>
-                      <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator1_email}</p></div>
-
-                    <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator2_name}</p>
-                    <div className=" pl-2 pr-2   flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator2_contact} &nbsp;</p>
-                      <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator2_email}</p></div>
-
-                    <p className=" text-md font-semibold font-spaceGrotesk">{data.cordinator3_name}</p>
-                    <div className=" pl-2 pr-2  flex text-white/60 flex-row"><p className="text-sm font-spaceGrotesk">{data.cordinator3_contact} &nbsp;</p>
-                      <p className="text-sm pb-1 font-spaceGrotesk">{data.cordinator3_email}</p></div>
+                  <div className="pr-4">
+                  <ContactInfo data={data} />
                   </div>
                 </div>
               </div>

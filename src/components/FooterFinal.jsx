@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-zinc-900 font-spaceGrotesk">
+      <footer className="bg-[#1b1b1b] font-spaceGrotesk">
         <div className="mx-auto p-5 pt-10">
           <div className="grid grid-cols-1 lg:grid-cols-6">
 
             <div className="lg:col-span-2 w-full p-8">
               <img className="max-w-full" src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png" alt="" />
-              <p className="text-white">Asthra is the annual technical festival of St. Joseph's College of Engineering and Technology, Palai. With an annual footfall of more than 5,000 visitors and participants, Asthra is one of the biggest inter-college fests in Kerala. Asthra will keep you engrossed in a plethora of professional shows, competitions, lectures and workshops that have a lot to offer to everybody.</p>
+              <p className="text-white">Asthra - The national level technical fest of St. Joseph's College of Engineering and Technology, Palai</p>
             </div>
 
             <div className="lg:col-span-1 p-10">

@@ -44,8 +44,8 @@ h1::selection {
 }
 
 .home-cards-container:hover .home-card:not(:hover) {
-  opacity: 0.8;
-  transition-duration: 0.5s;
+  opacity: 0.7;
+  transform: scale(0.95);
 }
 
 .hero {
