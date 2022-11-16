@@ -16,9 +16,7 @@ function Home() {
           {/* <DaretoDance /> */}
         </div>
       </div>
-      <div className="container mx-auto bg-black">
         <MainTabs />
-      </div>
       <div className="container p-5 pt-0 mx-auto bg-black">
         <AllEvents />
       </div>

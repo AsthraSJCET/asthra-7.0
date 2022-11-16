@@ -59,9 +59,7 @@ function ListPageTemplate({ page }) {
           {/* <DaretoDance /> */}
         </div>
       </div>
-      <div className="container mx-auto bg-black">
-        <MainTabs />
-      </div>
+      <MainTabs />
       <div className="container p-5 pt-0 mx-auto bg-black">
         <Events eventType={page} />
       </div></>)

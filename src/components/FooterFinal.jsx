@@ -89,7 +89,11 @@ export default function Footer() {
 
             <div className="lg:col-span-2 w-full p-8">
               <img className="max-w-full" src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png" alt="" />
-              <p className="text-white">Asthra - The national level technical fest of St. Joseph's College of Engineering and Technology, Palai</p>
+              <p className="text-white text-center">St.Joseph’s College of Engineering and Technology, Palai,<br/>
+Choondacherry P.O, Palai, Kottayam 686 579, Kerala,India.</p>
+<div className="mt-3 flex item-center justify-center w-full">
+  <a className="bg-lime-400 hover:bg-lime-500 text-white font-bold py-2 px-4 rounded" rel="noreferrer" target="_blank" href="https://goo.gl/maps/kWNNHwpCXR9dBMp76" ><i className="fa fa-arrows"></i> Direction</a>
+</div>
 
             </div>
 
