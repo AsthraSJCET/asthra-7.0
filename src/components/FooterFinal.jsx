@@ -8,73 +8,80 @@ export default function Footer() {
 
       <div className="bg-zinc-900 ">
 
-      <footer className="container mx-auto px-3 text-white flex justify-center  pb-5 flex-col lg:flex-row gap-1 lg:gap-3">
+        <footer className="container mx-auto px-3 text-white flex justify-center  pb-5 flex-col lg:flex-row gap-1 lg:gap-3">
 
-<a href="tel:+7306266971">
-      <div>
-        <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-          <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
-            <i className="fa fa-phone" aria-hidden="true"></i>
-          </div>
-          <div className="contact">
-            <p></p>
-            <p className=" text-md font-semibold font-spaceGrotesk">Abin Soji (Student Co-ordinator)</p>
-            <div className="  pr-2  flex  flex-row">
-              <p className="text-sm font-spaceGrotesk">7306266971 &nbsp;</p>
+          <a href="tel:+917306266971">
+            <div>
+              <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
+                <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div className="contact">
+                  <p></p>
+                  <p className=" text-md font-semibold font-spaceGrotesk">Abin Soji (Student Co-ordinator)</p>
+                  <div className="  pr-2  flex  flex-row">
+                    <p className="text-sm font-spaceGrotesk">7306266971 &nbsp;</p>
 
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      </a>
+          </a>
 
+          <a href="tel:+919447227844">
+            <div>
+              <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
+                <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div className="contact">
+                  <p></p>
+                  <p className=" text-md font-semibold font-spaceGrotesk">Prof. Nidheesh (Faculty Co-ordinator)</p>
+                  <div className="  pr-2  flex  flex-row">
+                    <p className="text-sm font-spaceGrotesk">9447227844 &nbsp;</p>
 
-
-      <a href="tel:+9447227844">
-
-      <div>
-        <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-          <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
-            <i className="fa fa-phone" aria-hidden="true"></i>
-          </div>
-          <div className="contact">
-            <p></p>
-            <p className=" text-md font-semibold font-spaceGrotesk">Prof. Nidheesh (Faculty Co-ordinator)</p>
-            <div className="  pr-2  flex  flex-row">
-              <p className="text-sm font-spaceGrotesk">9447227844 &nbsp;</p>
-
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      </a>
+          </a>
+          <a href="tel:+919656800223">
 
+            <div>
+              <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
+                <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div className="contact">
+                  <p></p>
+                  <p className=" text-md font-semibold font-spaceGrotesk">Prof. Kishore (Faculty Co-ordinator)</p>
+                  <div className="  pr-2  flex  flex-row">
+                    <p className="text-sm font-spaceGrotesk">9656800223 &nbsp;</p>
 
-      <a href="tel:+9656800223">
-
-      <div>
-        <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-          <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
-            <i className="fa fa-phone" aria-hidden="true"></i>
-          </div>
-          <div className="contact">
-            <p></p>
-            <p className=" text-md font-semibold font-spaceGrotesk">Prof. Kishore (Faculty Co-ordinator)</p>
-            <div className="  pr-2  flex  flex-row">
-              <p className="text-sm font-spaceGrotesk">9656800223 &nbsp;</p>
-
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </a>
+          <a href="tel:+919645072186">
+            <div>
+              <div className="contact-container mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
+                <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div className="contact">
+                  <p></p>
+                  <p className=" text-md font-semibold font-spaceGrotesk">Rajat Mathew (Technical Support)</p>
+                  <div className="  pr-2  flex  flex-row">
+                    <p className="text-sm font-spaceGrotesk">9645072186 &nbsp;</p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </footer>
       </div>
-      </a>
-
-
-      </footer>
-      </div>
-
-
-
 
       <footer className="bg-[#1b1b1b] font-spaceGrotesk">
         <div className="mx-auto p-5 pt-10">
@@ -83,7 +90,7 @@ export default function Footer() {
             <div className="lg:col-span-2 w-full p-8">
               <img className="max-w-full" src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png" alt="" />
               <p className="text-white">Asthra - The national level technical fest of St. Joseph's College of Engineering and Technology, Palai</p>
-              
+
             </div>
 
             <div className="lg:col-span-1 p-10">
@@ -128,7 +135,7 @@ export default function Footer() {
             <i className="fa-brands fa-youtube text-3xl text-white transition-all duration-300 hover:text-teal-500"></i>
           </a>
 
-         
+
         </div>
 
         <div className="bg-teal-900">

@@ -29,15 +29,13 @@ export default function Team() {
             image: "/team-images/albin_james.png",
             lin_url: "",
             desig: "Student Co-ordinator"
-
-
         }]
 
     let team = [
         {
-            name: "Jovit Mathew",
-            image: "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
-            lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/"
+            name: "Sarju S",
+            image: "https://media-exp1.licdn.com/dms/image/D5603AQHfH4mQmt9DvA/profile-displayphoto-shrink_200_200/0/1668585782234?e=1674086400&v=beta&t=jNkrfd7lW03C5bkINdeUZgBYRBPWBjXSQpMWe3IkXRo",
+            lin_url: "https://www.linkedin.com/in/sarju-s/"
         },
         {
             name: "Mohammed Yasim",
@@ -61,7 +59,12 @@ export default function Team() {
             name: "Vishnu Nair",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQGovWCSw1gvIw/profile-displayphoto-shrink_800_800/0/1666280429840?e=1674086400&v=beta&t=MWCA5fVveGQmuSDXnLUw6WNWY_8rtOJFKTs-wUER4cA",
             lin_url: "https://www.linkedin.com/in/vishnu-nair-p/"
-        }
+        },
+        {
+            name: "Jovit Mathew",
+            image: "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
+            lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/"
+        },
     ]
     return (
         <>

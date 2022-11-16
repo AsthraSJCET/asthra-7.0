@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useParams } from "react-router-dom";
 import { AsthraContext } from "../etc/context";
@@ -7,7 +7,7 @@ import Loader from "../lib/Loader";
 function RegisterForm() {
   let context = useContext(AsthraContext);
   const { code } = useParams()
-  const { isAuthenticated, isLoading,error, loginWithRedirect } = useAuth0();
+  const { isAuthenticated, isLoading, error, loginWithRedirect } = useAuth0();
   if (isAuthenticated) {
     return (
       <>
@@ -24,6 +24,7 @@ function RegisterForm() {
                   <div className="">
                     <div>
                       <input
+                        required
                         id="name"
                         type="text"
                         name="name"
@@ -34,6 +35,7 @@ function RegisterForm() {
                     </div>
                     <div>
                       <input
+                        required
                         id="college"
                         type="text"
                         name="college"
@@ -44,12 +46,14 @@ function RegisterForm() {
                     </div>
                     <div>
                       <input
+                        required
                         id="phone"
                         type="phone"
                         name="phone"
                         defaultValue={context.asthra_user?.phone}
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                         placeholder="PHONE NO."
+                        pattern="[0-9]{10}"
                       />
                     </div>
                     <div>
@@ -61,6 +65,15 @@ function RegisterForm() {
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
                         placeholder="EMAIL"
                         readOnly={true}
+                      />
+                    </div>
+                    <div>
+                      <input
+                        id="referral_code"
+                        type="text"
+                        name="referral_code"
+                        className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
+                        placeholder="Referral code"
                       />
                     </div>
                     <div className="my-6 flex justify-center">
@@ -79,7 +92,7 @@ function RegisterForm() {
     );
   } else {
     return loginWithRedirect({
-        redirect_uri: window.location.href
+      redirect_uri: window.location.href
     });
   }
 }

@@ -13,9 +13,9 @@ export default function Navbar() {
 
   return (
     <>
-      <div className=" m-auto">
+      <div className="m-auto">
         <nav className="flex p-4 pb-0">
-          <div className="grow">
+          <div className="grow lg:pl-20">
             <Link
               to={"/"}
             >

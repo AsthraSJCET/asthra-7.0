@@ -48,7 +48,36 @@
     <div class="firefly"></div>
     <div class="firefly"></div>
     <script>  var controller = new ScrollMagic.Controller();</script>
-    <img class="scrool" src="https://hutz.telhai.ac.il/wp-content/uploads/scroll-down.gif">
+    <div class="scrooll">
+    <div class="scroll-indicator" style="position: fixed; bottom: 30px; left:0;right:0; z-index:9999;margin:auto;display: flex; flex-direction: column; justify-content: center; align-items: center;"">
+        <div style="height: 50px; background: #1d1d1d; width: 2px; ">
+            <div id="scroll-in" style="background: lime; width: 2px; ">
+            </div>
+        </div>
+        <p style="color: lime; font-size: 15px; margin-top: 10px">SCROLL</p>
+      
+      <style>
+        #scroll-in {
+            animation: 2s ease-in infinite scrollAnim;
+            
+        }
+        @keyframes scrollAnim {
+
+            0% {
+                height: 0;
+                
+            }
+
+            100% {
+                height: 100%;
+                
+            }
+        }
+
+
+      </style>
+</div>
+
     <div class="spacer-small">
         <img src="/images/asthra-logo.svg" />
     </div>

@@ -47,7 +47,7 @@ const Capture = () => {
     <>
       {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
-        <ScrollToTop />
+          <ScrollToTop />
           <div className="p-5 lg:pl-20 lg:pr-20 pt-8 mx-auto bg-black">
             <div className="lg:pl-20 lg:pr-20">
               <div className="flex justify-between flex-row">
@@ -60,7 +60,7 @@ const Capture = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-6">
               <div id="block1" className="md:col-span-3">
-                <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
+                <div className="lg:px-20 py-2 font-spaceGrotesk text-white">
                   <div className="mb-4">
                     {/* <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS`)} className="font-bold p-4 text-black bg-[#CCFF00]">
                       {(data.event_price !== 0 ? "Register Now" : "Free with Asthra Pass")}
@@ -71,33 +71,42 @@ const Capture = () => {
                     </> : null}
                   </div>
                 </div>
-                <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
+                <div className="w-full lg:pl-20 lg:pr-20  pt-4 font-spaceGrotesk text-white">
                   <img className="inline"
                     src={`/event-images/${data.event_code}.png`}
                     alt=""
                   />
                 </div>
+                <div className="w-full lg:pl-20 pb-4 lg:pr-20 font-spaceGrotesk text-lime-400">
+                  {data.event_price_pool !== 0 &&
+                    <p className="text-md font-spaceGrotesk">
+                      Prizes worth&nbsp;₹
+                      {
+                        data.event_price_pool}
+                    </p>
+                  }
+                </div>
                 <div className="w-full lg:pl-20 lg:pr-20  py-4 font-spaceGrotesk text-white">
-                  {/* <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3> */}                  
+                  {/* <h3 className="font-bold font-mono text-2xl pb-6">DESCRIPTION</h3> */}
                   <p className=" pr-4 text-white font-spaceGrotesk text-xl tracking-tight font-semibold">
                     {data.desc}
                   </p>
                 </div>
                 {rules !== "NIL" &&
-                <div className="lg:pl-20  py-4 font-spaceGrotesk text-white">
-                  <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
-                  <div className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
-                    {rules.map((rules, key) => (
-                      <div key={key} className="flex flex-row"><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
-                    ))}
+                  <div className="lg:pl-20  py-4 font-spaceGrotesk text-white">
+                    <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
+                    <div className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
+                      {rules.map((rules, key) => (
+                        <div key={key} className="flex flex-row"><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
+                      ))}
+                    </div>
                   </div>
-                </div>
                 }
                 <div className="lg:px-20 py-4 font-spaceGrotesk text-white">
                   <h3 className="font-bold font-mono text-2xl pb-2">CONTACT</h3>
 
                   <div className="pr-4">
-                  <ContactInfo data={data} />
+                    <ContactInfo data={data} />
                   </div>
                 </div>
               </div>
