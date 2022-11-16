@@ -22,7 +22,8 @@ function Hero() {
         <div className="hero w-full overflow-hidden bg-no-repeat" style={{ height: "80vh", backgroundRepeat: "no-repeat" }}>
             <div className="container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
                 <div>
-
+                    {isAuthenticated ?
+                        <p className="text-white text-xs mb-2">Welcome, <b>{user.name} </b></p> : null}
                     <h1 className="text-6xl lg:text-8xl font-bold mb-8 text-white font-spaceGrotesk">THE FUTURE IS <br /> LOOKING</h1>
                     <div className="flex">
                         <a href="#mtabs" className="  px-8 py-5 mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
@@ -34,14 +35,13 @@ function Hero() {
                                     redirect_uri: window.location.href,
                                 })
                             } className=" px-8 py-5 mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
-                                <p className="text-white text-sm ml-=2">Welcome, <b>{user.name} </b></p>
                             </>}
 
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </>)
 }
 

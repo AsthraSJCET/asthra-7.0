@@ -27,7 +27,7 @@ function MyTickets() {
                 console.log(e);
             });
 
-    }, [data,setData]);
+    }, [data,setData,setError,setLoading]);
 
     return (
         <>
