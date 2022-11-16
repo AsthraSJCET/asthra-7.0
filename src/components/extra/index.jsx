@@ -34,7 +34,7 @@ function Hero() {
                                     redirect_uri: window.location.href,
                                 })
                             } className=" px-8 py-5 mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
-                                <p>Welcome, <b>{user.name} </b></p>
+                                <p className="text-white text-sm ml-=2">Welcome, <b>{user.name} </b></p>
                             </>}
 
                     </div>

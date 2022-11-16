@@ -1,5 +1,6 @@
 import Footer from "../components/FooterFinal";
 import Navbar from "../components/Navbar";
+import ScrollToTop from "../lib/ScrollToTop";
 
 export default function Team() {
     let coordinators = [
@@ -65,6 +66,7 @@ export default function Team() {
     return (
         <>
             <div className="container px-6 mx-auto">
+                <ScrollToTop/>
                 <Navbar />
                 <section className="mb-32 text-gray-800 text-center">
                     <h2 className="lg:text-7xl text-5xl text-white text-left font-spaceGrotesk font-bold mb-24 mt-12">Team Asthra</h2>
