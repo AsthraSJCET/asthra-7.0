@@ -26,7 +26,7 @@ function Hero() {
                         <p className="text-white text-xs mb-2">Welcome, <b>{user.name} </b></p> : null}
                     <h1 className="text-6xl lg:text-8xl font-bold mb-8 text-white font-spaceGrotesk">THE FUTURE IS <br /> LOOKING</h1>
                     <div className="flex">
-                        <a href="#mtabs" className="  px-8 py-5 mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
+                        <a href="#mtabs" className="px-4 py-2  md:px-8 md:py-5  mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
                         {/* <NavLink to="#about" className="  ">REGISTER</NavLink> */}
 
                         {!isAuthenticated ?
@@ -34,7 +34,7 @@ function Hero() {
                                 loginWithRedirect({
                                     redirect_uri: window.location.href,
                                 })
-                            } className=" px-8 py-5 mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
+                            } className="px-4 py-2  md:px-8 md:py-5  mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
                             </>}
 
                     </div>

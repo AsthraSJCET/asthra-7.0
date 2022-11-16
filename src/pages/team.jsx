@@ -34,7 +34,7 @@ export default function Team() {
     let team = [
         {
             name: "Sarju S",
-            image: "https://media-exp1.licdn.com/dms/image/D5603AQHfH4mQmt9DvA/profile-displayphoto-shrink_200_200/0/1668585782234?e=1674086400&v=beta&t=jNkrfd7lW03C5bkINdeUZgBYRBPWBjXSQpMWe3IkXRo",
+            image: "https://media-exp1.licdn.com/dms/image/D5603AQE1E85euwIiIw/profile-displayphoto-shrink_800_800/0/1668587612953?e=1674086400&v=beta&t=EUaZVS_QckTv55a756m9eFftozTGe-Zju_zomSCe-pc",
             lin_url: "https://www.linkedin.com/in/sarju-s/"
         },
         {
