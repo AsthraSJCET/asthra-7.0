@@ -92,13 +92,19 @@ const Capture = () => {
                     {data.desc}
                   </p>
                 </div>
-                {rules !== "NIL" &&
+                {data.rules.length > 4  &&
                   <div className="lg:pl-20  py-4 font-spaceGrotesk text-white">
                     <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
                     <div className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
-                      {rules.map((rules, key) => (
-                        <div key={key} className="flex flex-row"><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
-                      ))}
+                      {rules.map((rules, key) => {
+                        if (rules !== null) {
+                          return(
+                            <div key={key} className="flex flex-row" ><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
+                          )
+                        }else{
+                          return(null)
+                        }
+                      })}
                     </div>
                   </div>
                 }
