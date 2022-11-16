@@ -19,7 +19,7 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
   })
   return (
     <motion.div variants={item}>
-    <NavLink to={suspended === 0 && (parseInt(data.event_seat) - parseInt(data.event_sold)) - 0 ?`${index}`: "#"} onContextMenu={(e)=> e.preventDefault()}>
+    <NavLink to={suspended === 0 ?`${index}`: "#"} onContextMenu={(e)=> e.preventDefault()}>
       <div className="home-card h-full pt-5 pb-5 lg:pl-5 lg:pr-5 lg:w-auto w-full duration-300 hover:scale-105 text-white " style={{width:'88vw',maxWidth:'100%'}}>
 
         <div className={"shadow-lg hover:bg-zinc-900  cursor-pointer"  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-none")}>
