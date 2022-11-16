@@ -93,7 +93,7 @@ body {
     background-position: bottom center;
     background-attachment: fixed;
     transition: 0.7s;
-    z-index: 9999;
+    z-index: 9995;
 }
 .pin {
     transform: translateY(-40%);
@@ -106,17 +106,17 @@ body {
     max-width: 90vw;
     height: auto;
 }
-.main-bg a{
-    width: 50px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 15px;
-    background-color: red;
-    position: absolute;
-    top: 85vh;
+.scrool{
+    width: auto;
+    height: 80px;
+    line-height: 80px;
+    position: fixed;
+    bottom: 15vh;
+    left:0;right:0;
     z-index: 9999;
     color: white;
     text-align: center;
+    margin: auto;
 
 }
 

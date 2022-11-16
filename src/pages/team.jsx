@@ -79,7 +79,7 @@ export default function Team() {
                                 <div className="mb-6 lg:m-4 lg:mb-8">
                                     <div className="bg-white block shadow-lg">
                                         <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                            <img src={team.image} className="w-full" href={team.lin_url}/>
+                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url}/>
                                             <a href={team.lin_url}>
                                                 <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                             </a>
@@ -126,7 +126,7 @@ export default function Team() {
                                 <div className="mb-6 lg:m-4 lg:mb-8">
                                     <div className="bg-white block shadow-lg">
                                         <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                            <img src={team.image} className="w-full" href={team.lin_url}/>
+                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url}/>
                                             <a href={team.lin_url}>
                                                 <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                             </a>

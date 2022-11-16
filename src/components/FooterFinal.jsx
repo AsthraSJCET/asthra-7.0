@@ -1,6 +1,6 @@
 // import "./styles.css";
 import { Link } from "react-router-dom";
-import { ContactInfo } from "./rajat/contact";
+// import { ContactInfo } from "./rajat/contact";
 export default function Footer() {
   return (
     <div>

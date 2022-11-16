@@ -8,7 +8,7 @@ import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
-import AsthraPassBanner from "../components/AsthraPassBanner";
+// import AsthraPassBanner from "../components/AsthraPassBanner";
 // import ScrollToTop from "../lib/ScrollToTop";
 
 

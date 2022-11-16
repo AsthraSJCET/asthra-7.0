@@ -1,14 +1,14 @@
-import { useState, useContext, useEffect } from "react";
-import { AsthraContext } from "../etc/context";
+import { useState, useEffect } from "react";
+// import { AsthraContext } from "../etc/context";
 import { publicAPI } from "../etc/api";
-import Ticket from "../components/Ticket"
+// import Ticket from "../components/Ticket"
 import Loader from "../lib/Loader";
 
 function MyTickets() {
     let [data, setData] = useState([]);
     let [loading, setLoading] = useState(true);
     let [error, setError] = useState(false);
-    const context_ = useContext(AsthraContext);
+    // const context_ = useContext(AsthraContext);
     console.log(error, loading)
 
 
@@ -19,6 +19,7 @@ function MyTickets() {
             .then((response) => {
                 setData(response.data);
                 setLoading(false)
+                console.log(data);
             })
             .catch((e) => {
                 setLoading(false)
@@ -26,17 +27,14 @@ function MyTickets() {
                 console.log(e);
             });
 
-    }, []);
+    }, [data,setData]);
 
     return (
         <>
             {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
                 error ? <div className="text-white">An error occured</div> :
-                    <div className="grid grid-cols-2 align-center">
-                        {data.map((data, key) => {
-                            return (<div className="m-8 max-w-md"><Ticket data={data} user_data={context_} /></div>)
-                        })}
-                    </div>}
+                    <h1>Hello Avaliable 25th Nov</h1>
+            }
             </>
             }
 

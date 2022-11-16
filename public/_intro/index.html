@@ -48,13 +48,12 @@
     <div class="firefly"></div>
     <div class="firefly"></div>
     <script>  var controller = new ScrollMagic.Controller();</script>
+    <img class="scrool" src="https://hutz.telhai.ac.il/wp-content/uploads/scroll-down.gif">
     <div class="spacer-small">
         <img src="/images/asthra-logo.svg" />
     </div>
-
     <div id="stage">
         <div class="main-bg">
-            <a style="display: none ;" href="#main">Skip</a>
             <img src="/_intro/Planet.png" alt="" />
         </div>
 
@@ -73,7 +72,7 @@
                     <li><span id="seconds"></span>Seconds</li>
                 </ul>
             </div> -->
-            <script>
+            <!-- <script>
                 (function () {
                     const second = 1000,
                         minute = second * 60,
@@ -117,7 +116,7 @@
                             //seconds
                         }, 0)
                 }());
-            </script>
+            </script> -->
         </div>
     </div>
 
@@ -196,8 +195,8 @@
                 opacity: 0,
             });
         var scene4 = new ScrollMagic.Scene({ triggerElement: "#pin4", duration: 800 })
-            .on('enter', function () {
-               audio.pause();
+            .on('leave', function () {
+               audio.volume = 0.3
             })
             .setTween(tlpin4).setPin("#pin4", { pushFollowers: false })
             //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)

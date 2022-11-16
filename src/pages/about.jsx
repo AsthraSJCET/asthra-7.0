@@ -1,18 +1,10 @@
-import Team from "./team";
+import ScrollToTop from "../lib/ScrollToTop";
 
 function About() {
   return (
     <>
+    <ScrollToTop/>
     <div className="container my-10 mx-auto font-spaceGrotesk tracking-tight ">
-
-    <div className="about-x-container py-7">
-
-    <h1 className="text-4xl font-bold text-white pb-3">About Asthra</h1>
-    <p className="text-xl text-gray-300">
-    Asthra - The national level technical fest of St. Joseph's College of Engineering and Technology, Palai, framed with a vision to explore the possibilities of tomorrow. With an annual footfall of more than 5,000+ visitors and participants, Asthra is one of the biggest inter-college fests in Kerala. With a plethora of professional shows, competitions, lectures, and workshops, Asthra will keep you engrossed in every way possible.
-
-    </p>
-    </div>
 
 
     <div className="about-x-container py-7">

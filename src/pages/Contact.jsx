@@ -1,10 +1,12 @@
-import { ContactInfo } from "../components/rajat/contact";
-import Team from "./team";
+// import { ContactInfo } from "../components/rajat/contact";
+// import Team from "./team";
+
+import ScrollToTop from "../lib/ScrollToTop";
 
 function Contact() {
   return (
     <>
-    
+    <ScrollToTop/>
     <div className="container my-32 mx-auto  text-white font-spaceGrotesk tracking-tight">
 
 
@@ -12,8 +14,6 @@ function Contact() {
 <div className="contact-f-half  sm:w-full md:w-1/2">
         <h1 className="text-2xl font-bold text-white">Core Student Co-ordinators</h1>
     
-
-
     <a href="tel:+917306266971">
 
 <div>
