@@ -11,7 +11,7 @@ const item = {
 };
 
 function HomeCard({ index, data, eventName, date, time, active, suspended }) {
-  let event_date = new Date(date)
+  // let event_date = new Date(date)
   // const formattedDate = event_date.toLocaleDateString("en-GB", {
   //   day: "numeric",
   //   month: "long",
