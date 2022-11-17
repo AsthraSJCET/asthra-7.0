@@ -29,7 +29,10 @@ class AsthraAppMain extends React.Component {
   syncData = () => {
     publicAPI.post('/sync-asthra', {}, {
       headers: {
-        'Authorization': this.props.data.user.email
+        'Authorization': this.props.data.user.email,
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0',
       }
     }).then(response => {
       console.log(response.data);
@@ -56,7 +59,7 @@ class AsthraAppMain extends React.Component {
           <Routes>
             <Route path="/" element={<IndexTemplate />}>
               <Route index element={<Home />} />
-              <Route path="/about" element={<About/>} />
+              <Route path="/about" element={<About />} />
               {/* <Route path="/ambassador" element={<></>} /> */}
               <Route path="/contact" element={<Contact></Contact>} />
 
@@ -73,10 +76,10 @@ class AsthraAppMain extends React.Component {
               <Route path="/tickets" element={<MyTickets />} />
               <Route path="/profile" element={<div className="container m-auto"><h1 className="text-center text-white text-6xl mt-10 mb-20 p-6"> Coming Soon!</h1></div>} />
               <Route path="/register/:code" element={<RegisterForm />} />
-              
+
               <Route path="*" element={<NotFound />} />
             </Route>
-            <Route path="/team" element={<Team/>}/>
+            <Route path="/team" element={<Team />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

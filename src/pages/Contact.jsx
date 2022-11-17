@@ -18,7 +18,7 @@ function Contact() {
 
 <div>
   <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-    <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+    <div className="contact-icon px-6 py-5 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
       <i className="fa fa-phone" aria-hidden="true"></i>
     </div>
     <div className="contact">
@@ -39,7 +39,7 @@ function Contact() {
 
 <div>
   <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-    <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+    <div className="contact-icon px-6 py-5 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
       <i className="fa fa-phone" aria-hidden="true"></i>
     </div>
     <div className="contact">
@@ -70,7 +70,7 @@ function Contact() {
 
 <div>
   <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-    <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+    <div className="contact-icon px-6 py-5 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
       <i className="fa fa-phone" aria-hidden="true"></i>
     </div>
     <div className="contact">
@@ -91,7 +91,7 @@ function Contact() {
 
 <div>
   <div className="contact-container mt-3 transition-all duration-300 flex   bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
-    <div className="contact-icon px-3 pb-2 pt-2 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
+    <div className="contact-icon px-6 py-5 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
       <i className="fa fa-phone" aria-hidden="true"></i>
     </div>
     <div className="contact">
