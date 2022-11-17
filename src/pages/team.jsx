@@ -33,37 +33,43 @@ export default function Team() {
 
     let team = [
         {
-            name: "Sarju S",
+            name: "Prof. Sarju S",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQE1E85euwIiIw/profile-displayphoto-shrink_800_800/0/1668587612953?e=1674086400&v=beta&t=EUaZVS_QckTv55a756m9eFftozTGe-Zju_zomSCe-pc",
-            lin_url: "https://www.linkedin.com/in/sarju-s/"
+            lin_url: "https://www.linkedin.com/in/sarju-s/",
+            title:'Mentor'
         },
         {
             name: "Mohammed Yasim",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQFsU-r1054ACw/profile-displayphoto-shrink_800_800/0/1652080194719?e=1674086400&v=beta&t=ES2I4ALM7uv1ZRaMzEZSA-baPQQmoezZu_QKgkwKnTY",
-            lin_url: "https://www.linkedin.com/in/mohammed-yasim/"
+            lin_url: "https://www.linkedin.com/in/mohammed-yasim/",
+            title:'Lead Devoloper'
 
         },
         {
             name: "Rajat Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQG8df_hh53OFw/profile-displayphoto-shrink_800_800/0/1624566009452?e=1674086400&v=beta&t=kUIAm2HJXSOSLAOWngGAxF4krrFhiOVAXOkQeiZhQtI",
-            lin_url: "https://www.linkedin.com/in/rajatmathew/"
+            lin_url: "https://www.linkedin.com/in/rajatmathew/",
+            title:'UI & FrontEnd {team.title}'
 
         },
         {
             name: "Reenphy George",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQHQ3YUyYM80Cg/profile-displayphoto-shrink_800_800/0/1665377805280?e=1674086400&v=beta&t=y-a4EEKAyxEfOgggKiSac0SJEmwkZCYV284fSBBsJuc",
-            lin_url: "https://www.linkedin.com/in/reenphygeorge/"
+            lin_url: "https://www.linkedin.com/in/reenphygeorge/",
+            title:'FrontEnd {team.title}'
 
         },
         {
             name: "Vishnu Nair",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQGovWCSw1gvIw/profile-displayphoto-shrink_800_800/0/1666280429840?e=1674086400&v=beta&t=MWCA5fVveGQmuSDXnLUw6WNWY_8rtOJFKTs-wUER4cA",
-            lin_url: "https://www.linkedin.com/in/vishnu-nair-p/"
+            lin_url: "https://www.linkedin.com/in/vishnu-nair-p/",
+            title:'{team.title}'
         },
         {
             name: "Jovit Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
-            lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/"
+            lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/",
+            title:'{team.title}'
         },
     ]
     return (
@@ -142,7 +148,7 @@ export default function Team() {
                                         </div>
                                         <div className="p-6">
                                             <h5 className="text-2xl font-bold mb-4">{team.name}</h5>
-                                            <p className="text-gray-500 mb-4">Developer</p>
+                                            <p className="text-gray-500 mb-4">{team.title}</p>
                                             <a href={team.lin_url}>
                                                 <i className="fa-brands fa-linkedin"></i>
                                             </a>

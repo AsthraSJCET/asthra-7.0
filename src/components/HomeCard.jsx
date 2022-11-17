@@ -12,11 +12,11 @@ const item = {
 
 function HomeCard({ index, data, eventName, date, time, active, suspended }) {
   let event_date = new Date(date)
-  const formattedDate = event_date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })
+  // const formattedDate = event_date.toLocaleDateString("en-GB", {
+  //   day: "numeric",
+  //   month: "long",
+  //   year: "numeric",
+  // })
   return (
     <motion.div variants={item}>
     <NavLink to={suspended === 0 ?`${index}`: "#"} onContextMenu={(e)=> e.preventDefault()}>
@@ -42,8 +42,9 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
             <h1 className="text-white text-2xl md:text-3xl uppercase font-bold mb-2 font-spaceGrotesk md:truncate ">
               {eventName}
             </h1>
-            <h5 className="text-gray-300 font-medium text-lg mb-1 font-spaceGrotesk">
-              {formattedDate}, {time}
+            <h5 className="text-gray-300 font-medium text-lg mb-1 font-spaceGrotesk uppercase">
+              {/* {formattedDate}, */}
+              {data.date}, &nbsp;{time}
             </h5>
             
             {/* <p className="font-sans">
