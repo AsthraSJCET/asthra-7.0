@@ -49,27 +49,27 @@ export default function Team() {
             name: "Rajat Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQG8df_hh53OFw/profile-displayphoto-shrink_800_800/0/1624566009452?e=1674086400&v=beta&t=kUIAm2HJXSOSLAOWngGAxF4krrFhiOVAXOkQeiZhQtI",
             lin_url: "https://www.linkedin.com/in/rajatmathew/",
-            title:'UI & FrontEnd {team.title}'
+            title:'UI & FrontEnd Developer'
 
         },
         {
             name: "Reenphy George",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQHQ3YUyYM80Cg/profile-displayphoto-shrink_800_800/0/1665377805280?e=1674086400&v=beta&t=y-a4EEKAyxEfOgggKiSac0SJEmwkZCYV284fSBBsJuc",
             lin_url: "https://www.linkedin.com/in/reenphygeorge/",
-            title:'FrontEnd {team.title}'
+            title:'FrontEnd Developer'
 
         },
         {
             name: "Vishnu Nair",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQGovWCSw1gvIw/profile-displayphoto-shrink_800_800/0/1666280429840?e=1674086400&v=beta&t=MWCA5fVveGQmuSDXnLUw6WNWY_8rtOJFKTs-wUER4cA",
             lin_url: "https://www.linkedin.com/in/vishnu-nair-p/",
-            title:'{team.title}'
+            title:'Developer'
         },
         {
             name: "Jovit Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
             lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/",
-            title:'{team.title}'
+            title:'Developer'
         },
     ]
     return (
