@@ -20,7 +20,10 @@ function Hero() {
     let { loginWithRedirect, isAuthenticated, user } = useAuth0();
     return (<>
         <div className="hero w-full overflow-hidden bg-no-repeat relative" style={{ backgroundRepeat: "no-repeat" }}>
-            <video className="min-w-full min-h-full absolute hidden" src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4" onLoadedData={(e) => { e.target.classList.remove('hidden'); e.target.play() }} type="video/mp4" autoplay muted loop></video>
+            <video className="min-w-full min-h-full absolute hidden" 
+            // src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4"
+            src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4"
+             onLoadedData={(e) => { e.target.classList.remove('hidden'); e.target.play() }} type="video/mp4" autoplay muted loop></video>
             <div className="min-w-full min-h-full absolute backdrop bg-black/30"></div>
             <div className="absolute container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
                 <div>

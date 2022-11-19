@@ -10,11 +10,15 @@ const root = createRoot(document.getElementById('root'));
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
+const onRedirectCallback = (e) =>{
+  console.log("Login",e)
+}
 
 root.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}
+    onRedirectCallback={onRedirectCallback}
     redirectUri={window.location.origin}
   >
     <App />
