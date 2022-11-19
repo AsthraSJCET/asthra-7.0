@@ -10,14 +10,15 @@ import TicketWorkshopInitial from "../components/TicketWorkshopInitial";
 import Ticket from "../components/Ticket";
 import { ContactInfo } from "../components/rajat/contact";
 import ScrollToTop from "../lib/ScrollToTop";
+import { Helmet } from "react-helmet";
 
 
 const Capture = () => {
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(false);
-  let [data, setData] = useState([])
+  let [data, setData] = useState([]);
   const context_ = useContext(AsthraContext);
-  const { code } = useParams()
+  const { code } = useParams();
   const [cookies, setCookie] = useCookies(['introViewed']);
 
   useEffect(() => {
@@ -42,12 +43,14 @@ const Capture = () => {
   const rules_formatted = String(data.rules);
   const rules = typeof rules_formatted === "string" ? rules_formatted.split(';') : ""
   const tickets = context_.tickets !== null ? Object.values(context_.tickets).map(a => { return a.event_code }) : [];
-  console.log(tickets)
   return (
     <>
       {loading ? <div className="h-screen text-white">Loading... <Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> : <>
           <ScrollToTop />
+          <Helmet>
+            <title>{data.name} | Asthra 7.0</title>
+          </Helmet>
           <div className="p-5 lg:pl-20 lg:pr-20 pt-8 mx-auto bg-black">
             <div className="lg:pl-20 lg:pr-20">
               <div className="flex justify-between flex-row">
@@ -92,17 +95,17 @@ const Capture = () => {
                     {data.desc}
                   </p>
                 </div>
-                {data.rules.length > 4  &&
+                {data.rules.length > 4 &&
                   <div className="lg:pl-20  py-4 font-spaceGrotesk text-white">
                     <h3 className="font-bold font-mono text-2xl pb-6">RULES</h3>
                     <div className="pl-4 pr-4 text-white font-spaceGrotesk text-sm tracking-normal font-semibold">
                       {rules.map((rules, key) => {
                         if (rules !== null) {
-                          return(
+                          return (
                             <div key={key} className="flex flex-row" ><ChevronDoubleRightIcon className="m-1 h-3"></ChevronDoubleRightIcon><p key={key} className="mb-1">{rules} </p></div>
                           )
-                        }else{
-                          return(null)
+                        } else {
+                          return (null)
                         }
                       })}
                     </div>
@@ -135,7 +138,6 @@ const Capture = () => {
             </div>
 
           </div>
-          {console.log(data)}
         </>}
       </>
       }

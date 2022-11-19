@@ -36,7 +36,6 @@ function AllEvents(props) {
       .catch((e) => {
         setLoading(false)
         setError(e)
-        console.log(e);
       });
 
   }, [props.eventType]);

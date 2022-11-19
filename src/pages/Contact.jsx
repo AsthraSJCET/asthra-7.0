@@ -1,12 +1,17 @@
 // import { ContactInfo } from "../components/rajat/contact";
 // import Team from "./team";
 
+import { Helmet } from "react-helmet";
 import ScrollToTop from "../lib/ScrollToTop";
 
 function Contact() {
   return (
     <>
       <ScrollToTop />
+      
+      <Helmet>
+            <title>Contact | Asthra 7.0</title>
+          </Helmet>
       <div className="container my-32 mx-auto  text-white font-spaceGrotesk tracking-tight">
 
         <div className="flex flex-col lg:flex-row gap-5 mx-4">

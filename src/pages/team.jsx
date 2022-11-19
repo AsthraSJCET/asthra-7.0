@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Footer from "../components/FooterFinal";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../lib/ScrollToTop";
@@ -36,53 +37,56 @@ export default function Team() {
             name: "Prof. Sarju S",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQE1E85euwIiIw/profile-displayphoto-shrink_800_800/0/1668587612953?e=1674086400&v=beta&t=EUaZVS_QckTv55a756m9eFftozTGe-Zju_zomSCe-pc",
             lin_url: "https://www.linkedin.com/in/sarju-s/",
-            title:'Mentor'
+            title: 'Mentor'
         },
         {
             name: "Mohammed Yasim",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQFsU-r1054ACw/profile-displayphoto-shrink_800_800/0/1652080194719?e=1674086400&v=beta&t=ES2I4ALM7uv1ZRaMzEZSA-baPQQmoezZu_QKgkwKnTY",
             lin_url: "https://www.linkedin.com/in/mohammed-yasim/",
-            title:'Lead Devoloper'
+            title: 'Lead Devoloper'
 
         },
         {
             name: "Rajat Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQG8df_hh53OFw/profile-displayphoto-shrink_800_800/0/1624566009452?e=1674086400&v=beta&t=kUIAm2HJXSOSLAOWngGAxF4krrFhiOVAXOkQeiZhQtI",
             lin_url: "https://www.linkedin.com/in/rajatmathew/",
-            title:'UI & FrontEnd Developer'
+            title: 'UI & FrontEnd Developer'
 
         },
         {
             name: "Reenphy George",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQHQ3YUyYM80Cg/profile-displayphoto-shrink_800_800/0/1665377805280?e=1674086400&v=beta&t=y-a4EEKAyxEfOgggKiSac0SJEmwkZCYV284fSBBsJuc",
             lin_url: "https://www.linkedin.com/in/reenphygeorge/",
-            title:'FrontEnd Developer'
+            title: 'FrontEnd Developer'
 
         },
         {
             name: "Vishnu Nair",
             image: "https://media-exp1.licdn.com/dms/image/D5603AQGovWCSw1gvIw/profile-displayphoto-shrink_800_800/0/1666280429840?e=1674086400&v=beta&t=MWCA5fVveGQmuSDXnLUw6WNWY_8rtOJFKTs-wUER4cA",
             lin_url: "https://www.linkedin.com/in/vishnu-nair-p/",
-            title:'Developer'
+            title: 'Developer'
         },
         {
             name: "Jovit Mathew",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
             lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/",
-            title:'Developer'
+            title: 'Developer'
         },
     ]
     return (
         <>
+            <Helmet>
+                <title>Team - Asthra 7.0</title>
+            </Helmet>
+            <Navbar />
             <div className="container px-6 mx-auto">
-                <ScrollToTop/>
-                <Navbar />
+                <ScrollToTop />
                 <section className="mb-32 text-gray-800 text-center">
                     <h2 className="lg:text-7xl text-5xl text-white text-left font-spaceGrotesk font-bold mb-24 mt-12">Team Asthra</h2>
                     <h3 className="text-white uppercase text-left  mb-12 text-semibold text-3xl">
                         Core Co-ordinators
                     </h3>
-                    
+
 
                     <div className="grid md:grid-cols-4 gap-x-1 lg:gap-x-1">
                         {coordinators.map((team, key) => {
@@ -90,7 +94,7 @@ export default function Team() {
                                 <div className="mb-6 lg:m-4 lg:mb-8">
                                     <div className="bg-white block shadow-lg">
                                         <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url}/>
+                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url} />
                                             <a href={team.lin_url}>
                                                 <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                             </a>
@@ -137,7 +141,7 @@ export default function Team() {
                                 <div className="mb-6 lg:m-4 lg:mb-8">
                                     <div className="bg-white block shadow-lg">
                                         <div className="relative overflow-hidden bg-no-repeat bg-cover">
-                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url}/>
+                                            <img src={team.image} alt={team.name} className="w-full" href={team.lin_url} />
                                             <a href={team.lin_url}>
                                                 <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"></div>
                                             </a>
@@ -178,7 +182,7 @@ export default function Team() {
                 </section>
             </div>
 
-            <Footer/>
+            <Footer />
         </>
     );
 }

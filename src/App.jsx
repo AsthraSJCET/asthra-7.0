@@ -35,7 +35,6 @@ class AsthraAppMain extends React.Component {
         'Expires': '0',
       }
     }).then(response => {
-      console.log(response.data);
       this.setState({ asthra_user: response.data.user, tickets: response.data.ticket })
     }).catch(e => {
       console.log(e);

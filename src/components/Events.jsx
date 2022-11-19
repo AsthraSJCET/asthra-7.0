@@ -4,6 +4,7 @@ import HomeCard from "../components/HomeCard";
 import { motion } from "framer-motion";
 import Loader from "../lib/Loader";
 import AsthraPassBanner from "./AsthraPassBanner";
+import { Helmet } from "react-helmet";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -35,7 +36,6 @@ function Events(props) {
       .catch((e) => {
         setLoading(false)
         setError(e)
-        console.log(e);
       });
 
   }, [props.eventType]);
@@ -46,6 +46,9 @@ function Events(props) {
       {loading ? <div className="text-white">Loading...<Loader /> </div> : <>{
         error ? <div className="text-white">An error occured</div> :
           <>
+          <Helmet>
+            <title>{String(props?.eventType).toUpperCase()}S | Asthra 7.0</title>
+          </Helmet>
             <div className="flex p-1">
               <select value={deptfilter} onChange={changeDeptFilter}
                 className="sticky top-20 inset-x-0 inset-y-0 w-full py-5 mb-5 lg:mx-5 bg-black/70 backdrop-blur-xl z-10 text-white focus:outline-0 border-0"

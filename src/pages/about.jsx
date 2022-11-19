@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet";
 import ScrollToTop from "../lib/ScrollToTop";
 
 function About() {
   return (
     <>
     <ScrollToTop/>
+    
+    <Helmet>
+            <title>About</title>
+          </Helmet>
     <div className="container my-10 mx-auto font-spaceGrotesk tracking-tight ">
 
 
