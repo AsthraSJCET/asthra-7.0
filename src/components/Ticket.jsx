@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Ticket({ data, user_data }) {
   return (
@@ -42,7 +43,7 @@ function Ticket({ data, user_data }) {
         <h1 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm">You're in!</h1>
         <p className="px-8 pb-4 text-gray-300">Your registration for this event was successfull. Any further communications will be made via email.  </p>
         <div className="mx-8">
-          <a href="#aaa" className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">View your ticket</a>
+          <Link to="/tickets" className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">View/Download your ticket</Link>
         </div>
       </div>
     </div>

@@ -1,9 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 function TicketAsthraPassInitial({ data, user_data }) {
+
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+
   return (
-    <div className="max-w-lg" onContextMenu={(e)=> e.preventDefault()}>
+    <div className="max-w-lg" onContextMenu={(e) => e.preventDefault()}>
       <div className="bg-[#CCFF00] rounded-t-lg w-full lg:mr-40 pb-10 lg:pb-0">
         <div className="pl-10 pr-10 pt-10">
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] uppercase">
@@ -47,7 +52,13 @@ function TicketAsthraPassInitial({ data, user_data }) {
           <a className="text-blue-300 hover:text-blue-500 font-bold" href="#a"> AsthraPass</a>
         </p>
         <div className="mr-8 ml-8">
-          <NavLink to={'/register/ASTHRA_PASS'} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your AsthraPass</NavLink>
+          {isAuthenticated ?
+            <NavLink to={'/register/ASTHRA_PASS'} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your AsthraPass</NavLink>
+            : <NavLink onClick={() =>
+              loginWithRedirect({
+                redirect_uri: window.location.href,
+              })
+            } className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your AsthraPass</NavLink>}
         </div>
       </div>
     </div>

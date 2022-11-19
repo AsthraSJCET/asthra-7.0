@@ -125,15 +125,15 @@ export default function Footer() {
         <div className="w-full h-0.5 bg-gray-300/20 container mx-auto"></div>
 
         <div className="flex justify-center gap-5 py-10">
-          <a href="https://instagram.com/asthra_sjcet">
+          <a href="https://instagram.com/asthra_sjcet" target={'_blank'}  rel="noreferrer">
             <i className="fa-brands fa-instagram text-3xl text-white transition-all duration-300 hover:text-teal-500"></i>
           </a>
 
-          <a href="https://www.facebook.com/asthra.sjcet/">
+          <a href="https://www.facebook.com/asthra.sjcet/" target={'_blank'} rel="noreferrer">
             <i className="fa-brands fa-facebook text-3xl text-white transition-all duration-300 hover:text-teal-500"></i>
           </a>
 
-          <a href="https://www.youtube.com/watch?v=Un7VDHwZIrI">
+          <a href="https://www.youtube.com/watch?v=Un7VDHwZIrI" target={'_blank'}  rel="noreferrer">
             <i className="fa-brands fa-youtube text-3xl text-white transition-all duration-300 hover:text-teal-500"></i>
           </a>
 
