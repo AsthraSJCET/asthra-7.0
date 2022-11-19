@@ -4,6 +4,8 @@
 // // import Ticket from "../components/Ticket"
 // import Loader from "../lib/Loader";
 
+import ScrollToTop from "../lib/ScrollToTop"
+
 // function MyTickets() {
 //     let [data, setData] = useState([]);
 //     let [loading, setLoading] = useState(true);
@@ -42,10 +44,14 @@
 //     )
 // }
 
-function MyTickets(){
-    return(
-        <div className="container m-auto"><h1 className="text-center text-white text-6xl mt-10 mb-20 p-6"> Coming Soon!</h1></div>
-    )
+function MyTickets() {
+    return (<>
+        <ScrollToTop />
+        <div className="container m-auto">
+            <h1 className="text-center text-white text-6xl mt-10 mb-20 p-6">Updated Soon!</h1>
+            <h1 className="text-center text-white text-2xl mt-10 mb-20 p-6"> Ticket Will Generated on week Before the Event! </h1>
+        </div>
+    </>)
 }
 
 export default MyTickets
