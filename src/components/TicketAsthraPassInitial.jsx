@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -49,7 +49,7 @@ function TicketAsthraPassInitial({ data, user_data }) {
         <h2 className="pl-8 pr-8 text-4xl font-spaceGrotesk text-white font-medium pt-4 max-w-sm tracking-tight">Get all-access with AsthraPass!</h2>
         <p className="pl-8 pr-8  pt-2 pb-4 text-gray-300 text-md">With AsthraPass, you can now get access to all events (excluding workshops) for just ₹ 300!</p>
         <p className="pl-8 pr-8  pb-4 text-gray-300">*This event  is included with
-          <a className="text-blue-300 hover:text-blue-500 font-bold" href="#a"> AsthraPass</a>
+          <Link className="text-blue-300 hover:text-blue-500 font-bold" to="/asthra_pass"> AsthraPass</Link>
         </p>
         <div className="mr-8 ml-8">
           {isAuthenticated ?

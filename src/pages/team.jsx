@@ -153,7 +153,7 @@ export default function Team() {
                                         <div className="p-6">
                                             <h5 className="text-2xl font-bold mb-4">{team.name}</h5>
                                             <p className="text-gray-500 mb-4">{team.title}</p>
-                                            <a href={team.lin_url}>
+                                            <a href={team.lin_url} target={"_blank"} rel="noreferrer">
                                                 <i className="fa-brands fa-linkedin"></i>
                                             </a>
                                             <ul className="list-inside flex mx-auto justify-center">
