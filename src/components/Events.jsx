@@ -3,6 +3,7 @@ import { publicAPI } from "../etc/api";
 import HomeCard from "../components/HomeCard";
 import { motion } from "framer-motion";
 import Loader from "../lib/Loader";
+import AsthraPassBanner from "./AsthraPassBanner";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -72,7 +73,6 @@ function Events(props) {
                 </option>
               </select>
             </div>
-
             <motion.div
               variants={container}
               initial="hidden"
@@ -97,7 +97,9 @@ function Events(props) {
                   />
                 );
               })}
-            </motion.div></>
+            </motion.div>
+            {props.eventType !== 'workshop' ? <AsthraPassBanner /> : null}
+            </>
       }
       </>
       }

@@ -50,9 +50,8 @@ function ListPageTemplate({ page }) {
   return (
     <><Hero />
 
-      <div className="py-28">
+      <div className="py-5 lg:py-28">
         <div className="px-4 lg:px-64 sm:px-4 container mx-auto">
-
           <h1 className="text-white font-spaceGrotesk lg:text-2xl md:text-xl text-lg">Asthra - The national level technical fest of St. Joseph's College of Engineering and Technology, Palai, framed with a vision to explore the possibilities of tomorrow. With an annual footfall of more than 5,000+ visitors and participants, Asthra is one of the biggest inter-college fests in Kerala. With a plethora of professional shows, competitions, lectures, and workshops, Asthra will keep you engrossed in every way possible.
           </h1>
           <br />

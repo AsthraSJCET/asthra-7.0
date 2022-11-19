@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function TicketWorkshopInitial({ data, user_data }) {
   return (
-    <div className="max-w-lg">
+    <div className="max-w-lg" onContextMenu={(e)=> e.preventDefault()}>
       <div className="bg-[#CCFF00] rounded-t-lg w-full lg:mr-40 pb-10 lg:pb-0">
         <div className="pl-10 pr-10 pt-10">
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] uppercase">
@@ -36,10 +36,21 @@ function TicketWorkshopInitial({ data, user_data }) {
           <NavLink to={'/'} className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</NavLink>
         </p>
 
-        <div className="ml-8 mr-8">
-          <NavLink to={`/register/${data.code}`} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your ticket
-          </NavLink>
-        </div>
+        {data.active === 1 ? <>
+          {data.event_seat !== 0 && data.event_sold >= data.event_seat ? <div className="ml-8 mr-8">
+            <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-red-800 text-white font-medium">
+              Registration Closed
+            </button>
+          </div> :
+            <div className="ml-8 mr-8">
+              <NavLink to={`/register/${data.code}`} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Get your ticket
+              </NavLink>
+            </div>
+          }
+        </>
+          : <div className="ml-8 mr-8">
+            <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Registration Closed </button>
+          </div>}
       </div>
     </div>
   );

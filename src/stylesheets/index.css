@@ -14,10 +14,12 @@ body {
   background-color: black;
   user-select: text;
 }
+
 ::selection {
   color: white;
   background: grey;
 }
+
 h1::selection {
   color: #CCFF00;
   background: transparent;
@@ -49,11 +51,19 @@ h1::selection {
 }
 
 .hero {
+  height: 85vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url('https://prytek.com/wp-content/uploads/2021/03/hacker-you-greenpaper.jpeg');
   background-position: center;
   background-size: 100%, 100%;
   background-attachment: fixed, scroll;
 }
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 40vh;
+  }
+}
+
 
 /* SELECT */
 .home-card {

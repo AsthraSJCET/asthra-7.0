@@ -2,7 +2,7 @@ import React from "react";
 
 function Ticket({ data, user_data }) {
   return (
-    <div className="mt-10 md:mt-0 max-w-3xl overflow-hidden">
+    <div className="mt-10 md:mt-0 max-w-3xl overflow-hidden" onContextMenu={(e)=> e.preventDefault()}>
       <div className="bg-[#CCFF00] rounded-t-lg lg:w-auto  lg:mr-40 pb-10 lg:pb-0">
         <div className="px-10 pt-10">
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c]">

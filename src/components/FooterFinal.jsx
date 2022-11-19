@@ -114,7 +114,7 @@ export default function Footer() {
               <p className="text-lg text-gray-300">Developing into a world-class, pace-setting institute of Engineering and Technology with distinct identity and character, meeting the goals and aspirations of the society.</p>
               <h4 className="mt-5 text-xl font-bold text-white">MISSION</h4>
               <ul className="text-lg text-gray-300">
-                <li>To maintain a conducive infrastrucutre and learning environment for world-class education.</li>
+                <li>To maintain a conducive infrastructure and learning environment for world-class education.</li>
                 <li>To nurture a team of dedicated, competent and research-oriented faculty.</li>
                 <li>To develop students with moral and ethical values, for their successful career by offering variety of programmes and services</li>
               </ul>

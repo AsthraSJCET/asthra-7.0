@@ -19,22 +19,23 @@ function Hero() {
 
     let { loginWithRedirect, isAuthenticated, user } = useAuth0();
     return (<>
-        <div className="hero w-full overflow-hidden bg-no-repeat" style={{ height: "80vh", backgroundRepeat: "no-repeat" }}>
-            <div className="container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
+        <div className="hero w-full overflow-hidden bg-no-repeat relative" style={{ backgroundRepeat: "no-repeat" }}>
+            <video className="min-w-full min-h-full absolute hidden" src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4" onLoadedData={(e) => { e.target.classList.remove('hidden'); e.target.play() }} type="video/mp4" autoplay muted loop></video>
+            <div className="min-w-full min-h-full absolute backdrop bg-black/30"></div>
+            <div className="absolute container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
                 <div>
                     {isAuthenticated ?
                         <p className="text-white text-xs mb-2">Welcome, <b>{user.name} </b></p> : null}
-                    <h1 className="text-6xl lg:text-8xl font-bold mb-8 text-white font-spaceGrotesk">THE FUTURE IS <br /> LOOKING</h1>
+                    <h1 className="text-3xl lg:text-8xl font-bold mb-4 md:mb-8 text-white font-spaceGrotesk">THE FUTURE IS <br /> LOOKING</h1>
                     <div className="flex">
-                        <a href="#mtabs" className="px-4 py-2  md:px-8 md:py-5  mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
+                        <a href="#mtabs" className="px-4 py-2 text-xs md:text-base  md:px-8 md:py-5  mr-2 text-black font-bold font-spaceGrotesk bg-lime-400 hover:bg-zinc-900 hover:text-white transition-all duration-300">EXPLORE</a>
                         {/* <NavLink to="#about" className="  ">REGISTER</NavLink> */}
-
                         {!isAuthenticated ?
                             <NavLink onClick={() =>
                                 loginWithRedirect({
                                     redirect_uri: window.location.href,
                                 })
-                            } className="px-4 py-2  md:px-8 md:py-5  mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
+                            } className="px-4 py-2  text-xs md:text-base md:px-8 md:py-5  mr-2 text-white font-bold font-spaceGrotesk bg-zinc-600 hover:bg-zinc-900 hover:text-white transition-all duration-300">REGISTER</NavLink> : <>
                             </>}
 
                     </div>

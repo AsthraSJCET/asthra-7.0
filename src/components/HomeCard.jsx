@@ -17,20 +17,26 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
   //   month: "long",
   //   year: "numeric",
   // })
+
   return (
     <motion.div variants={item}>
     <NavLink to={suspended === 0 ?`${index}`: "#"} onContextMenu={(e)=> e.preventDefault()}>
       <div className="home-card h-full pt-5 pb-5 lg:pl-5 lg:pr-5 lg:w-auto w-full duration-300 hover:scale-105 text-white " style={{width:'88vw',maxWidth:'100%'}}>
-
         <div className={"shadow-lg hover:bg-zinc-900  cursor-pointer"  + (!suspended === 0 ? "bg-white/50 hover:scale-none": "bg-white hover:scale-none")}>
           {!suspended === 0?( <div className="absolute bg-white/50 text-black p-2 "> Cancelled </div>): <></>}
           <div className="bg-black relative">
             <img className="m-0 p-0 w-full"
             src={`/event-images/${data.code}.png`}
-            alt=""
+            alt={eventName}
           />
+          {data.event_seat !== 0 && data.event_sold >= data.event_seat ?<div className="absolute top-0 text-xs right-0 bg-red-900/90 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
+          Registration Full
+          </div>:<>{data.event_type === 'workshop'?
+          <div className="absolute text-xs top-0 right-0 bg-lime-400/90 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
+          Registration Open
+          </div>:null}</>}
           {data.event_price === 0 ?
-          <div className="absolute bottom-0 right-0 bg-white/20 tracking-tight backdrop-blur-md px-4 py-1 bglime-400 font-spaceGrotesk">
+          <div className="absolute bottom-0 right-0 bglime-400 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
           {/* {(data.code.substring(6,7) !== "W" ? "Included with AsthraPass" : "")} */} Included with AsthraPass
           </div>
           : <div className="absolute bottom-0 right-5 rounded-t-lg bg-black/50 tracking-tight backdrop-blur px-4 py-1 !text-bglime-400 font-spaceGrotesk">₹ {data.event_price}</div>}
@@ -46,12 +52,6 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
               {/* {formattedDate}, */}
               {data.date}, &nbsp;{time}
             </h5>
-            
-            {/* <p className="font-sans">
-              {(!active ? "Registrations open" : "Registration closed")}
-            </p> */}
-
-
             {data.event_price_pool !== 0 && 
             <p className="text-gray-500 text-md font-spaceGrotesk">
               Prizes worth&nbsp;₹
@@ -59,7 +59,6 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
               data.event_price_pool}
             </p>
             }
-
           </div>
         </div>
       </div>
