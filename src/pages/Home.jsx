@@ -2,6 +2,7 @@
 import MainTabs from "../components/MainTabs";
 import AllEvents from "../components/AllEvents";
 import { Hero } from "../components/extra";
+import AsthraPassBanner from "../components/AsthraPassBanner";
 // import DeptFilter from "../components/DeptFilter";
 function Home() {
   return (
@@ -15,6 +16,9 @@ function Home() {
           {/* <DaretoDance /> */}
         </div>
       </div>
+      <div className="container p-5 pt-0 mx-auto bg-black">
+        <AsthraPassBanner/>
+        </div>
         <MainTabs />
       <div className="container p-5 pt-0 mx-auto bg-black">
         <AllEvents />

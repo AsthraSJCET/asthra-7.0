@@ -22,7 +22,8 @@ function Hero() {
         <div className="hero w-full overflow-hidden bg-no-repeat relative" style={{ backgroundRepeat: "no-repeat" }}>
             <video className="min-w-full min-h-full absolute hidden" 
             // src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4"
-            src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1668843179/athra_cover_bg.mp4"
+            src="https://res.cloudinary.com/dqnwrafnm/video/upload/v1669054547/5537_dHVubmVsbW90aW9uczQ1NjU1YXJ0ZWRlc2lnbjAwMDEtMDYwMGhx_1_ul7evp.mp4"
+            // src="https://static.videezy.com/system/resources/previews/000/054/625/original/5537_dHVubmVsbW90aW9uczQ1NjU1YXJ0ZWRlc2lnbjAwMDEtMDYwMGhx.mp4"
              onLoadedData={(e) => { e.target.classList.remove('hidden'); e.target.play() }} type="video/mp4" autoPlay muted loop></video>
             <div className="min-w-full min-h-full absolute backdrop bg-black/30"></div>
             <div className="absolute container ml-4 lg:ml-24  h-full flex flex-col justify-center align-center mx-auto">
@@ -56,7 +57,7 @@ function DaretoDance() {
             <div className="container mx-auto flex flex-col md:flex-col items-center lg:flex-row gap-5  justify-center">
 
                 {/* <div className=" container mx-auto mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full -mt-12 mx-4 lg:mx-24 flex justify-center"> */}
-                <div className="relative max-w-sm overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-500 hover:-translate-y-5">
+                <div className="relative herovideo max-w-sm overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-500 hover:-translate-y-5">
                     <img className="object-cover w-full " src="https://images.unsplash.com/photo-1621976360623-004223992275?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1128&q=80" alt="Flower and sky" />
 
                     <div className="absolute top-0 w-full h-full bg-gradient-to-b from-black/0 to-black hover:to-black/70 transition-all duration-900"></div>

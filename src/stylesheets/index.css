@@ -64,6 +64,9 @@ h1::selection {
   }
 }
 
+.herovideo{
+  transition: transform 400ms ease 0ms;
+}
 
 /* SELECT */
 .home-card {

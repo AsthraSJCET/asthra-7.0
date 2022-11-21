@@ -49,7 +49,7 @@ function MyTickets() {
         <ScrollToTop />
         <div className="container m-auto">
             <h1 className="text-center text-white text-6xl mt-10 mb-20 p-6">Updated Soon!</h1>
-            <h1 className="text-center text-white text-2xl mt-10 mb-20 p-6"> Ticket Will Generated on week Before the Event! </h1>
+            <h1 className="text-center text-white text-2xl mt-10 mb-20 p-6"> Ticket Will Generated! <br/> one week Before the Event! </h1>
         </div>
     </>)
 }
