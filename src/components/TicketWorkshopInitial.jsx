@@ -11,7 +11,7 @@ function TicketWorkshopInitial({ data, user_data }) {
       <div className="bg-[#CCFF00] rounded-t-lg w-full lg:mr-40 pb-10 lg:pb-0">
         <div className="pl-10 pr-10 pt-10">
           <h4 className="font-medium font-spaceGrotesk text-sm lg:text-lg text-[#5c5c5c] uppercase">
-            {data.event_type}
+            {data.event_type} <i className="text-xs"> {data.code} </i>
           </h4>
           <h2 className="font-bold font-spaceGrotesk text-3xl lg:text-4xl">
             {data.name}
@@ -34,30 +34,43 @@ function TicketWorkshopInitial({ data, user_data }) {
           <h2 className="font-medium font-spaceGrotesk mt-0 text-md lg:text-2xl"> </h2>
         </div>
       </div>
-      <div className="w-full bg-zinc-800 rounded-b-lg pb-8 lg:mr-40">
-        <h2 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm tracking-tight">Grab your seats <br /> for ₹{data.event_price}</h2>
-        <p className="pl-8 pr-8 pb-4 text-gray-300">*This event is not included with
-          <NavLink to={'/'} className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</NavLink>
-        </p>
-
-        <div className="ml-8 mr-8">
-          {data.active === 1 ? <>
-            {data.event_seat !== 0 && data.event_sold >= data.event_seat ?
-              <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-red-800 text-white font-medium">
-                Registration Closed
-              </button>
-              :
-              <NavLink to={isAuthenticated ? `/register/${data.code}` : null} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium"
-                onClick={() => { if (!isAuthenticated) { loginWithRedirect({ redirect_uri: window.location.href });console.log(window.location.href); } }}
-              >Get your ticket
-              </NavLink>
-            }
-          </>
-            :
-            <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Registration Closed </button>
-          }
+      {data.event_price === 1 ?
+        <div className="w-full bg-zinc-800 rounded-b-lg pb-8 lg:mr-40">
+          <div className="ml-8 mr-8">
+            <h2 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm tracking-tight">&nbsp;</h2>
+            <p className="pl-8 pr-8 pb-4 text-gray-300">*This event is not included with
+              <NavLink to={'/'} className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</NavLink>
+            </p>
+            <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-red-500 text-white font-medium">Spot Registration</button>
+          </div>
         </div>
-      </div>
+        : <>
+          <div className="w-full bg-zinc-800 rounded-b-lg pb-8 lg:mr-40">
+            <h2 className="text-4xl font-spaceGrotesk text-white font-medium pl-8 pt-8 max-w-sm tracking-tight">Grab your seats <br /> for ₹{data.event_price}</h2>
+            <p className="pl-8 pr-8 pb-4 text-gray-300">*This event is not included with
+              <NavLink to={'/'} className="text-blue-300 hover:text-blue-500 font-bold" href="#"> AsthraPass</NavLink>
+            </p>
+
+
+            <div className="ml-8 mr-8">
+              {data.active === 1 ? <>
+                {data.event_seat !== 0 && data.event_sold >= data.event_seat ?
+                  <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-red-800 text-white font-medium">
+                    Registration Closed
+                  </button>
+                  :
+                  <NavLink to={isAuthenticated ? `/register/${data.code}` : null} className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium"
+                    onClick={() => { if (!isAuthenticated) { loginWithRedirect({ redirect_uri: window.location.href }); console.log(window.location.href); } }}
+                  >Get your ticket
+                  </NavLink>
+                }
+              </>
+                :
+                <button className="text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl w-full inline-block py-4 bg-white text-black font-medium">Registration Closed </button>
+              }
+            </div>
+          </div>
+        </>}
     </div>
   );
 }

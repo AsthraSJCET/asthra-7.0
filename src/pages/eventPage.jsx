@@ -65,6 +65,9 @@ const Capture = () => {
               <div id="block1" className="md:col-span-3">
                 <div className="lg:px-20 py-2 font-spaceGrotesk text-white">
                   <div className="mb-4">
+                    {/* {data.event_price !== 0 ? <> */}
+                      Event Code : {data.event_code} <br />
+                    {/* </> : null} */}
                     {/* <NavLink to={(data.event_price !== 0 ? `/register/${code}` : `/register/ASTHRA_PASS`)} className="font-bold p-4 text-black bg-[#CCFF00]">
                       {(data.event_price !== 0 ? "Register Now" : "Free with Asthra Pass")}
                     </NavLink>&nbsp; */}

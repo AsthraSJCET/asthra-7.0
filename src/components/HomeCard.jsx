@@ -39,7 +39,9 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
           <div className="absolute bottom-0 right-0 bglime-400 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
           {/* {(data.code.substring(6,7) !== "W" ? "Included with AsthraPass" : "")} */} Included with AsthraPass
           </div>
-          : <div className="absolute bottom-0 right-5 rounded-t-lg bg-black/50 tracking-tight backdrop-blur px-4 py-1 !text-bglime-400 font-spaceGrotesk">₹ {data.event_price}</div>}
+          :<>
+          {data.event_price === 1?<div className="absolute bottom-0 right-5 rounded-t-lg bg-red-500 tracking-tight px-4 py-1 !text-bglime-400 font-spaceGrotesk">Spot Registration</div>: <div className="absolute bottom-0 right-5 rounded-t-lg bg-black/50 tracking-tight backdrop-blur px-4 py-1 !text-bglime-400 font-spaceGrotesk">₹ {data.event_price}</div>}
+          </>}
           <div className="circle h-24 w-24 bg-lime-400/70 absolute top-1/2 left-1/2 img-hover-arrow flex justify-center items-center">
            <svg className="absolute top-1/2 left-1/2 arrow-hover h-12"  viewBox="0 0 21 21"  xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 6)"><path d="m8.5 7.5v-7h-7"/><path d="m8.5.5-8 8"/></g></svg> 
           </div>
