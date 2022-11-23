@@ -26,15 +26,18 @@ function HomeCard({ index, data, eventName, date, time, active, suspended }) {
           {!suspended === 0?( <div className="absolute bg-white/50 text-black p-2 "> Cancelled </div>): <></>}
           <div className="bg-black relative">
             <img className="m-0 p-0 w-full"
+            onError={(e)=>{e.target.src="https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FtZXxlbnwwfHwwfHw%3D&w=1000&q=80"}}
             src={`/event-images/${data.code}.png`}
             alt={eventName}
           />
           {data.event_seat !== 0 && data.event_sold >= data.event_seat ?<div className="absolute top-0 text-xs right-0 bg-red-900/90 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
           Registration Full
-          </div>:<>{data.event_type === 'workshop'?
+          </div>:<>
+          {/* {data.event_type === 'workshop'?
           <div className="absolute text-xs top-0 right-0 bg-lime-400/90 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
           Registration Open
-          </div>:null}</>}
+          </div>:null} */}
+          </>}
           {data.event_price === 0 ?
           <div className="absolute bottom-0 right-0 bglime-400 tracking-tight backdrop-blur-md px-4 py-1  font-spaceGrotesk">
           {/* {(data.code.substring(6,7) !== "W" ? "Included with AsthraPass" : "")} */} Included with AsthraPass

@@ -8,6 +8,7 @@ import MainTabs from "../components/MainTabs";
 import Events from "../components/Events";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import AsthraPassBanner from "../components/AsthraPassBanner";
 // import AsthraPassBanner from "../components/AsthraPassBanner";
 // import ScrollToTop from "../lib/ScrollToTop";
 
@@ -57,6 +58,9 @@ function ListPageTemplate({ page }) {
           <br />
           {/* <DaretoDance /> */}
         </div>
+      </div>
+      <div className="container p-5 pt-0 mx-auto bg-black">
+        {page !== 'workshop' ? <AsthraPassBanner /> : null}
       </div>
       <MainTabs />
       <div className="container p-5 pt-0 mx-auto bg-black">

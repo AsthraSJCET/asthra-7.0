@@ -81,6 +81,10 @@ function AllEvents(props) {
               </option>
               <option value="FEN">Fenstra - Master of Computer Applications
               </option>
+              <option value="GEN">General
+              </option>
+              <option value="INF">Informal
+              </option>
             </select>
           </div>
           <motion.div
