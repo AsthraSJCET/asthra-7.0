@@ -75,7 +75,7 @@ function AllEvents(props) {
               </option>
               <option value="AZT">Aztec Allure - Artificial Intelligence and Data Science
               </option>
-              <option value="CRE">Creedorian - Electronics and Computer Science
+              <option value="CRE">Pandora - Electronics and Computer Science
               </option>
               <option value="TRI">Trilok - Master of Business Administration
               </option>

@@ -6,8 +6,8 @@ import ScrollToTop from "../lib/ScrollToTop";
 export default function Team() {
     let coordinators = [
         {
-            name: "Prof. Nidhish Mathew",
-            image: "/team-images/nidhish.jpg",
+            name: "Dr. Binoy Baby",
+            image: "https://sjcetpalai.ac.in/wp-content/uploads/2017/12/Binoy1-300x220.jpg",
             lin_url: "",
             desig: "Faculty Co-ordinator"
         },
