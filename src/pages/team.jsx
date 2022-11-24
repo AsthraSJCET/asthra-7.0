@@ -43,7 +43,7 @@ export default function Team() {
             name: "Mohammed Yasim",
             image: "https://media-exp1.licdn.com/dms/image/C5603AQFsU-r1054ACw/profile-displayphoto-shrink_800_800/0/1652080194719?e=1674086400&v=beta&t=ES2I4ALM7uv1ZRaMzEZSA-baPQQmoezZu_QKgkwKnTY",
             lin_url: "https://www.linkedin.com/in/mohammed-yasim/",
-            title: 'Lead Devoloper'
+            title: 'Lead Developer'
 
         },
         {
