@@ -14,6 +14,7 @@ import Loader from "./lib/Loader";
 import { publicAPI } from "./etc/api";
 import Team from "./pages/team";
 import Contact from "./pages/Contact";
+import Profile from "./pages/profile";
 
 class AsthraAppMain extends React.Component {
   constructor(props) {
@@ -73,7 +74,7 @@ class AsthraAppMain extends React.Component {
               <Route path="/exhibition/:code" element={<Capture />} />
 
               <Route path="/tickets" element={<MyTickets />} />
-              <Route path="/profile" element={<div className="container m-auto"><h1 className="text-center text-white text-6xl mt-10 mb-20 p-6"> Coming Soon!</h1></div>} />
+              <Route path="/profile" element={<Profile/>} />
               <Route path="/register/:code" element={<RegisterForm />} />
 
               <Route path="*" element={<NotFound />} />

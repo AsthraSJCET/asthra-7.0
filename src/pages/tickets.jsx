@@ -4,6 +4,8 @@
 // // import Ticket from "../components/Ticket"
 // import Loader from "../lib/Loader";
 
+import React from "react"
+import { publicAPI } from "../etc/api";
 import ScrollToTop from "../lib/ScrollToTop"
 
 // function MyTickets() {
@@ -44,12 +46,52 @@ import ScrollToTop from "../lib/ScrollToTop"
 //     )
 // }
 
+
+class AllTickets extends React.Component {
+    constructor(props) {
+        super(props);
+        this.load_data = this.load_data.bind(this);
+        this.state = {
+            tickets: []
+        }
+    }
+    componentDidMount(){
+        this.load_data();
+    }
+    load_data = () => {
+        publicAPI.get('/my-ticket', {
+            headers: {
+                // 'Authorization': this.props.data.user.email,
+                'Authorization': 'mohammedyasim.edkm@gmail.com',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+            }
+        }).then(response => {
+            this.setState({ tickets: response.data })
+        }).catch(e => {
+            console.log(e);
+        })
+    }
+    render() {
+        return (<>
+            {this.state.tickets.map((ticket) => { 
+                return (<>
+                {JSON.stringify(ticket)}
+                {/* //PASS THIS Data */}
+                </>)
+                 })}
+        </>)
+    }
+}
+
+
 function MyTickets() {
     return (<>
         <ScrollToTop />
-        <div className="container m-auto">
-            <h1 className="text-center text-white text-6xl mt-10 mb-20 p-6">Updated Soon!</h1>
-            <h1 className="text-center text-white text-2xl mt-10 mb-20 p-6"> Ticket Will Generated! <br/> one week Before the Event! </h1>
+        <div className="container m-auto p-5">
+            <h2 className="text-2-lg text-white">Your Tickets</h2>
+            <AllTickets />
         </div>
     </>)
 }
