@@ -78,11 +78,11 @@ class AllTickets extends React.Component {
   };
   render() {
     return (
-      <div className="grid lg:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {this.state.tickets.map((ticket) => {
           console.log(ticket);
           return (
-            <div>
+            <div className="grid lg:justify-items-center">
               {JSON.stringify(ticket)}
               {
                 <>
@@ -139,7 +139,7 @@ function MyTickets() {
   return (
     <>
       <ScrollToTop />
-      <div className="container m-auto p-5">
+      <div className="container m-auto p-5 overflow-hidden">
         {/* <h2 className="text-2-lg text-white">Your Tickets</h2> */}
         <AllTickets />
       </div>
