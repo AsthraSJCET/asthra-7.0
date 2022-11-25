@@ -92,7 +92,7 @@ class AllTickets extends React.Component {
                   </div>
                   <div className="lg:w-96 w-80 p-4 bg-zinc-800">
                     <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
-                      #{ticket.id}
+                      {ticket.event_code} #{ticket.id}
                     </h2>
                     <div className="grid justify-start">
                       <h2 className="text-white font-medium font-spaceGrotesk text-3xl lg:text-4xl">
@@ -104,26 +104,23 @@ class AllTickets extends React.Component {
                         {ticket.college}
                       </h4>
                     </div>
-                    <h6 className="text-zinc-300 font-extrabold font-spaceGrotesk text-xl pb-2">
-                      {ticket.event_code}
-                    </h6>
                     <h4 className="text-zinc-500 font-semibold font-spaceGrotesk text-2xl pb-2">
                       {ticket.event_name}
                     </h4>
-                    <h6 className="pb-5 text-white font-light">
-                      *something to be noted. I forgot.
-                    </h6>
                     <div className="grid grid-rows-1 grid-cols-2 pb-5">
                       <div className="grid justify-items-start">
                         <img
                           src="images/asthra_logo_white.svg"
-                          className="h-10"
+                          className="h-14"
                         />
                       </div>
                       <div className="grid justify-items-end">
-                        <QRCode value={ticket.u_id} size={50} level="L" />
+                        <QRCode value={ticket.u_id} size={75} level="L" />
                       </div>
                     </div>
+                    <h6 className="pb-1 text-white font-light">
+                      *A valid college ID card is mandatory.
+                    </h6>
                   </div>
                 </>
               }
