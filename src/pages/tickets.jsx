@@ -7,6 +7,7 @@
 import React from "react";
 import { publicAPI } from "../etc/api";
 import ScrollToTop from "../lib/ScrollToTop";
+import QRCode from "react-qr-code";
 import "../stylesheets/tickets.css";
 
 // function MyTickets() {
@@ -90,19 +91,25 @@ class AllTickets extends React.Component {
                     <div className="hex z-10"></div>
                   </div>
                   <div className="lg:w-96 w-80 p-4 bg-zinc-800">
-                    <div className="grid grid-cols-2">
-                      <h2 className="text-white font-normal font-spaceGrotesk text-3xl lg:text-4xl">
+                    <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
+                      #{ticket.id}
+                    </h2>
+                    <div className="grid justify-start">
+                      <h2 className="text-white font-medium font-spaceGrotesk text-3xl lg:text-4xl">
                         {ticket.name}
                       </h2>
                     </div>
-                    <div className="grid grid-cols-2">
-                      <h4 className="pb-36 pt-5 text-zinc-500 font-normal font-spaceGrotesk text-xl">
+                    <div className="grid justify-start">
+                      <h4 className="pb-20 pt-2 text-zinc-500 font-medium font-spaceGrotesk text-xl">
                         {ticket.college}
                       </h4>
                     </div>
-                    <h1 className="text-zinc-500 font-bold font-spaceGrotesk text-4xl">
-                      {ticket.event_type}
-                    </h1>
+                    <h6 className="text-zinc-300 font-extrabold font-spaceGrotesk text-xl pb-2">
+                      {ticket.event_code}
+                    </h6>
+                    <h4 className="text-zinc-500 font-semibold font-spaceGrotesk text-2xl pb-2">
+                      {ticket.event_name}
+                    </h4>
                     <h6 className="pb-5 text-white font-light">
                       *something to be noted. I forgot.
                     </h6>
@@ -114,7 +121,7 @@ class AllTickets extends React.Component {
                         />
                       </div>
                       <div className="grid justify-items-end">
-                        <img src="images/asthra.svg" className="h-10" />
+                        <QRCode value={ticket.u_id} size={50} level="L" />
                       </div>
                     </div>
                   </div>
