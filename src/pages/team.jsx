@@ -7,13 +7,20 @@ export default function Team() {
     let coordinators = [
         {
             name: "Dr. Binoy Baby",
-            image: "https://sjcetpalai.ac.in/wp-content/uploads/2017/12/Binoy1-300x220.jpg",
+            image: "/team-images/binoy.jpg",
             lin_url: "",
             desig: "Faculty Co-ordinator"
         },
         {
             name: "Prof. Kishore Sebastian",
             image: "/team-images/kishore.jpg",
+            lin_url: "",
+            desig: "Faculty Co-ordinator"
+
+        },
+        {
+            name: "Dr. Arun P",
+            image: "/team-images/arun.jpg",
             lin_url: "",
             desig: "Faculty Co-ordinator"
 
@@ -27,7 +34,7 @@ export default function Team() {
         },
         {
             name: "Albin James",
-            image: "/team-images/albin_james.png",
+            image: "/team-images/albin.jpg",
             lin_url: "",
             desig: "Student Co-ordinator"
         }]
@@ -88,7 +95,7 @@ export default function Team() {
                     </h3>
 
 
-                    <div className="grid md:grid-cols-4 gap-x-1 lg:gap-x-1">
+                    <div className="grid md:grid-cols-3 gap-x-1 lg:gap-x-1">
                         {coordinators.map((team, key) => {
                             return (
                                 <div className="mb-6 lg:m-4 lg:mb-8">
