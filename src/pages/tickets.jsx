@@ -93,7 +93,7 @@ class AllTickets extends React.Component {
                                 <>
                                     <div className="bg-[#CCFF00] rounded-t-lg lg:w-96 w-80 pt-20"></div>
                                     <div className="hex-wrapper lg:w-96 w-80 z-0 grid justify-center">
-                                        <div className="hex z-10" style={{ background: `url('${this.context.user.picture}')` }}></div>
+                                        <div className="hex z-10" style={{ background: `url('${this.context.user.picture}')`,backgroundSize:'100%' }}></div>
                                     </div>
                                     <div className="lg:w-96 w-80 p-4 bg-zinc-800">
                                         <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
