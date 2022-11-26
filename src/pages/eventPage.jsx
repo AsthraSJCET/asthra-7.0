@@ -3,7 +3,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { publicAPI } from "../etc/api";
 import TicketAsthraPassInitial from "../components/TicketAsthraPassInitial";
 import { useCookies } from "react-cookie";
-import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 import { AsthraContext } from "../etc/context";
 import Loader from "../lib/Loader";
 import TicketWorkshopInitial from "../components/TicketWorkshopInitial";
