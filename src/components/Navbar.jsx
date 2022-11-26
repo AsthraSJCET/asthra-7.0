@@ -1,7 +1,11 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link, NavLink } from "react-router-dom";
-import { Bars2Icon, XMarkIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import {
+  Bars2Icon,
+  XMarkIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   let { isAuthenticated, logout, loginWithRedirect } = useAuth0();
@@ -16,9 +20,7 @@ export default function Navbar() {
       <div className="m-auto">
         <nav className="flex p-4 pb-0">
           <div className="grow lg:pl-20">
-            <Link
-              to={"/"}
-            >
+            <Link to={"/"}>
               <img
                 alt="Asthra 7.0"
                 src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
@@ -27,15 +29,22 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex-shink flex">
-            {isAuthenticated ?
+            {isAuthenticated ? (
               <div>
-                <Link className="text-white p-3 cursor-pointer rounded outline-none focus:outline-none" to="/profile">
-                  <UserCircleIcon className="h-7 text-white" /></Link>
+                <Link
+                  className="text-white p-3 cursor-pointer rounded outline-none focus:outline-none"
+                  to="/tickets"
+                >
+                  <UserCircleIcon className="h-7 text-white" />
+                </Link>
               </div>
-              : ""}
-            <div >
+            ) : (
+              ""
+            )}
+            <div>
               <button
-                className={"text-sm px-4 py-2 leading-none rounded text-white border-white  mt-4 lg:mt-0" +
+                className={
+                  "text-sm px-4 py-2 leading-none rounded text-white border-white  mt-4 lg:mt-0" +
                   (navbarOpen ? "bg-black" : "bg-transparent")
                 }
                 type="button"
@@ -47,7 +56,6 @@ export default function Navbar() {
                   <Bars2Icon className="h-7 "></Bars2Icon>
                 )}
               </button>
-
             </div>
           </div>
         </nav>
@@ -62,7 +70,8 @@ export default function Navbar() {
         <div className="relative w-full h-full flex items-center">
           <div className="absolute top-5 right-5">
             <button
-              className={"text-sm px-4 py-2 leading-none rounded text-white border-white mt-4 lg:mt-0" +
+              className={
+                "text-sm px-4 py-2 leading-none rounded text-white border-white mt-4 lg:mt-0" +
                 (navbarOpen ? "bg-black" : "bg-transparent")
               }
               type="button"
