@@ -95,7 +95,7 @@ class AllTickets extends React.Component {
                     <div
                       className="hex z-10"
                       style={{
-                        // background: `url('${this.context.user.picture}')`,
+                        background: `url('${this.context.user.picture}')`,
                         backgroundSize: "100%",
                       }}
                     ></div>
