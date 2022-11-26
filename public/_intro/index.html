@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" class="dragscroll">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,user-scalable=no"
+    />
     <title>Asthra 7.0</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/_intro/normalize.css">
-    <link rel="stylesheet" href="/_intro/style.css">
-    <link rel="stylesheet" href="/_intro/star.css">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js'></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/_intro/normalize.css" />
+    <link rel="stylesheet" href="/_intro/style.css" />
+    <link rel="stylesheet" href="/_intro/star.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js'></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        #spaceScene {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: transparent;
-        }
+      #spaceScene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: transparent;
+      }
     </style>
-</head>
+  </head>
 
-<body class="dragscroll">
+  <body class="dragscroll">
     <div id="cursor"></div>
     <canvas id="spaceScene"></canvas>
     <!-- <div id='stars'></div>
@@ -47,47 +58,61 @@
     <div class="firefly"></div>
     <div class="firefly"></div>
     <div class="firefly"></div>
-    <script>  var controller = new ScrollMagic.Controller();</script>
+    <script>
+      var controller = new ScrollMagic.Controller();
+    </script>
     <div class="scrooll">
-        <div class="scroll-indicator"
-            style="position: fixed; bottom: 5%; left:0;right:0; z-index:9999;margin:auto;display: flex; flex-direction: column; justify-content: center; align-items: center;" "="">         <div style="
-            height: 50px;/* background: #1d1d1d; */width: 2px;">
-            <div id="scroll-in" style="background: white;width: 2px;"> </div>
-        </div>
-        <p style="color: white;font-size: 12px;margin-top: 10px;font-weight: 700; text-align: center;">SCROLL DOWN</p>
-        <style>
-            #scroll-in {
-                animation: 2s ease-in infinite scrollAnim;
-            }
+      <div class="scroll-indicator" style="position: fixed; bottom: 5%;
+      left:0;right:0; z-index:9999;margin:auto;display: flex; flex-direction:
+      column; justify-content: center; align-items: center;" "="">
+      <div style="height: 50px; /* background: #1d1d1d; */ width: 2px">
+        <div id="scroll-in" style="background: white; width: 2px"></div>
+      </div>
+      <p
+        style="
+          color: white;
+          font-size: 12px;
+          margin-top: 10px;
+          font-weight: 700;
+          text-align: center;
+        "
+      >
+        SCROLL DOWN
+      </p>
+      <style>
+        #scroll-in {
+          animation: 2s ease-in infinite scrollAnim;
+        }
 
-            @keyframes scrollAnim {
-                0% {
-                    height: 0;
-                }
+        @keyframes scrollAnim {
+          0% {
+            height: 0;
+          }
 
-                100% {
-                    height: 100%;
-                }
-            }
-        </style>
+          100% {
+            height: 100%;
+          }
+        }
+      </style>
     </div>
 
     <div class="spacer-small">
-        <img src="/asthra_logo.png" />
+      <img src="/asthra_logo.png" />
     </div>
     <div id="stage">
-        <div class="main-bg">
-            <img src="/_intro/Planet.png" alt="" />
-        </div>
-
+      <div class="main-bg">
+        <img src="/_intro/Planet.png" alt="" />
+      </div>
     </div>
     <div class="spacer-small"></div>
     <div class="spacer">
-        <div id="pin1" class="pin">
-            <h1>The day of reckoning has brought <br> chaos into this era.
-            </h1>
-            <br>
-            <!-- <div id="countdown">
+      <div id="pin1" class="pin">
+        <h1>
+          The day of reckoning has brought <br />
+          chaos into this era.
+        </h1>
+        <br />
+        <!-- <div id="countdown">
                 <ul>
                     <li><span id="days"></span>days</li>
                     <li><span id="hours"></span>Hours</li>
@@ -95,7 +120,7 @@
                     <li><span id="seconds"></span>Seconds</li>
                 </ul>
             </div> -->
-            <!-- <script>
+        <!-- <script>
                 (function () {
                     const second = 1000,
                         minute = second * 60,
@@ -140,192 +165,222 @@
                         }, 0)
                 }());
             </script> -->
-        </div>
+      </div>
     </div>
 
     <div class="spacer">
-        <div id="pin2" class="pin">
-            <h1>Now, the time has come to restore <br> order within the realm.</h1>
-        </div>
+      <div id="pin2" class="pin">
+        <h1>
+          Now, the time has come to restore <br />
+          order within the realm.
+        </h1>
+      </div>
     </div>
     <div class="spacer">
-        <div id="pin3" class="pin">
-            <h1>With the creators joining forces, <br> we are taking a voyage into the future</h1>
-        </div>
+      <div id="pin3" class="pin">
+        <h1>
+          With the creators joining forces, <br />
+          we are taking a voyage into the future
+        </h1>
+      </div>
     </div>
     <div id="main" class="spacer">
-        <div id="pin4" class="pin">
-            <h1>Gear yourselves up to <br> witness the <span>Asthraverse</span> </h1>
-        </div>
+      <div id="pin4" class="pin">
+        <h1>
+          Gear yourselves up to <br />
+          witness the <span>Asthraverse</span>
+        </h1>
+      </div>
     </div>
     <div class="spacer"></div>
     <script>
-        var audio = new Audio('/_intro/22.mp3');
-        audio.loop = false;
-        audio.volume = 1;
+      var audio = new Audio("/_intro/22.mp3");
+      audio.loop = false;
+      audio.volume = 1;
 
-        var tlpin1 = new TimelineMax();
-        tlpin1
-            .to("#pin1", 100, {
-                opacity: 1
-            })
-            .to("#pin1", 600, {
-                opacity: 1
-            }).to("#pin1", 100, {
-                opacity: 0
-            });
-        var scene1 = new ScrollMagic.Scene({ triggerElement: "#pin1", duration: 800 })
-            .setTween(tlpin1).setPin("#pin1", { pushFollowers: false })
-            //.addIndicators({ name: "1 (duration: 1000)" }) // add indicators (requires plugin)
-            .addTo(controller);
-        var tlpin2 = new TimelineMax();
-        tlpin2
-            .to("#pin2", 100, {
-                opacity: 1
-            })
-            .to("#pin2", 600, {
-                opacity: 1
-            }).to("#pin2", 100, {
-                opacity: 0
-            });
-        var scene2 = new ScrollMagic.Scene({ triggerElement: "#pin2", duration: 800 })
-            .setTween(tlpin2).setPin("#pin2", { pushFollowers: false })
-            //.addIndicators({ name: "2 (duration: 1000)" }) // add indicators (requires plugin)
-            .addTo(controller);
-        var tlpin3 = new TimelineMax();
-        tlpin3
-            .to("#pin3", 100, {
-                opacity: 1
-            })
-            .to("#pin3", 600, {
-                opacity: 1
-            }).to("#pin3", 100, {
-                opacity: 0,
-            });
-        var scene3 = new ScrollMagic.Scene({ triggerElement: "#pin3", duration: 800 })
-            .setTween(tlpin3).setPin("#pin3", { pushFollowers: false })
-            //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
-            .addTo(controller);
+      var tlpin1 = new TimelineMax();
+      tlpin1
+        .to("#pin1", 100, {
+          opacity: 1,
+        })
+        .to("#pin1", 600, {
+          opacity: 1,
+        })
+        .to("#pin1", 100, {
+          opacity: 0,
+        });
+      var scene1 = new ScrollMagic.Scene({
+        triggerElement: "#pin1",
+        duration: 800,
+      })
+        .setTween(tlpin1)
+        .setPin("#pin1", { pushFollowers: false })
+        //.addIndicators({ name: "1 (duration: 1000)" }) // add indicators (requires plugin)
+        .addTo(controller);
+      var tlpin2 = new TimelineMax();
+      tlpin2
+        .to("#pin2", 100, {
+          opacity: 1,
+        })
+        .to("#pin2", 600, {
+          opacity: 1,
+        })
+        .to("#pin2", 100, {
+          opacity: 0,
+        });
+      var scene2 = new ScrollMagic.Scene({
+        triggerElement: "#pin2",
+        duration: 800,
+      })
+        .setTween(tlpin2)
+        .setPin("#pin2", { pushFollowers: false })
+        //.addIndicators({ name: "2 (duration: 1000)" }) // add indicators (requires plugin)
+        .addTo(controller);
+      var tlpin3 = new TimelineMax();
+      tlpin3
+        .to("#pin3", 100, {
+          opacity: 1,
+        })
+        .to("#pin3", 600, {
+          opacity: 1,
+        })
+        .to("#pin3", 100, {
+          opacity: 0,
+        });
+      var scene3 = new ScrollMagic.Scene({
+        triggerElement: "#pin3",
+        duration: 800,
+      })
+        .setTween(tlpin3)
+        .setPin("#pin3", { pushFollowers: false })
+        //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
+        .addTo(controller);
 
-        var tlpin4 = new TimelineMax();
-        tlpin4
-            .to("#pin4", 100, {
-                opacity: 1
-            })
-            .to("#pin4", 600, {
-                opacity: 1
-            }).to("#pin4", 100, {
-                opacity: 0,
-            });
-        var scene4 = new ScrollMagic.Scene({ triggerElement: "#pin4", duration: 800 })
-            .on('leave', function () {
-                audio.volume = 0.3
-            })
-            .setTween(tlpin4).setPin("#pin4", { pushFollowers: false })
-            //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
-            .addTo(controller);
-
+      var tlpin4 = new TimelineMax();
+      tlpin4
+        .to("#pin4", 100, {
+          opacity: 1,
+        })
+        .to("#pin4", 600, {
+          opacity: 1,
+        })
+        .to("#pin4", 100, {
+          opacity: 0,
+        });
+      var scene4 = new ScrollMagic.Scene({
+        triggerElement: "#pin4",
+        duration: 800,
+      })
+        .on("leave", function () {
+          audio.volume = 0.3;
+        })
+        .setTween(tlpin4)
+        .setPin("#pin4", { pushFollowers: false })
+        //.addIndicators({ name: "3 (duration: 1000)" }) // add indicators (requires plugin)
+        .addTo(controller);
     </script>
     <script>
+      var tl = new TimelineMax();
+      tl.to(".main-bg", 0.2, {
+        scale: 4,
+        top: "50%",
+      }).to(".main-bg", 0.5, {
+        scale: 5,
+        top: "100%",
+      });
 
-        var tl = new TimelineMax();
-        tl.to(".main-bg", 0.2, {
-            scale: 4, top: '50%',
+      var scene = new ScrollMagic.Scene({
+        triggerElement: "#stage",
+        duration: 500,
+      })
+        .on("enter", function () {
+          audio.play();
         })
-            .to(".main-bg", 0.5, {
-                scale: 5, top: '100%'
-            })
-
-        var scene = new ScrollMagic.Scene({
-            triggerElement: "#stage",
-            duration: 500,
-        }).on('enter', function () {
-            audio.play();
-        })
-            //.addIndicators({ colorTrigger: "white", colorStart: "white", colorEnd: "white"})
-            .setTween(tl)
-            .addTo(controller);
+        //.addIndicators({ colorTrigger: "white", colorStart: "white", colorEnd: "white"})
+        .setTween(tl)
+        .addTo(controller);
     </script>
     <script>
-        AOS.init();
-        var cursor = document.getElementById('cursor');
-        document.onmousemove = (e) => {
-            cursor.style.left = (e.pageX - 25) + "px"
-            cursor.style.top = (e.pageY - 25) + "px"
-            cursor.style.display = 'block';
-
-        }
-        // document.body.innerHTML = 0;
+      AOS.init();
+      var cursor = document.getElementById("cursor");
+      document.onmousemove = (e) => {
+        cursor.style.left = e.pageX - 25 + "px";
+        cursor.style.top = e.pageY - 25 + "px";
+        cursor.style.display = "block";
+      };
+      // document.body.innerHTML = 0;
     </script>
     <script src="/_intro/space/three.min.js"></script>
     <script>
-        let spaceScene, camera, renderer, stars, starGeo;
+      let spaceScene, camera, renderer, stars, starGeo;
 
-        const canvas = document.getElementById('spaceScene');
+      const canvas = document.getElementById("spaceScene");
 
-        function initSpace() {
+      function initSpace() {
+        spaceScene = new THREE.Scene();
 
-            spaceScene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(
+          85,
+          window.innerWidth / window.innerHeight,
+          1,
+          500
+        );
+        camera.position.z = 1;
+        camera.rotation.x = Math.PI / 2;
 
-            camera = new THREE.PerspectiveCamera(85, window.innerWidth / window.innerHeight, 1, 500);
-            camera.position.z = 1;
-            camera.rotation.x = Math.PI / 2;
+        renderer = new THREE.WebGLRenderer({ alpha: true, canvas: canvas });
 
-            renderer = new THREE.WebGLRenderer({ alpha: true, canvas: canvas });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-
-            starGeo = new THREE.Geometry();
-            for (let i = 0; i < 6000; i++) {
-                star = new THREE.Vector3(
-                    Math.random() * 600 - 300,
-                    Math.random() * 600 - 300,
-                    Math.random() * 600 - 300
-                );
-                star.velocity = 0;
-                star.acceleration = 0.001;
-                starGeo.vertices.push(star);
-            }
-
-            let sprite = new THREE.TextureLoader().load('/_intro/space/star.png');
-            let starMaterial = new THREE.PointsMaterial({
-                color: 0xaaaaaa,
-                size: 0.7,
-                map: sprite
-            });
-
-            stars = new THREE.Points(starGeo, starMaterial);
-            spaceScene.add(stars);
-
-            window.addEventListener("resize", onWindowResize, false);
-
-            animate();
+        starGeo = new THREE.Geometry();
+        for (let i = 0; i < 6000; i++) {
+          star = new THREE.Vector3(
+            Math.random() * 600 - 300,
+            Math.random() * 600 - 300,
+            Math.random() * 600 - 300
+          );
+          star.velocity = 0;
+          star.acceleration = 0.001;
+          starGeo.vertices.push(star);
         }
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-        function animate() {
-            starGeo.vertices.forEach(p => {
-                p.velocity += p.acceleration
-                p.y -= p.velocity;
 
-                if (p.y < -200) {
-                    p.y = 200;
-                    p.velocity = 0;
-                }
-            });
-            starGeo.verticesNeedUpdate = true;
-            stars.rotation.y += 0.007;
+        let sprite = new THREE.TextureLoader().load("/_intro/space/star.png");
+        let starMaterial = new THREE.PointsMaterial({
+          color: 0xaaaaaa,
+          size: 0.7,
+          map: sprite,
+        });
 
-            renderer.render(spaceScene, camera);
-            requestAnimationFrame(animate);
-        }
-        initSpace();
+        stars = new THREE.Points(starGeo, starMaterial);
+        spaceScene.add(stars);
 
+        window.addEventListener("resize", onWindowResize, false);
+
+        animate();
+      }
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+      function animate() {
+        starGeo.vertices.forEach((p) => {
+          p.velocity += p.acceleration;
+          p.y -= p.velocity;
+
+          if (p.y < -200) {
+            p.y = 200;
+            p.velocity = 0;
+          }
+        });
+        starGeo.verticesNeedUpdate = true;
+        stars.rotation.y += 0.007;
+
+        renderer.render(spaceScene, camera);
+        requestAnimationFrame(animate);
+      }
+      initSpace();
     </script>
-</body>
-
+  </body>
 </html>

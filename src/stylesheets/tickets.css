@@ -8,9 +8,13 @@
     0% 25%
   );
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-image: url("https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-  width: 125px;
-  height: 125px;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aceshowbiz.com%2Fimages%2Fphoto%2Fcristiano_ronaldo.jpg&f=1&nofb=1&ipt=aff1ecfee17ba32a3934cc2b4bde4b224e66db9cbc9d9a3744e5ca1e8106493a&ipo=images");
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  /* border: 2px solid; */
 }
 
 .hex-wrapper {
