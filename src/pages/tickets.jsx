@@ -116,7 +116,7 @@ class AllTickets extends React.Component {
                                             <div className="grid justify-items-start">
                                                 <img
                                                     alt="logo"
-                                                    src="images/asthra_logo_white.svg"
+                                                    src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
                                                     className="h-14"
                                                 />
                                             </div>
