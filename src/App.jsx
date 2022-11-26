@@ -1,6 +1,6 @@
 import React from "react";
 import { IndexTemplate, ListPageTemplate } from "./pages/template";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Capture from "./pages/eventPage";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -73,8 +73,8 @@ class AsthraAppMain extends React.Component {
               <Route path="/event/:code" element={<Capture />} />
               <Route path="/exhibition/:code" element={<Capture />} />
 
-              <Route path="/tickets" element={<MyTickets />} />
-              <Route path="/profile" element={<Profile/>} />
+              <Route path="/tickets" element={this.props.data.isAuthenticated?<MyTickets />:<Navigate to="/" />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/register/:code" element={<RegisterForm />} />
 
               <Route path="*" element={<NotFound />} />

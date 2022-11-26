@@ -10,7 +10,7 @@ export default function Footer() {
 
         <footer className="container mx-auto px-3 text-white flex justify-center  pb-5 flex-col lg:flex-row gap-1 lg:gap-3">
 
-          <a className="w-full" href="tel:+917304429615">
+          <a className="w-full" href="tel:+917034429615">
             <div>
               <div className="contact-container  mt-3 transition-all duration-300 flex  bg-zinc-800 px-5 py-5 rounded-md hover:bg-white hover:text-black">
                 <div className="contact-icon px-6 py-5 border-white/20 border-solid border-2 rounded-xl mr-3 " style={{ borderRadius: "500px" }}>
@@ -20,7 +20,7 @@ export default function Footer() {
                   <p className=" text-md font-semibold font-spaceGrotesk">Albin James</p>
                   <p className=" text-xs font-semibold font-spaceGrotesk text-grey-300">(Student Co-ordinator)</p>
                   <div className="  pr-2  flex  flex-row">
-                    <p className="text-sm font-spaceGrotesk">7304429615 &nbsp;</p>
+                    <p className="text-sm font-spaceGrotesk">7034429615 &nbsp;</p>
                   </div>
                 </div>
               </div>

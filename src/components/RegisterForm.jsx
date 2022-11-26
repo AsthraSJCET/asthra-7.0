@@ -73,7 +73,7 @@ function RegisterForm() {
                         type="text"
                         name="referral_code"
                         className="focus:outline-none border-b w-full pb-2 bg-gray-900 text-white border-gray-500 font-spaceGrotesk placeholder-gray-500 mb-8"
-                        placeholder="Referral code"
+                        placeholder="Referral code (optional)"
                       />
                     </div>
                     <div className="my-6 flex justify-center">
