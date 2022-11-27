@@ -12,7 +12,7 @@ export default function Team() {
       desig: "Faculty Co-ordinator",
     },
     {
-      name: "Prof. Kishore Sebastian",
+      name: "Prof. Kishore Sebastian ",
       image: "/team-images/kishore.jpg",
       lin_url: "",
       desig: "Faculty Co-ordinator",
