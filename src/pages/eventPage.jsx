@@ -126,12 +126,12 @@ const Capture = () => {
                         <h3 className="font-bold font-spaceGrotesk text-2xl pb-6">
                           RULES
                         </h3>
-                        <div className=" pr-4 text-white font-spaceGrotesk text-md tracking-normal font-semibold">
+                        <div className=" pr-4 text-white font-spaceGrotesk text-lg tracking-normal font-semibold">
                           {rules.map((rules, key) => {
                             if (rules !== null) {
                               return (
                                 <div key={key} className="flex flex-row">
-                                  -&nbsp;
+                                  <div className="ml-6"></div> •<div className="ml-4"></div>
                                   <p key={key} className="mb-1">
                                     {rules}{" "}
                                   </p>

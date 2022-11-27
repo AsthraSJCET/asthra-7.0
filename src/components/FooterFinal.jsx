@@ -51,7 +51,7 @@ export default function Footer() {
                   <i className="fa fa-phone" aria-hidden="true"></i>
                 </div>
                 <div className="contact">
-                  <p className=" text-md font-semibold font-spaceGrotesk">Prof. Kishore</p>
+                  <p className=" text-md font-semibold font-spaceGrotesk">Prof. Kishore Sebastian</p>
                   <p className=" text-xs font-semibold font-spaceGrotesk text-grey-300">(Faculty Co-ordinator)</p>
                   <div className="  pr-2  flex  flex-row">
                     <p className="text-sm font-spaceGrotesk">9656800223 &nbsp;</p>
