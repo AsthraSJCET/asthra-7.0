@@ -80,6 +80,18 @@ export default function Team() {
       lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/",
       title: "Developer",
     },
+    {
+      name: "Goutham Sreeram",
+      image: "/team-images/Gautham.png",
+      lin_url: "https://www.github.com/Friggin-sphinx",
+      title: "Developer",
+    },
+    {
+      name: "Tomin Joy",
+      image: "/team-images/tomin.png",
+      lin_url: "https://www.github.com/Tomin-Joy",
+      title: "Developer",
+    },
   ];
   return (
     <>
