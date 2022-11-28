@@ -377,7 +377,7 @@ let dept=[
   {
       title: "ECS",
       name: "Niya Biju Lukose ",
-      image: "dept-cortd/NIya Biju Lukose.jpg",
+      image: "dept-cortd/Niya Biju Lukose.jpg",
       lin_url:"",
   },
   {
