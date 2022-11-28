@@ -159,7 +159,9 @@ class AllTickets extends React.Component {
                 className="mt-3 text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl  inline-block py-4 bg-white font-medium lg:w-96 md:w-96 w-80"
                 onClick={async () => {
                   this.updateState(true);
-                  return exportComponentAsPNG(this.componentRef).then(() => {
+                  return exportComponentAsPNG(this.componentRef, {
+                    fileName: ticket.event_name,
+                  }).then(() => {
                     this.updateState(false);
                     console.log(this.state.loading);
                   });
