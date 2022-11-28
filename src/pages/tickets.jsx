@@ -11,6 +11,7 @@ import QRCode from "react-qr-code";
 import "../stylesheets/tickets.css";
 import { AsthraContext } from "../etc/context";
 import { exportComponentAsPNG } from "react-component-export-image";
+import Loader from "../lib/Loader";
 
 // function MyTickets() {
 //     let [data, setData] = useState([]);
@@ -57,7 +58,12 @@ class AllTickets extends React.Component {
     this.load_data = this.load_data.bind(this);
     this.state = {
       tickets: [],
+      loading: false,
     };
+  }
+
+  updateState(value) {
+    this.setState({ loading: value });
   }
   componentDidMount() {
     if (this.context.isAuthenticated) {
@@ -88,20 +94,30 @@ class AllTickets extends React.Component {
       <div className="flex flex-wrap justify-center gap-10">
         {this.state.tickets.map((ticket) => {
           console.log(ticket);
-          return (
+          return this.state.loading ? (
+            <div>
+              <Loader />
+            </div>
+          ) : (
             <div className="">
               <div ref={this.componentRef}>
-                <div className="bg-[#CCFF00] rounded-t-lg lg:w-96 md:w-96 w-80 pt-20"></div>
-                <div className="hex-wrapper lg:w-96 md:w-96 w-80 z-0 grid justify-center">
+                <div
+                  className="bg-[#CCFF00] rounded-t-lg lg:w-96 md:w-96 w-80 pt-12"
+                  style={{ border: "none" }}
+                ></div>
+                <div
+                  className="hex-wrapper lg:w-96 md:w-96 w-80 z-0 grid px-4 pb-2"
+                  style={{ border: "none" }}
+                >
                   <div
-                    className="hex z-10"
+                    className="hex z-10 rounded-md shadow-xl"
                     style={{
                       background: `url('${this.context.user.picture}')`,
                       backgroundSize: "100%",
                     }}
                   ></div>
                 </div>
-                <div className="lg:w-96 md:w-96 w-80 p-4 bg-zinc-800">
+                <div className="lg:w-96 md:w-96 w-80 p-4 bg-zinc-800 border-none">
                   <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
                     {ticket.event_code} #{ticket.id}
                     <span className="text-zinc-400">
@@ -141,7 +157,13 @@ class AllTickets extends React.Component {
               </div>
               <button
                 className="mt-3 text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl  inline-block py-4 bg-white font-medium lg:w-96 md:w-96 w-80"
-                onClick={() => exportComponentAsPNG(this.componentRef)}
+                onClick={async () => {
+                  this.updateState(true);
+                  return exportComponentAsPNG(this.componentRef).then(() => {
+                    this.updateState(false);
+                    console.log(this.state.loading);
+                  });
+                }}
               >
                 Download
               </button>

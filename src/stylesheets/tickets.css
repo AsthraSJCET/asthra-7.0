@@ -11,4 +11,5 @@
 
 .hex-wrapper {
   background: linear-gradient(#ccff00 50%, #27272a 50%) no-repeat;
+  border: none;
 }
