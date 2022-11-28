@@ -6,7 +6,7 @@ export default function Footer() {
     <div>
 
 
-      <div className="bg-zinc-900 ">
+      {/* <div className="bg-zinc-900 ">
 
         <footer className="container mx-auto px-3 text-white flex justify-center  pb-5 flex-col lg:flex-row gap-1 lg:gap-3">
 
@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
           </a>
         </footer>
-      </div>
+      </div> */}
 
       <footer className="bg-[#1b1b1b] font-spaceGrotesk">
         <div className="mx-auto p-5 pt-10">
