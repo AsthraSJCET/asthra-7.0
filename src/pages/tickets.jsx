@@ -10,6 +10,7 @@ import ScrollToTop from "../lib/ScrollToTop";
 import QRCode from "react-qr-code";
 import "../stylesheets/tickets.css";
 import { AsthraContext } from "../etc/context";
+import { exportComponentAsPNG } from "react-component-export-image";
 
 // function MyTickets() {
 //     let [data, setData] = useState([]);
@@ -52,6 +53,7 @@ class AllTickets extends React.Component {
   static contextType = AsthraContext;
   constructor(props) {
     super(props);
+    this.componentRef = React.createRef();
     this.load_data = this.load_data.bind(this);
     this.state = {
       tickets: [],
@@ -66,7 +68,7 @@ class AllTickets extends React.Component {
     publicAPI
       .get("/my-ticket", {
         headers: {
-          //   Authorization: "mohammedyasim.edkm@gmail.com",
+          // Authorization: "mohammedyasim.edkm@gmail.com",
           Authorization: this.context.user.email,
           "Cache-Control": "no-cache",
           Pragma: "no-cache",
@@ -88,58 +90,59 @@ class AllTickets extends React.Component {
           console.log(ticket);
           return (
             <div className="">
-              {
-                <>
-                  <div className="bg-[#CCFF00] rounded-t-lg w-96 pt-20"></div>
-                  <div className="hex-wrapper w-96 z-0 grid justify-center">
-                    <div
-                      className="hex z-10"
-                      style={{
-                        background: `url('${this.context.user.picture}')`,
-                        backgroundSize: "100%",
-                      }}
-                    ></div>
-                  </div>
-                  <div className="w-96 p-4 bg-zinc-800">
-                    <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
-                      {ticket.event_code} #{ticket.id}
-                      <span className="text-zinc-400">
-                        &nbsp;{ticket.u_id.slice(0, 4)}
-                      </span>
+              <div ref={this.componentRef}>
+                <div className="bg-[#CCFF00] rounded-t-lg lg:w-96 md:w-96 w-80 pt-20"></div>
+                <div className="hex-wrapper lg:w-96 md:w-96 w-80 z-0 grid justify-center">
+                  <div
+                    className="hex z-10"
+                    style={{
+                      background: `url('${this.context.user.picture}')`,
+                      backgroundSize: "100%",
+                    }}
+                  ></div>
+                </div>
+                <div className="lg:w-96 md:w-96 w-80 p-4 bg-zinc-800">
+                  <h2 className="text-[#CCFF00] font-extrabold font-spaceGrotesk text-xl lg:text-xl">
+                    {ticket.event_code} #{ticket.id}
+                    <span className="text-zinc-400">
+                      &nbsp;{ticket.u_id.slice(0, 4)}
+                    </span>
+                  </h2>
+                  <div className="grid justify-start">
+                    <h2 className="text-white font-medium font-spaceGrotesk text-3xl lg:text-4xl">
+                      {ticket.name}
                     </h2>
-                    <div className="grid justify-start">
-                      <h2 className="text-white font-medium font-spaceGrotesk text-3xl lg:text-4xl">
-                        {ticket.name}
-                      </h2>
-                    </div>
-                    <div className="grid justify-start">
-                      <h4 className="pb-20 pt-2 text-zinc-500 font-medium font-spaceGrotesk text-xl">
-                        {ticket.college}
-                      </h4>
-                    </div>
-                    <h4 className="text-zinc-500 font-semibold font-spaceGrotesk text-2xl pb-2">
-                      {ticket.event_name}
+                  </div>
+                  <div className="grid justify-start">
+                    <h4 className="pb-20 pt-2 text-zinc-500 font-medium font-spaceGrotesk text-xl">
+                      {ticket.college}
                     </h4>
-                    <div className="flex justify-between">
-                      <div className="h-20">
-                        <img
-                          alt="logo"
-                          src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
-                        />
-                      </div>
-                      <div className="bg-white flex items-center justify-center p-1">
-                        <QRCode
-                          value={ticket.u_id}
-                          size={75}
-                          level="L"
-                          className=""
-                        />
-                      </div>
+                  </div>
+                  <h4 className="text-zinc-500 font-semibold font-spaceGrotesk text-2xl pb-2">
+                    {ticket.event_name}
+                  </h4>
+                  <div className="flex justify-between">
+                    <div className="h-20">
+                      <img
+                        alt="logo"
+                        src="https://res.cloudinary.com/djzshuwo1/image/upload/v1668420358/Frame_83_d7g5la.png"
+                      />
+                    </div>
+                    <div className="bg-white flex items-center justify-center p-1">
+                      <QRCode
+                        value={ticket.u_id}
+                        size={75}
+                        level="L"
+                        className=""
+                      />
                     </div>
                   </div>
-                </>
-              }
-              <button className="mt-3 text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl  inline-block py-4 bg-white font-medium w-96">
+                </div>
+              </div>
+              <button
+                className="mt-3 text-center transition-all duration-300 hover:-translate-y-2 rounded font-spaceGrotesk text-1xl  inline-block py-4 bg-white font-medium lg:w-96 md:w-96 w-80"
+                onClick={() => exportComponentAsPNG(this.componentRef)}
+              >
                 Download
               </button>
             </div>

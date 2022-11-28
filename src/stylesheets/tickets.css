@@ -1,14 +1,6 @@
 .hex {
-  -webkit-clip-path: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aceshowbiz.com%2Fimages%2Fphoto%2Fcristiano_ronaldo.jpg&f=1&nofb=1&ipt=aff1ecfee17ba32a3934cc2b4bde4b224e66db9cbc9d9a3744e5ca1e8106493a&ipo=images");
+  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+  /* background-image: url("https://res.cloudinary.com/due4u0qxv/image/upload/v1669618180/asthra7.0/main-cordt/Rosna_Joy_dtvzhc.jpg"); */
   width: 150px;
   height: 150px;
   background-repeat: no-repeat;
