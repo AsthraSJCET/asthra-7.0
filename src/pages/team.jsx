@@ -19,7 +19,7 @@ export default function Team() {
     },
     {
       name: "Dr. Arun P",
-      image: "/team-images/arun.jpg",
+      image: "/team-images/Arun.jpg",
       lin_url: "",
       desig: "Faculty Co-ordinator",
     },
