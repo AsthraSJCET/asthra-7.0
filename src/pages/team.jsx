@@ -19,7 +19,7 @@ export default function Team() {
     },
     {
       name: "Dr. Arun P",
-      image: "/team-images/Arun.jpg",
+      image: "/team-images/arun.jpg",
       lin_url: "",
       desig: "Faculty Co-ordinator",
     },
@@ -249,7 +249,7 @@ export default function Team() {
     {
         "name": "Arun Alex",
         title: "Marketing and Publicity",
-        image: "main-cordt/Arun Alex.jpg",
+        image: "main-cordt/Arun.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
