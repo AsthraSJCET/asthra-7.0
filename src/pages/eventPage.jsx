@@ -80,7 +80,7 @@ const Capture = () => {
                 <div className="grid grid-cols-1 md:grid-cols-6">
                   <div id="block1" className="md:col-span-3">
                     <div className="lg:px-20 py-2 font-spaceGrotesk text-white">
-                      <div className="mb-4">
+                      <div className="">
                         {/* {data.event_price !== 0 ? <> */}
                         Event Code : {data.event_code} <br />
                         {/* </> : null} */}
@@ -98,6 +98,16 @@ const Capture = () => {
                             </span>
                           </>
                         ) : null}
+                        
+                      </div>
+                      <div className="mb-4">
+                      {
+                          data.event_type==="workshop"?(
+                            <span className="text-gray-400 pt-1 pb-2">
+                              Refund facility is not available once registered
+                            </span>
+                          ):null
+                        }
                       </div>
                     </div>
                     <div className="w-full lg:pl-20 lg:pr-20  pt-4 font-spaceGrotesk text-white">
