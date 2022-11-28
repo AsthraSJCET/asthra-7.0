@@ -90,8 +90,7 @@ export default function Team() {
     },
     {
       name: "Jovit Mathew",
-      image:
-        "https://media-exp1.licdn.com/dms/image/C5603AQE2iKDgdakndA/profile-displayphoto-shrink_800_800/0/1642647832449?e=1674086400&v=beta&t=3Qrp5mO1h2hnr3qtRH0SF4yhNSQ9J3w2_qRbMacJmyo",
+      image:"team-images/jovit.jpg",
       lin_url: "https://www.linkedin.com/in/jovit-mathew-844590205/",
       title: "Developer",
       git_url:"",
@@ -606,7 +605,7 @@ let dept=[
           <hr />
 
           <h3 className="text-white mt-20 font-bold ml-4 text-left uppercase font-spaceGrotesk text-semibold text-3xl">
-            Departmenr Co-ordinators
+            Department Co-ordinators
           </h3>
           <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
             {dept.map((team, key) => {
