@@ -121,7 +121,7 @@ export default function Team() {
     {
         name: "Sebin Mathew",
         title: "Volunteer lead",
-        image: "main-crdt/Sebin.JPG",
+        image: "main-cordt/Sebin.JPG",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -129,7 +129,7 @@ export default function Team() {
     {
         "name": "Amal Joe Paulose",
         title: "Registration desk",
-        image: "main-crdt/AmalJoePaulose.jpg",
+        image: "main-cordt/AmalJoePaulose.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -137,7 +137,7 @@ export default function Team() {
     {
         "name": "Sreelekshmi Madhu",
         title: "Registration desk",
-        image: "main-crdt/dummy.jpg",
+        image: "main-cordt/dummy.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -145,7 +145,7 @@ export default function Team() {
     {
         "name": "Chris Sebastian",
         title: "Informal Event",
-        image: "main-crdt/Chris Sebastian.jpg",
+        image: "main-cordt/Chris Sebastian.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -153,7 +153,7 @@ export default function Team() {
     {
         "name": "Hridhya Harikuttan",
         title: "Informal Event",
-        image: "main-crdt/Hridhya.jpg",
+        image: "main-cordt/Hridhya.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -161,7 +161,7 @@ export default function Team() {
     {
         "name": "Anand Krishna",
         title: "Media lead",
-        image: "main-crdt/Anand Krishna.jpg",
+        image: "main-cordt/Anand Krishna.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -169,7 +169,7 @@ export default function Team() {
     {
         "name": "Anju Merin Mathew",
         title: "Media lead",
-        image: "main-crdt/Anju Merin.jpg",
+        image: "main-cordt/Anju Merin.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -177,7 +177,7 @@ export default function Team() {
     {
         "name": "Rahul Suredran",
         title: "Design lead",
-        image: "main-crdt/dummy.jpg",
+        image: "main-cordt/dummy.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -185,7 +185,7 @@ export default function Team() {
     {
         "name": "Anto Sebastian",
         title: "Design lead",
-        image: "main-crdt/Anto Sebastian.jpg",
+        image: "main-cordt/Anto Sebastian.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -193,7 +193,7 @@ export default function Team() {
     {
         "name": "Aivin Thambi",
         title: "Program lead",
-        image: "main-crdt/Aivin.jpg",
+        image: "main-cordt/Aivin.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -201,7 +201,7 @@ export default function Team() {
     {
         "name": "Anand Baby John",
         title: "Program lead",
-        image: "main-crdt/Anand Baby.jpg",
+        image: "main-cordt/Anand Baby.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -209,7 +209,7 @@ export default function Team() {
     {
         "name": "Jeevan Ghosh Shaji",
         title: "Stall Arrangement",
-        image: "main-crdt/Jeevan Ghosh.jpg",
+        image: "main-cordt/Jeevan Ghosh.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -217,7 +217,7 @@ export default function Team() {
     {
         "name": "Alan Tom Vincent",
         title: "Hospitality lead",
-        image: "main-crdt/Alan Vincent.jpg",
+        image: "main-cordt/Alan Vincent.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -225,7 +225,7 @@ export default function Team() {
     {
         "name": "K J Raina",
         title: "Hospitality lead",
-        image: "main-crdt/K J Raina.jpg",
+        image: "main-cordt/K J Raina.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -233,7 +233,7 @@ export default function Team() {
     {
         "name": "Anna Thomas",
         title: "Sponsorship",
-        image: "main-crdt/anna.jpg",
+        image: "main-cordt/anna.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -241,7 +241,7 @@ export default function Team() {
     {
         "name": "Justin Jiby Varghese",
         title: "General event",
-        image: "main-crdt/dummy.jpg",
+        image: "main-cordt/dummy.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -249,7 +249,7 @@ export default function Team() {
     {
         "name": "Arun Alex",
         title: "Marketing and Publicity",
-        image: "main-crdt/Arun Alex.jpg",
+        image: "main-cordt/Arun Alex.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -257,7 +257,7 @@ export default function Team() {
     {
         "name": "Rosna Joy",
         title: "Campus Ambassodor",
-        image: "main-crdt/Rosna Joy.jpg",
+        image: "main-cordt/Rosna Joy.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -265,7 +265,7 @@ export default function Team() {
     {
         "name": "Zinz Criz Xavier",
         title: "Campus Ambassodor",
-        image: "main-crdt/Zinz.png",
+        image: "main-cordt/Zinz.png",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -273,7 +273,7 @@ export default function Team() {
     // {
     //     "name": "Mohammed Yasim",
     //     title: "Lead Developer",
-    //     image: "main-crdt/dummy.jpg",
+    //     image: "main-cordt/dummy.jpg",
     //     git_url: "",
     //     lin_url: "",
     //     behance_url: "",
@@ -281,7 +281,7 @@ export default function Team() {
     // {
     //     "name": "Rajat Mathew",
     //     title: "Website and Online Event",
-    //     image: "main-crdt/dummy.jpg",
+    //     image: "main-cordt/dummy.jpg",
     //     git_url: "",
     //     lin_url: "",
     //     behance_url: "",
@@ -289,7 +289,7 @@ export default function Team() {
     {
         "name": "Adarsh Ajith",
         title: "General Arrangement",
-        image: "main-crdt/Adarsh Ajith.jpg",
+        image: "main-cordt/Adarsh Ajith.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -297,7 +297,7 @@ export default function Team() {
     {
         "name": "Noel Thomas",
         title: "Documentation ",
-        image: "main-crdt/Noel Thomas.jpg",
+        image: "main-cordt/Noel Thomas.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -305,7 +305,7 @@ export default function Team() {
     {
         "name": "Anupama Moncy Thomas ",
         title: "Documentation ",
-        image: "main-crdt/Anupama Moncy.jpg",
+        image: "main-cordt/Anupama Moncy.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -313,7 +313,7 @@ export default function Team() {
     {
         "name": "Joel Jo Thomas",
         title: "Finance Lead",
-        image: "main-crdt/Joel Jo.jpg",
+        image: "main-cordt/Joel Jo.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -323,99 +323,99 @@ let dept=[
   {
       title: "AD",
       name: "Alan Anto",
-      image: "dept-crtd/Alan Anto.jpg",
+      image: "dept-cortd/Alan Anto.jpg",
       lin_url:"",
   },
   {
       title: "AD",
       name: "Aleena Roy ",
-      image: "dept-crtd/ALEENA ROY.jpg",
+      image: "dept-cortd/ALEENA ROY.jpg",
       lin_url:"",
   },
   {
       title: "CE",
       name: "Abhijith E S ",
-      image: "dept-crtd/ABHIJITH E S.jpg",
+      image: "dept-cortd/ABHIJITH E S.jpg",
       lin_url:"",
   },
   {
       title: "CE",
       name: "Amal Mathew",
-      image: "dept-crtd/AMAL MATHEW.jpg",
+      image: "dept-cortd/AMAL MATHEW.jpg",
       lin_url:"",
   },
   {
       title: "CSE",
       name: "Nikhil J Medackal ",
-      image: "dept-crtd/NIKHIL J MEDACKAL.jpg",
+      image: "dept-cortd/NIKHIL J MEDACKAL.jpg",
       lin_url:"",
   },
   {
       title: "CSE",
       name: "Reethu Joseph",
-      image: "dept-crtd/Reethu Joseph.jpg",
+      image: "dept-cortd/Reethu Joseph.jpg",
       lin_url:"",
   },
   {
       title: "ECE",
       name: "Esther Thankam Mathew",
-      image: "dept-crtd/esther.jpg",
+      image: "dept-cortd/esther.jpg",
       lin_url:"",
   },
   {
       title: "ECE",
       name: "Joel varghese",
-      image: "dept-crtd/TGOD TAZZ.jpg",
+      image: "dept-cortd/TGOD TAZZ.jpg",
       lin_url:"",
   },
   {
       title: "ECS",
       name: "Abimanyu J",
-      image: "dept-crtd/Abimanyu J.jpg",
+      image: "dept-cortd/Abimanyu J.jpg",
       lin_url:"",
   },
   {
       title: "ECS",
       name: "Niya Biju Lukose ",
-      image: "dept-crtd/NIya Biju Lukose.jpg",
+      image: "dept-cortd/NIya Biju Lukose.jpg",
       lin_url:"",
   },
   {
       title: "EEE",
       name: "S C SWATHIN SIVA",
-      image: "dept-crtd/SWATHIN SIVA.jpg",
+      image: "dept-cortd/SWATHIN SIVA.jpg",
       lin_url:"",
   },
   {
       title: "EEE",
       name: "Saya Fathima Sibu ",
-      image: "dept-crtd/SAYA FATHIMA.jpg",
+      image: "dept-cortd/SAYA FATHIMA.jpg",
       lin_url:"",
   },
   {
       title: "EI",
       name: "Ananthan S",
-      image: "dept-crtd/ANANTHAN S.jpg",
+      image: "dept-cortd/ANANTHAN S.jpg",
       lin_url:"",
   },
   {
       title: "EI",
       name: "Diya Jose",
-      image: "dept-crtd/DIYA JOSE.jpg",
-      lin_url:"",
-  },
-  {
-      title: "ME",
-      name: "Jins Tomy ",
-      image: "dept-crtd/dummy.jpg",
+      image: "dept-cortd/DIYA JOSE.jpg",
       lin_url:"",
   },
   {
       title: "ME",
       name: "Thanseel Ahammed Saif",
-      image: "dept-crtd/THANSEEL.jpg",
+      image: "dept-cortd/THANSEEL.jpg",
       lin_url:"",
-  }
+  },
+  {
+    title: "ME",
+    name: "Jins Tomy ",
+    image: "dept-cortd/JINS TOMY.jpg",
+    lin_url:"",
+},
 ];
   return (
     <>
