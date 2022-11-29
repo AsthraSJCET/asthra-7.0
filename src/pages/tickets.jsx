@@ -160,7 +160,7 @@ class AllTickets extends React.Component {
                 onClick={async () => {
                   this.updateState(true);
                   return exportComponentAsPNG(this.componentRef, {
-                    fileName: ticket.event_name,
+                    fileName: `${ticket.id}_${ticket.event_name}`,
                   }).then(() => {
                     this.updateState(false);
                     console.log(this.state.loading);
