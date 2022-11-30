@@ -85,7 +85,7 @@ function Contact() {
                   <div className="contact">
                     <p></p>
                     <p className=" text-md font-semibold font-spaceGrotesk">
-                      Prof. Binoy Baby
+                      Dr. Binoy Baby
                     </p>
                     <div className="  pr-2  flex  flex-row">
                       <p className="text-sm font-spaceGrotesk">
@@ -132,7 +132,7 @@ function Contact() {
                   <div className="contact">
                     <p></p>
                     <p className=" text-md font-semibold font-spaceGrotesk">
-                      Prof. Arun P
+                      Dr. Arun P
                     </p>
                     <div className="  pr-2  flex  flex-row">
                       <p className="text-sm font-spaceGrotesk">
