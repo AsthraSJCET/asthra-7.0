@@ -136,7 +136,7 @@ export default function Team() {
     },
     {
         "name": "Amal Joe Paulose",
-        title: "Registration desk",
+        title: "Registrations Management Lead",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618579/asthra7.0/main-cordt/AmalJoePaulose_oeuykr.jpg",
         git_url: "",
         lin_url: "",
@@ -144,7 +144,7 @@ export default function Team() {
     },
     {
         "name": "Sreelekshmi Madhu",
-        title: "Registration desk",
+        title: "Registrations Management Lead",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618451/asthra7.0/main-cordt/sreelakmi_x3t11d.jpg",
         git_url: "",
         lin_url: "",
@@ -152,7 +152,7 @@ export default function Team() {
     },
     {
         "name": "Chris Sebastian",
-        title: "Informal Event",
+        title: "Informal Events Co-ordinator",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Chris_Sebastian_ecpecp.jpg",
         git_url: "",
         lin_url: "",
@@ -160,40 +160,8 @@ export default function Team() {
     },
     {
         "name": "Hridhya Harikuttan",
-        title: "Informal Event",
+        title: "Informal Events Co-ordinator",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618178/asthra7.0/main-cordt/Hridhya_gtmd0g.jpg",
-        git_url: "",
-        lin_url: "",
-        behance_url: "",
-    },
-    {
-        "name": "Anand Krishna",
-        title: "Media lead",
-        image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618580/asthra7.0/main-cordt/Anand_Krishna_hitubw.jpg",
-        git_url: "",
-        lin_url: "",
-        behance_url: "",
-    },
-    {
-        "name": "Anju Merin Mathew",
-        title: "Media lead",
-        image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anju_Merin_isuwic.jpg",
-        git_url: "",
-        lin_url: "",
-        behance_url: "",
-    },
-    {
-        "name": "Raghul Suredran",
-        title: "Design lead",
-        image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618180/asthra7.0/main-cordt/raghul_mbstza.jpg",
-        git_url: "",
-        lin_url: "",
-        behance_url: "",
-    },
-    {
-        "name": "Anto Sebastian",
-        title: "Design lead",
-        image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anto_Sebastian_d3lfw6.jpg",
         git_url: "",
         lin_url: "",
         behance_url: "",
@@ -239,25 +207,10 @@ export default function Team() {
     lin_url: "",
     behance_url: "",
 },
-    {
-      "name": "Noel Thomas",
-      title: "Documentation ",
-      image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618179/asthra7.0/main-cordt/Noel_Thomas_b0fnej.jpg",
-      git_url: "",
-      lin_url: "",
-      behance_url: "",
-  },
-  {
-      "name": "Anupama Moncy Thomas ",
-      title: "Documentation ",
-      image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anupama_Moncy_rtljjk.jpg",
-      git_url: "",
-      lin_url: "",
-      behance_url: "",
-  },
+    
     {
         "name": "Anna Thomas",
-        title: "Sponsorship",
+        title: "Sponsorship Incharge",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618179/asthra7.0/main-cordt/anna_zhbahu.jpg",
         git_url: "",
         lin_url: "",
@@ -265,7 +218,7 @@ export default function Team() {
     },
     {
         "name": "Justin Jiby Varghese",
-        title: "General event",
+        title: "General event Co-ordinator",
         image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618451/asthra7.0/main-cordt/justin_eeekj4.jpg",
         git_url: "",
         lin_url: "",
@@ -415,6 +368,65 @@ let dept=[
 },
 ];
 let mediaT=[
+  
+  {
+    "name": "Anand Krishna",
+    title: "Media lead",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618580/asthra7.0/main-cordt/Anand_Krishna_hitubw.jpg",
+    git_url: "",
+    lin_url: "",
+    behance_url: "",
+},
+{
+    "name": "Anju Merin Mathew",
+    title: "Media lead",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anju_Merin_isuwic.jpg",
+    git_url: "",
+    lin_url: "",
+    behance_url: "",
+},
+{
+    "name": "Raghul Suredran",
+    title: "Design lead",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618180/asthra7.0/main-cordt/raghul_mbstza.jpg",
+    git_url: "",
+    lin_url: "",
+    behance_url: "",
+},
+{
+    "name": "Anto Sebastian",
+    title: "Design lead",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anto_Sebastian_d3lfw6.jpg",
+    git_url: "",
+    lin_url: "",
+    behance_url: "",
+},
+{
+  "name": "Noel Thomas",
+  title: "Documentation Lead",
+  image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618179/asthra7.0/main-cordt/Noel_Thomas_b0fnej.jpg",
+  git_url: "",
+  lin_url: "",
+  behance_url: "",
+},
+{
+  "name": "Anupama Moncy Thomas ",
+  title: "Documentation Lead  ",
+  image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618177/asthra7.0/main-cordt/Anupama_Moncy_rtljjk.jpg",
+  git_url: "",
+  lin_url: "",
+  behance_url: "",
+},
+
+{
+  name: "Akash Vijay",
+  image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669783643/asthra7.0/media/akash_irb02s.jpg",
+  lin_url: "",
+  title: "Documentation",
+  git_url:"",
+  behance_url:"",
+  stat:"000",
+},
   {
     name: "Emil Saj Abraham",
     image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669801034/asthra7.0/media/Emil_xtbnb5.jpg",
@@ -425,7 +437,7 @@ let mediaT=[
     stat:"000",
   },
   {
-    name: "Ranil George",
+    name: "Ranil Joseph",
     image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669805949/asthra7.0/media/renil_g3fdkp.jpg",
     lin_url: "",
     title: "3D Artist",
@@ -435,15 +447,6 @@ let mediaT=[
   },
   
   
-  {
-    name: "Akash Vijay",
-    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669783643/asthra7.0/media/akash_irb02s.jpg",
-    lin_url: "",
-    title: "Documentation",
-    git_url:"",
-    behance_url:"",
-    stat:"000",
-  },
   
   {
     name: "Sathwik P Nair",
