@@ -404,6 +404,47 @@ let dept=[
     lin_url:"",
 },
 ];
+let mediaT=[
+  {
+    name: "Emil Saj Abraham",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669801034/asthra7.0/media/Emil_xtbnb5.jpg",
+    lin_url: "",
+    title: "3D Artist",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
+  {
+    name: "Ranil George",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669616959/asthra7.0/dept-cord/dummy_rumpdc.jpg",
+    lin_url: "",
+    title: "3D Artist",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
+  
+  
+  {
+    name: "Akash Vijay",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669783643/asthra7.0/media/akash_irb02s.jpg",
+    lin_url: "",
+    title: "Documentation",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
+  
+  {
+    name: "Sathwik P Nair",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669616959/asthra7.0/dept-cord/dummy_rumpdc.jpg",
+    lin_url: "",
+    title: "Sound Designer",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
+]
   return (
     <>
       <Helmet>
@@ -537,12 +578,14 @@ let dept=[
           <br />
           <br />
           <hr />
-
+            <h3 className="text-white mt-20 font-bold ml-4 text-left uppercase font-spaceGrotesk text-semibold text-3xl">
+            Media Artist
+          </h3>
           <h3 className="text-white mt-20 font-bold ml-4 text-left uppercase font-spaceGrotesk text-semibold text-3xl">
             Main Co-ordinators
           </h3>
           <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
-            {mainT.map((team, key) => {
+            {mediaT.map((team, key) => {
               return (
                 <div className="mb-6 lg:m-4 lg:mb-8">
                   <div className="bg-zinc-700 block shadow-lg">
