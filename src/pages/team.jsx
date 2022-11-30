@@ -425,7 +425,7 @@ let mediaT=[
   },
   {
     name: "Ranil George",
-    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669616959/asthra7.0/dept-cord/dummy_rumpdc.jpg",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669805949/asthra7.0/media/renil_g3fdkp.jpg",
     lin_url: "",
     title: "3D Artist",
     git_url:"",
@@ -446,7 +446,7 @@ let mediaT=[
   
   {
     name: "Sathwik P Nair",
-    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669616959/asthra7.0/dept-cord/dummy_rumpdc.jpg",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669805428/asthra7.0/media/swathik3_gge37a.jpg",
     lin_url: "",
     title: "Sound Designer",
     git_url:"",
