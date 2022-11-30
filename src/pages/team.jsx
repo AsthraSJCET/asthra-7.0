@@ -117,6 +117,15 @@ export default function Team() {
     },
   ];
   let mainT=[
+    
+    {
+      "name": "Arun Alex",
+      title: "Marketing and Publicity",
+      image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618178/asthra7.0/main-cordt/Arun_hpaqga.jpg",
+      git_url: "",
+      lin_url: "",
+      behance_url: "",
+  },
     {
         name: "Sebin Mathew",
         title: "Volunteer lead",
@@ -262,14 +271,6 @@ export default function Team() {
         lin_url: "",
         behance_url: "",
     },
-    {
-        "name": "Arun Alex",
-        title: "Marketing and Publicity",
-        image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669618178/asthra7.0/main-cordt/Arun_hpaqga.jpg",
-        git_url: "",
-        lin_url: "",
-        behance_url: "",
-    },
     
     {
       "name": "Alan Tom Vincent",
@@ -402,8 +403,8 @@ let dept=[
   },
   {
       title: "ME",
-      name: "Thanseel Ahammed Saif",
-      image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669616961/asthra7.0/dept-cord/THANSEEL_mbix9z.jpg",
+      name: "Akash Bennichen",
+      image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1669816299/asthra7.0/dept-cord/thanseel_fwghxn.jpg",
       lin_url:"",
   },
   {
