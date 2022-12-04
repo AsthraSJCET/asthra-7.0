@@ -457,6 +457,24 @@ let mediaT=[
     behance_url:"",
     stat:"000",
   },
+  {
+    name: "Aashish Philip",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1670163084/asthra7.0/media/ashish_i1p2jh.png",
+    lin_url: "",
+    title: "Sound Designer",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
+  {
+    name: "Jerin T Varghese",
+    image: "https://res.cloudinary.com/due4u0qxv/image/upload/v1670163079/asthra7.0/media/Jerin_mc9mxt.png",
+    lin_url: "",
+    title: "Sound Designer",
+    git_url:"",
+    behance_url:"",
+    stat:"000",
+  },
 ]
   return (
     <>
